@@ -1,0 +1,11 @@
+
+*.xcodeproj/*
+!*.xcodeproj/project.pbxproj
+
+*.xcworkspace/*
+!*.xcworkspace/contents.xcworkspacedata
+
+Pods/*.xcodeproj/*
+!Pods/*.xcodeproj/project.pbxproj
+
+.DS_Store

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GPImageViewController">
+            <connections>
+                <outlet property="button1" destination="cUB-4h-aIv" id="e78-s7-NLT"/>
+                <outlet property="button2" destination="12s-ra-yOa" id="6qz-jL-qq0"/>
+                <outlet property="scrollView" destination="f0V-ub-VNW" id="SXD-IJ-wgk"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q6b-Jb-Gib">
+                    <rect key="frame" x="10" y="20" width="355" height="40"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cUB-4h-aIv">
+                            <rect key="frame" x="0.0" y="0.0" width="177.5" height="40"/>
+                            <state key="normal" title="Button"/>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="12s-ra-yOa">
+                            <rect key="frame" x="177.5" y="0.0" width="177.5" height="40"/>
+                            <state key="normal" title="Button"/>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="12s-ra-yOa" firstAttribute="leading" secondItem="cUB-4h-aIv" secondAttribute="trailing" id="54C-f6-aEA"/>
+                        <constraint firstItem="12s-ra-yOa" firstAttribute="top" secondItem="Q6b-Jb-Gib" secondAttribute="top" id="9uV-B5-FkJ"/>
+                        <constraint firstAttribute="trailing" secondItem="12s-ra-yOa" secondAttribute="trailing" id="FZg-OJ-ZH4"/>
+                        <constraint firstItem="cUB-4h-aIv" firstAttribute="leading" secondItem="Q6b-Jb-Gib" secondAttribute="leading" id="KQG-BP-pih"/>
+                        <constraint firstAttribute="bottom" secondItem="12s-ra-yOa" secondAttribute="bottom" id="M5F-Cs-pMC"/>
+                        <constraint firstItem="12s-ra-yOa" firstAttribute="width" secondItem="cUB-4h-aIv" secondAttribute="width" id="VkV-i6-GJV"/>
+                        <constraint firstAttribute="bottom" secondItem="cUB-4h-aIv" secondAttribute="bottom" id="iz3-xF-CEL"/>
+                        <constraint firstAttribute="height" constant="40" id="x59-4a-TJm"/>
+                        <constraint firstItem="cUB-4h-aIv" firstAttribute="top" secondItem="Q6b-Jb-Gib" secondAttribute="top" id="zBq-yQ-nfR"/>
+                    </constraints>
+                </view>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f0V-ub-VNW">
+                    <rect key="frame" x="27.5" y="60" width="320" height="597"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="320" id="DTG-jQ-xxK"/>
+                    </constraints>
+                </scrollView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="f0V-ub-VNW" firstAttribute="top" secondItem="Q6b-Jb-Gib" secondAttribute="bottom" id="72S-MS-jKu"/>
+                <constraint firstItem="Q6b-Jb-Gib" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="EbZ-OU-0Mk"/>
+                <constraint firstAttribute="bottom" secondItem="f0V-ub-VNW" secondAttribute="bottom" constant="10" id="cxO-Dd-2SA"/>
+                <constraint firstItem="Q6b-Jb-Gib" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="20" id="d0B-Pb-nY1"/>
+                <constraint firstItem="f0V-ub-VNW" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="j9V-8X-tep"/>
+                <constraint firstAttribute="trailing" secondItem="Q6b-Jb-Gib" secondAttribute="trailing" constant="10" id="oJw-1A-Fqg"/>
+            </constraints>
+            <point key="canvasLocation" x="-635" y="-39"/>
+        </view>
+    </objects>
+</document>
