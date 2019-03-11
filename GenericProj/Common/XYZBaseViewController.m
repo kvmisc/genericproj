@@ -36,11 +36,6 @@
                       error:NULL];
 }
 
-- (void)didReceiveMemoryWarning
-{
-  [super didReceiveMemoryWarning];
-}
-
 - (void)updateViewConstraints
 {
   if ( _contentView ) {
@@ -122,11 +117,16 @@
 
   _contentView = [self.view.subviews firstObject];
   if ( _contentView ) {
-    [_contentView removeFromSuperview];
+    // 删除视图再添加可以让 XIB 中添加的约束消失，这样就可以在代码中约束
+    // 但是不清楚删除视图再添加会不会造成什么潜在的问题，所以还是决定不删除
+    // 如果不删除，开发的时候在 XIB 中添加的约束应设置为 remove at build time
+    //[_contentView removeFromSuperview];
+    //[self.view insertSubview:_contentView atIndex:0];
   } else {
     _contentView = [[UIView alloc] init];
+    [self.view addSubview:_contentView];
   }
-  [self.view insertSubview:_contentView atIndex:0];
+
 
   [self updateViewConstraints];
 }

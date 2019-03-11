@@ -48,7 +48,8 @@ void TKFindResponderInView(int number);
 // 属性的值，而类的实现者可以修改属性的值
 @property (nonatomic, readonly) NSInteger level;
 
-// 属性中不要使用 NSMutableString，字符串和 block 属性都使用 copy 修饰
+// 属性中不要使用 NSMutableString
+// 字符串和 block 属性都使用 copy 修饰
 @property (nonatomic, copy) NSString *userName;
 @property (nonatomic, copy) void (^completion)(BOOL result);
 

@@ -32,13 +32,6 @@
 @property (nonatomic, strong, readonly) UIView *contentView;
 
 
-- (void)viewDidLoad;
-
-- (void)didReceiveMemoryWarning;
-
-- (void)updateViewConstraints;
-
-
 - (BOOL)shouldLoadContentView;
 
 - (void)loadContentViewIfNeeded;
