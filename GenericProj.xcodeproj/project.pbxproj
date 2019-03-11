@@ -62,6 +62,10 @@
 		0AEF637F1D5B0BB90081D6B7 /* sql_main in Resources */ = {isa = PBXBuildFile; fileRef = 0AEF637E1D5B0BB90081D6B7 /* sql_main */; };
 		0AF669C42053E8FC00712772 /* XYZHTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AF669C32053E8FC00712772 /* XYZHTTPRequest.m */; };
 		0AFEA2261E14EE2A00F0C4C6 /* XYZBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AFEA2251E14EE2A00F0C4C6 /* XYZBaseViewController.m */; };
+		BB04B9572235F64C005E54C4 /* GPCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB04B9552235F64C005E54C4 /* GPCollectionViewController.m */; };
+		BB04B9582235F64C005E54C4 /* GPCollectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB04B9562235F64C005E54C4 /* GPCollectionViewController.xib */; };
+		BB04B95D2235F923005E54C4 /* GPCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BB04B95B2235F923005E54C4 /* GPCollectionViewCell.m */; };
+		BB04B95E2235F923005E54C4 /* GPCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB04B95C2235F923005E54C4 /* GPCollectionViewCell.xib */; };
 		BB145D56207DC8110087D55F /* XYZWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB145D54207DC8100087D55F /* XYZWebViewController.m */; };
 		BB145D59207DCA1D0087D55F /* XYZWeakScriptMessageHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = BB145D58207DCA1D0087D55F /* XYZWeakScriptMessageHandler.m */; };
 		BB16F2991FF5E119004359B2 /* q5-1712.txt in Resources */ = {isa = PBXBuildFile; fileRef = BB16F2981FF5E119004359B2 /* q5-1712.txt */; };
@@ -196,6 +200,12 @@
 		2579012E5534F46C56F97098 /* libPods-GenericProj.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GenericProj.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		515BB722BAC56AAD43AD1865 /* Pods-GenericProj.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GenericProj.release.xcconfig"; path = "Pods/Target Support Files/Pods-GenericProj/Pods-GenericProj.release.xcconfig"; sourceTree = "<group>"; };
 		6CC8B4CFFD62002DD8FEA6DF /* Pods-GenericProj.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GenericProj.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GenericProj/Pods-GenericProj.debug.xcconfig"; sourceTree = "<group>"; };
+		BB04B9542235F64C005E54C4 /* GPCollectionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GPCollectionViewController.h; sourceTree = "<group>"; };
+		BB04B9552235F64C005E54C4 /* GPCollectionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GPCollectionViewController.m; sourceTree = "<group>"; };
+		BB04B9562235F64C005E54C4 /* GPCollectionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GPCollectionViewController.xib; sourceTree = "<group>"; };
+		BB04B95A2235F923005E54C4 /* GPCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GPCollectionViewCell.h; sourceTree = "<group>"; };
+		BB04B95B2235F923005E54C4 /* GPCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GPCollectionViewCell.m; sourceTree = "<group>"; };
+		BB04B95C2235F923005E54C4 /* GPCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GPCollectionViewCell.xib; sourceTree = "<group>"; };
 		BB145D54207DC8100087D55F /* XYZWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYZWebViewController.m; sourceTree = "<group>"; };
 		BB145D55207DC8110087D55F /* XYZWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYZWebViewController.h; sourceTree = "<group>"; };
 		BB145D57207DCA1D0087D55F /* XYZWeakScriptMessageHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYZWeakScriptMessageHandler.h; sourceTree = "<group>"; };
@@ -498,6 +508,7 @@
 				0AAB27221FDFC5C400BD2451 /* Cover */,
 				BBDC830A2046633700C3E554 /* Image */,
 				BB7EDE5820808C9D00B44D0C /* TableView */,
+				BB04B9592235F65D005E54C4 /* CollectionView */,
 			);
 			path = Pages;
 			sourceTree = "<group>";
@@ -615,6 +626,19 @@
 				515BB722BAC56AAD43AD1865 /* Pods-GenericProj.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		BB04B9592235F65D005E54C4 /* CollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				BB04B9542235F64C005E54C4 /* GPCollectionViewController.h */,
+				BB04B9552235F64C005E54C4 /* GPCollectionViewController.m */,
+				BB04B9562235F64C005E54C4 /* GPCollectionViewController.xib */,
+				BB04B95A2235F923005E54C4 /* GPCollectionViewCell.h */,
+				BB04B95B2235F923005E54C4 /* GPCollectionViewCell.m */,
+				BB04B95C2235F923005E54C4 /* GPCollectionViewCell.xib */,
+			);
+			name = CollectionView;
 			sourceTree = "<group>";
 		};
 		BB145D6A207DFE620087D55F /* WebViewController */ = {
@@ -780,10 +804,12 @@
 				BB8F976A2050DAD5008A8CAD /* GPRuntimeViewController.xib in Resources */,
 				0A55A7D81F6664A3001A0C13 /* GPHTTPViewController.xib in Resources */,
 				BBDC831020466CAE00C3E554 /* hh.png in Resources */,
+				BB04B9582235F64C005E54C4 /* GPCollectionViewController.xib in Resources */,
 				BB16F2991FF5E119004359B2 /* q5-1712.txt in Resources */,
 				0A883B871F62B87C00ED33EB /* GPHierarchyViewController.xib in Resources */,
 				0A883B8C1F62C4DE00ED33EB /* GPRestructureViewController.xib in Resources */,
 				0AEF637F1D5B0BB90081D6B7 /* sql_main in Resources */,
+				BB04B95E2235F923005E54C4 /* GPCollectionViewCell.xib in Resources */,
 				0A7AE4FF1D58294200B585D9 /* Assets.xcassets in Resources */,
 				BBDC83092046633200C3E554 /* GPImageViewController.xib in Resources */,
 				0A0E6F0A1FA9B5FF00E26E42 /* GPDownloadViewController.xib in Resources */,
@@ -864,6 +890,7 @@
 				0A0E6F091FA9B5FF00E26E42 /* GPDownloadViewController.m in Sources */,
 				0AA817BE1D61B59B009F831A /* XYZGlobal.m in Sources */,
 				BB7EDE52208087C600B44D0C /* XYZBaseTableViewCell.m in Sources */,
+				BB04B95D2235F923005E54C4 /* GPCollectionViewCell.m in Sources */,
 				0A883B4D1F623D8200ED33EB /* UIButtonExtentions.m in Sources */,
 				0A883B861F62B87C00ED33EB /* GPHierarchyViewController.m in Sources */,
 				0A883B411F6237AC00ED33EB /* NSObjectExtentions.m in Sources */,
@@ -913,6 +940,7 @@
 				0AAB271C1FDFC42D00BD2451 /* XYZCoverView.m in Sources */,
 				0A55A7D71F6664A2001A0C13 /* GPHTTPViewController.m in Sources */,
 				0A972A4D1FC3F88200396FBD /* NSStringExtentions.m in Sources */,
+				BB04B9572235F64C005E54C4 /* GPCollectionViewController.m in Sources */,
 				BB8F97692050DAD5008A8CAD /* GPRuntimeViewController.m in Sources */,
 				0AAB27201FDFC5B800BD2451 /* GPCoverViewController.m in Sources */,
 			);
