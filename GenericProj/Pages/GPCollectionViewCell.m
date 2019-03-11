@@ -13,6 +13,9 @@
 - (void)awakeFromNib
 {
   [super awakeFromNib];
+
+  self.contentView.layer.borderWidth = 1.0;
+  self.contentView.layer.borderColor = [[UIColor blackColor] CGColor];
 }
 
 @end

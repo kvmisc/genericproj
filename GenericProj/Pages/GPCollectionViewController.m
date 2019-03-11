@@ -8,6 +8,7 @@
 
 #import "GPCollectionViewController.h"
 #import "GPCollectionViewCell.h"
+#import "GPCollectionReusableView.h"
 
 @interface GPCollectionViewController () <
     UICollectionViewDelegate,
@@ -31,6 +32,12 @@
 
   [_collectionView registerNib:[UINib nibWithNibName:@"GPCollectionViewCell" bundle:[NSBundle mainBundle]]
     forCellWithReuseIdentifier:@"GPCollectionViewCell"];
+  [_collectionView registerNib:[UINib nibWithNibName:@"GPCollectionReusableView" bundle:[NSBundle mainBundle]]
+    forSupplementaryViewOfKind:UICollectionElementKindSectionHeader
+           withReuseIdentifier:@"GPCollectionReusableView"];
+  [_collectionView registerNib:[UINib nibWithNibName:@"GPCollectionReusableView" bundle:[NSBundle mainBundle]]
+    forSupplementaryViewOfKind:UICollectionElementKindSectionFooter
+           withReuseIdentifier:@"GPCollectionReusableView"];
 
   // 修改 layout，也可以用下面的四个代理方法来修改
   UICollectionViewFlowLayout *flowLayout = (UICollectionViewFlowLayout *)(_collectionView.collectionViewLayout);
@@ -67,6 +74,10 @@
   return cell;
 }
 
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+}
+
 
 
 //- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
@@ -92,14 +103,24 @@
 //}
 
 
-//- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section;
-//- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForFooterInSection:(NSInteger)section
 
-
-- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath
 {
+  GPCollectionReusableView *view = [collectionView dequeueReusableSupplementaryViewOfKind:kind
+                                                                      withReuseIdentifier:@"GPCollectionReusableView"
+                                                                             forIndexPath:indexPath];
+  NSString *knd = [kind substringFromIndex:19];
+  view.titleLabel.text = [NSString stringWithFormat:@"%d %@", (int)(indexPath.section), knd];
+  return view;
 }
 
-//- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath;
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section
+{
+  return CGSizeMake(XYZ_SCREEN_WID, 40);
+}
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForFooterInSection:(NSInteger)section
+{
+  return CGSizeMake(XYZ_SCREEN_WID, 40);
+}
 
 @end

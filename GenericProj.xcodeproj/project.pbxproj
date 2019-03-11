@@ -66,6 +66,8 @@
 		BB04B9582235F64C005E54C4 /* GPCollectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB04B9562235F64C005E54C4 /* GPCollectionViewController.xib */; };
 		BB04B95D2235F923005E54C4 /* GPCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BB04B95B2235F923005E54C4 /* GPCollectionViewCell.m */; };
 		BB04B95E2235F923005E54C4 /* GPCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB04B95C2235F923005E54C4 /* GPCollectionViewCell.xib */; };
+		BB04B962223606BA005E54C4 /* GPCollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = BB04B960223606BA005E54C4 /* GPCollectionReusableView.m */; };
+		BB04B963223606BA005E54C4 /* GPCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB04B961223606BA005E54C4 /* GPCollectionReusableView.xib */; };
 		BB145D56207DC8110087D55F /* XYZWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB145D54207DC8100087D55F /* XYZWebViewController.m */; };
 		BB145D59207DCA1D0087D55F /* XYZWeakScriptMessageHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = BB145D58207DCA1D0087D55F /* XYZWeakScriptMessageHandler.m */; };
 		BB16F2991FF5E119004359B2 /* q5-1712.txt in Resources */ = {isa = PBXBuildFile; fileRef = BB16F2981FF5E119004359B2 /* q5-1712.txt */; };
@@ -206,6 +208,9 @@
 		BB04B95A2235F923005E54C4 /* GPCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GPCollectionViewCell.h; sourceTree = "<group>"; };
 		BB04B95B2235F923005E54C4 /* GPCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GPCollectionViewCell.m; sourceTree = "<group>"; };
 		BB04B95C2235F923005E54C4 /* GPCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GPCollectionViewCell.xib; sourceTree = "<group>"; };
+		BB04B95F223606BA005E54C4 /* GPCollectionReusableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GPCollectionReusableView.h; sourceTree = "<group>"; };
+		BB04B960223606BA005E54C4 /* GPCollectionReusableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GPCollectionReusableView.m; sourceTree = "<group>"; };
+		BB04B961223606BA005E54C4 /* GPCollectionReusableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GPCollectionReusableView.xib; sourceTree = "<group>"; };
 		BB145D54207DC8100087D55F /* XYZWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYZWebViewController.m; sourceTree = "<group>"; };
 		BB145D55207DC8110087D55F /* XYZWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYZWebViewController.h; sourceTree = "<group>"; };
 		BB145D57207DCA1D0087D55F /* XYZWeakScriptMessageHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYZWeakScriptMessageHandler.h; sourceTree = "<group>"; };
@@ -637,6 +642,9 @@
 				BB04B95A2235F923005E54C4 /* GPCollectionViewCell.h */,
 				BB04B95B2235F923005E54C4 /* GPCollectionViewCell.m */,
 				BB04B95C2235F923005E54C4 /* GPCollectionViewCell.xib */,
+				BB04B95F223606BA005E54C4 /* GPCollectionReusableView.h */,
+				BB04B960223606BA005E54C4 /* GPCollectionReusableView.m */,
+				BB04B961223606BA005E54C4 /* GPCollectionReusableView.xib */,
 			);
 			name = CollectionView;
 			sourceTree = "<group>";
@@ -819,6 +827,7 @@
 				0A4869691ED67FAF00F54D2F /* GPTestViewController.xib in Resources */,
 				BBDC831220466CC700C3E554 /* ww.png in Resources */,
 				BB7EDE5D20808D1600B44D0C /* GPTableViewCell.xib in Resources */,
+				BB04B963223606BA005E54C4 /* GPCollectionReusableView.xib in Resources */,
 				0AAB27211FDFC5B800BD2451 /* GPCoverViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -897,6 +906,7 @@
 				0A883B4A1F623C5400ED33EB /* UITextXXXMaxLength.m in Sources */,
 				0A7AE5221D58576700B585D9 /* XYZLogger.m in Sources */,
 				0AD8DF381FE0C35B0092FF6D /* GPSourceView.m in Sources */,
+				BB04B962223606BA005E54C4 /* GPCollectionReusableView.m in Sources */,
 				0A3D07E01F67B82E00F19DF3 /* GPAspectViewController.m in Sources */,
 				BB8F976D2050DD45008A8CAD /* GPRuntimeTest.m in Sources */,
 				0A883B441F62380800ED33EB /* UIColorExtentions.m in Sources */,
