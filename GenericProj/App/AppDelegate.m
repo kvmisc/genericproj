@@ -86,7 +86,7 @@
   _window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
   _window.backgroundColor = [UIColor whiteColor];
   UIViewController *vc = [[GPRootViewController alloc] init];
-  UINavigationController *nc = [[UINavigationController alloc] initWithRootViewController:vc];
+  UINavigationController *nc = [[XYZNavigationController alloc] initWithRootViewController:vc];
   nc.navigationBarHidden = YES;
   _window.rootViewController = nc;
 

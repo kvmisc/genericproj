@@ -73,14 +73,9 @@
 - (void)viewDidDisappear:(BOOL)animated
 {
   [super viewDidDisappear:animated];
-
-  if ( self.isMovingFromParentViewController ) {
-    [self destroyActivities];
-  } else {
-    [self stopActivities];
-  }
-
   _viewAppeared = NO;
+
+  [self stopActivities];
 }
 
 
@@ -130,5 +125,20 @@
 
   [self updateViewConstraints];
 }
+
+
+
+
+//- (void)presentViewController:(UIViewController *)viewControllerToPresent animated:(BOOL)flag completion:(void (^)(void))completion
+//{
+//  [super presentViewController:viewControllerToPresent animated:flag completion:completion];
+//}
+
+- (void)dismissViewControllerAnimated:(BOOL)flag completion:(void (^)(void))completion
+{
+  [self destroyActivities];
+  [super dismissViewControllerAnimated:flag completion:completion];
+}
+
 
 @end

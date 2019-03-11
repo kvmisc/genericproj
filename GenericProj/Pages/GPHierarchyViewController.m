@@ -8,6 +8,10 @@
 
 #import "GPHierarchyViewController.h"
 
+@interface GPHierarchyViewController ()
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+@end
+
 static NSMutableArray *TitleAry = nil;
 
 @implementation GPHierarchyViewController {
@@ -19,7 +23,7 @@ static NSMutableArray *TitleAry = nil;
   self = [super init];
   if (self) {
     if ( !TitleAry ) {
-      TitleAry = [[NSMutableArray alloc] initWithObjects:@"AAA", @"BBB", @"CCC", @"DDD", @"!!!", nil];
+      TitleAry = [[NSMutableArray alloc] initWithObjects:@"AAA", @"BBB", @"CCC", @"DDD", @"EEE", @"!!!", nil];
     }
 
     _theTitle = [TitleAry firstObject];
@@ -28,6 +32,12 @@ static NSMutableArray *TitleAry = nil;
     }
   }
   return self;
+}
+
+- (void)viewDidLoad
+{
+  [super viewDidLoad];
+  _titleLabel.text = _theTitle;
 }
 
 

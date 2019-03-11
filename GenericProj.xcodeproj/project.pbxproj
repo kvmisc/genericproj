@@ -91,6 +91,7 @@
 		BBDC831020466CAE00C3E554 /* hh.png in Resources */ = {isa = PBXBuildFile; fileRef = BBDC830F20466CAE00C3E554 /* hh.png */; };
 		BBDC831220466CC700C3E554 /* ww.png in Resources */ = {isa = PBXBuildFile; fileRef = BBDC831120466CC700C3E554 /* ww.png */; };
 		BBE72F9921A53C7700B9CE37 /* GPTestObject.m in Sources */ = {isa = PBXBuildFile; fileRef = BBE72F9821A53C7700B9CE37 /* GPTestObject.m */; };
+		BBE77A712236596A007C7AA6 /* XYZNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBE77A702236596A007C7AA6 /* XYZNavigationController.m */; };
 		BBFFBA8A2178417F00FB8159 /* XYZSampleObject.m in Sources */ = {isa = PBXBuildFile; fileRef = BBFFBA882178417E00FB8159 /* XYZSampleObject.m */; };
 		E2719F12FDE058AF8C1860D8 /* libPods-GenericProj.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2579012E5534F46C56F97098 /* libPods-GenericProj.a */; };
 /* End PBXBuildFile section */
@@ -258,6 +259,8 @@
 		BBDC831120466CC700C3E554 /* ww.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ww.png; sourceTree = "<group>"; };
 		BBE72F9721A53C7700B9CE37 /* GPTestObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GPTestObject.h; sourceTree = "<group>"; };
 		BBE72F9821A53C7700B9CE37 /* GPTestObject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GPTestObject.m; sourceTree = "<group>"; };
+		BBE77A6F2236596A007C7AA6 /* XYZNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYZNavigationController.h; sourceTree = "<group>"; };
+		BBE77A702236596A007C7AA6 /* XYZNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XYZNavigationController.m; sourceTree = "<group>"; };
 		BBFFBA83217827C900FB8159 /* block_declaration.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = block_declaration.md; sourceTree = "<group>"; };
 		BBFFBA8521782E4B00FB8159 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		BBFFBA8721782F5100FB8159 /* bump_build_number.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = bump_build_number.sh; sourceTree = "<group>"; };
@@ -545,6 +548,8 @@
 				0A2BD38A1D5D5CEA009D1CEF /* XYZBaseView.m */,
 				0AFEA2241E14EE2A00F0C4C6 /* XYZBaseViewController.h */,
 				0AFEA2251E14EE2A00F0C4C6 /* XYZBaseViewController.m */,
+				BBE77A6F2236596A007C7AA6 /* XYZNavigationController.h */,
+				BBE77A702236596A007C7AA6 /* XYZNavigationController.m */,
 				0AD8DF351FE0B71E0092FF6D /* CoverView */,
 				0A883B571F62638300ED33EB /* MessageCenter */,
 				BB7EDE4F208087A800B44D0C /* TableViewController */,
@@ -929,6 +934,7 @@
 				0A3BB1E41E76821C00F11642 /* GPMessageViewController.m in Sources */,
 				0A883B811F62B25E00ED33EB /* XYZBaseTableViewController.m in Sources */,
 				0A2EA8621FC7AC4300A800C6 /* GPDatabaseViewController.m in Sources */,
+				BBE77A712236596A007C7AA6 /* XYZNavigationController.m in Sources */,
 				BBFFBA8A2178417F00FB8159 /* XYZSampleObject.m in Sources */,
 				0A29B0AE1FE12F4D00F007FE /* XYZCoverContentView.m in Sources */,
 				BBD5C47B202B02330093AE9E /* UINavigationControllerExtentions.m in Sources */,

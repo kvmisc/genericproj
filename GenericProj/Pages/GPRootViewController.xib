@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -31,10 +31,10 @@
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="jNJ-9r-TyN" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Rib-AA-P9G"/>
-                <constraint firstAttribute="trailing" secondItem="jNJ-9r-TyN" secondAttribute="trailing" id="SU1-4k-nnl"/>
-                <constraint firstAttribute="bottom" secondItem="jNJ-9r-TyN" secondAttribute="bottom" id="j9C-Af-3Sg"/>
-                <constraint firstItem="jNJ-9r-TyN" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="q8O-it-8vF"/>
+                <constraint firstItem="jNJ-9r-TyN" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" placeholder="YES" id="Rib-AA-P9G"/>
+                <constraint firstAttribute="trailing" secondItem="jNJ-9r-TyN" secondAttribute="trailing" placeholder="YES" id="SU1-4k-nnl"/>
+                <constraint firstAttribute="bottom" secondItem="jNJ-9r-TyN" secondAttribute="bottom" placeholder="YES" id="j9C-Af-3Sg"/>
+                <constraint firstItem="jNJ-9r-TyN" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" placeholder="YES" id="q8O-it-8vF"/>
             </constraints>
             <point key="canvasLocation" x="7" y="152"/>
         </view>
