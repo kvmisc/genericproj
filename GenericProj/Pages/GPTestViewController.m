@@ -50,42 +50,54 @@
 //  [dt2 writeToFile:TKPathForDocumentResource(@"bbb.jpg") atomically:YES];
 
 
+//  {
+//    UIImage *image1 = [UIImage imageNamed:@"ic_a"];
+//    NSLog(@"%@ %f", NSStringFromCGSize(image1.size), image1.scale);
+//
+//    UIImage *image2 = [UIImage tk_decodeImage:image1];
+//    NSLog(@"%@ %f", NSStringFromCGSize(image2.size), image2.scale);
+//
+//    UIImage *image3 = [UIImage pin_decodedImageWithCGImageRef:image1.CGImage];
+//    NSLog(@"%@ %f", NSStringFromCGSize(image3.size), image3.scale);
+//
+////    NSString *path = TKPathForBundleResource(nil, @"ic_a.png");
+////    NSData *data = [[NSData alloc] initWithContentsOfFile:path];
+//    NSData *dt1 = UIImageJPEGRepresentation(image2, 0.9);
+//    [dt1 writeToFile:TKPathForDocumentResource(@"aaa.jpg") atomically:YES];
+//  }
+//  NSLog(@" ");
+//  NSLog(@" ");
+//  {
+//    UIImage *image1 = [UIImage imageNamed:@"ic_b"];
+//    NSLog(@"%@ %f", NSStringFromCGSize(image1.size), image1.scale);
+//
+//    UIImage *image2 = [UIImage tk_decodeImage:image1];
+//    NSLog(@"%@ %f", NSStringFromCGSize(image2.size), image2.scale);
+//
+//    UIImage *image3 = [UIImage pin_decodedImageWithCGImageRef:image1.CGImage];
+//    NSLog(@"%@ %f", NSStringFromCGSize(image3.size), image3.scale);
+//
+//    //    NSString *path = TKPathForBundleResource(nil, @"ic_a.png");
+//    //    NSData *data = [[NSData alloc] initWithContentsOfFile:path];
+//    NSData *dt1 = UIImageJPEGRepresentation(image2, 0.9);
+//    [dt1 writeToFile:TKPathForDocumentResource(@"bbb.jpg") atomically:YES];
+//  }
+
+
+//  {
+//    UIImage *image1 = [UIImage imageNamed:@"haa"];
+//    NSLog(@"%@ %f", NSStringFromCGSize(image1.size), image1.scale);
+//    UIImage *image2 = [image1 tk_roundedCornerImage:26];
+//    NSLog(@"%@ %f", NSStringFromCGSize(image2.size), image2.scale);
+//    _avatarView.image = image2;
+//  }
   {
-    UIImage *image1 = [UIImage imageNamed:@"ic_a"];
+    UIImage *image1 = [UIImage imageNamed:@"haa"];
     NSLog(@"%@ %f", NSStringFromCGSize(image1.size), image1.scale);
-
-    UIImage *image2 = [UIImage tk_decodeImage:image1];
+    UIImage *image2 = [image1 tk_roundedCornerImage:30];
     NSLog(@"%@ %f", NSStringFromCGSize(image2.size), image2.scale);
-
-    UIImage *image3 = [UIImage pin_decodedImageWithCGImageRef:image1.CGImage];
-    NSLog(@"%@ %f", NSStringFromCGSize(image3.size), image3.scale);
-
-//    NSString *path = TKPathForBundleResource(nil, @"ic_a.png");
-//    NSData *data = [[NSData alloc] initWithContentsOfFile:path];
-    NSData *dt1 = UIImageJPEGRepresentation(image2, 0.9);
-    [dt1 writeToFile:TKPathForDocumentResource(@"aaa.jpg") atomically:YES];
+    _avatarView.image = image2;
   }
-  NSLog(@" ");
-  NSLog(@" ");
-  {
-    UIImage *image1 = [UIImage imageNamed:@"ic_b"];
-    NSLog(@"%@ %f", NSStringFromCGSize(image1.size), image1.scale);
-
-    UIImage *image2 = [UIImage tk_decodeImage:image1];
-    NSLog(@"%@ %f", NSStringFromCGSize(image2.size), image2.scale);
-
-    UIImage *image3 = [UIImage pin_decodedImageWithCGImageRef:image1.CGImage];
-    NSLog(@"%@ %f", NSStringFromCGSize(image3.size), image3.scale);
-
-    //    NSString *path = TKPathForBundleResource(nil, @"ic_a.png");
-    //    NSData *data = [[NSData alloc] initWithContentsOfFile:path];
-    NSData *dt1 = UIImageJPEGRepresentation(image2, 0.9);
-    [dt1 writeToFile:TKPathForDocumentResource(@"bbb.jpg") atomically:YES];
-  }
-
-
-//  UIImage *image1 = [UIImage imageNamed:@"hill"];
-//  _avatarView.image = [image1 tk_cornerRadius:150];
 
   
 

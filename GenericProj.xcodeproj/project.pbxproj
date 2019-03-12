@@ -80,7 +80,8 @@
 		BB7EDE5D20808D1600B44D0C /* GPTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB7EDE5B20808D1600B44D0C /* GPTableViewCell.xib */; };
 		BB826F6B2237540000BBB30B /* ic_b@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BB826F692237540000BBB30B /* ic_b@2x.png */; };
 		BB826F6C2237540000BBB30B /* ic_a.png in Resources */ = {isa = PBXBuildFile; fileRef = BB826F6A2237540000BBB30B /* ic_a.png */; };
-		BB826F6E22375EB400BBB30B /* hill.png in Resources */ = {isa = PBXBuildFile; fileRef = BB826F6D22375EB400BBB30B /* hill.png */; };
+		BB826F6E22375EB400BBB30B /* haa.png in Resources */ = {isa = PBXBuildFile; fileRef = BB826F6D22375EB400BBB30B /* haa.png */; };
+		BB826F702237683A00BBB30B /* hbb@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BB826F6F2237683900BBB30B /* hbb@2x.png */; };
 		BB8F97692050DAD5008A8CAD /* GPRuntimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB8F97672050DAD5008A8CAD /* GPRuntimeViewController.m */; };
 		BB8F976A2050DAD5008A8CAD /* GPRuntimeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB8F97682050DAD5008A8CAD /* GPRuntimeViewController.xib */; };
 		BB8F976D2050DD45008A8CAD /* GPRuntimeTest.m in Sources */ = {isa = PBXBuildFile; fileRef = BB8F976C2050DD45008A8CAD /* GPRuntimeTest.m */; };
@@ -234,7 +235,8 @@
 		BB7EDE5B20808D1600B44D0C /* GPTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GPTableViewCell.xib; sourceTree = "<group>"; };
 		BB826F692237540000BBB30B /* ic_b@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_b@2x.png"; sourceTree = "<group>"; };
 		BB826F6A2237540000BBB30B /* ic_a.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_a.png; sourceTree = "<group>"; };
-		BB826F6D22375EB400BBB30B /* hill.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hill.png; sourceTree = "<group>"; };
+		BB826F6D22375EB400BBB30B /* haa.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = haa.png; sourceTree = "<group>"; };
+		BB826F6F2237683900BBB30B /* hbb@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "hbb@2x.png"; sourceTree = "<group>"; };
 		BB8F97662050DAD5008A8CAD /* GPRuntimeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GPRuntimeViewController.h; sourceTree = "<group>"; };
 		BB8F97672050DAD5008A8CAD /* GPRuntimeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GPRuntimeViewController.m; sourceTree = "<group>"; };
 		BB8F97682050DAD5008A8CAD /* GPRuntimeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GPRuntimeViewController.xib; sourceTree = "<group>"; };
@@ -594,7 +596,8 @@
 				0A4869671ED67FAF00F54D2F /* GPTestViewController.xib */,
 				BB826F6A2237540000BBB30B /* ic_a.png */,
 				BB826F692237540000BBB30B /* ic_b@2x.png */,
-				BB826F6D22375EB400BBB30B /* hill.png */,
+				BB826F6D22375EB400BBB30B /* haa.png */,
+				BB826F6F2237683900BBB30B /* hbb@2x.png */,
 				BB16F2981FF5E119004359B2 /* q5-1712.txt */,
 			);
 			name = Test;
@@ -821,7 +824,8 @@
 			files = (
 				0A7AE5081D582C7A00B585D9 /* GPRootViewController.xib in Resources */,
 				BB7EDE5720808C9900B44D0C /* GPTableViewController.xib in Resources */,
-				BB826F6E22375EB400BBB30B /* hill.png in Resources */,
+				BB826F6E22375EB400BBB30B /* haa.png in Resources */,
+				BB826F702237683A00BBB30B /* hbb@2x.png in Resources */,
 				0A3D07E11F67B82E00F19DF3 /* GPAspectViewController.xib in Resources */,
 				0A3D07EC1F67BE0A00F19DF3 /* GPKVOViewController.xib in Resources */,
 				BB8F976A2050DAD5008A8CAD /* GPRuntimeViewController.xib in Resources */,

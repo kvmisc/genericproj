@@ -17,7 +17,7 @@
 - (UIImage *)tk_scaleToFill:(CGSize)boundSize obligatory:(BOOL)obligatory;
 
 
-- (UIImage *)tk_cornerRadius:(CGFloat)cornerRadius;
+- (UIImage *)tk_roundedCornerImage:(CGFloat)cornerRadius;
 
 
 // https://www.paintcodeapp.com/news/ultimate-guide-to-iphone-resolutions
@@ -35,7 +35,9 @@
 + (UIImage *)tk_imageWithColor:(UIColor *)color size:(CGSize)size;
 
 
-// cover@2x.png 512*512
+// 无论传入图片 scale 是什么，画图片都是用像素值，最后根据原始图片的 scale 来决定最终图片的 size 和 scale
+//
+// cover@2x.png, size in pixel: 512*512
 //
 // UIImage *image1 = [UIImage imageNamed:@"cover"];
 //   size:256*256, scale:2.0

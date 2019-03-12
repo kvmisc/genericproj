@@ -69,21 +69,90 @@
 }
 
 
-- (UIImage *)tk_cornerRadius:(CGFloat)cornerRadius
+- (UIImage *)tk_roundedCornerImage:(CGFloat)cornerRadius
 {
-  UIGraphicsBeginImageContextWithOptions(self.size, NO, [UIScreen mainScreen].scale);
+  UIImage *resultImage = nil;
 
-  CGRect rect = CGRectMake(0.0, 0.0, self.size.width, self.size.height);
-  UIBezierPath *bezierPath = [UIBezierPath bezierPathWithRoundedRect:rect cornerRadius:cornerRadius];
-  CGContextAddPath(UIGraphicsGetCurrentContext(), bezierPath.CGPath);
-  CGContextClip(UIGraphicsGetCurrentContext());
+  size_t imageWidth = CGImageGetWidth(self.CGImage);
+  size_t imageHeight = CGImageGetHeight(self.CGImage);
 
-  [self drawInRect:rect];
+  CGColorSpaceRef colorSpaceRef = CGColorSpaceCreateDeviceRGB();
 
-  CGContextDrawPath(UIGraphicsGetCurrentContext(), kCGPathFillStroke);
-  UIImage *resultImage = UIGraphicsGetImageFromCurrentImageContext();
-  UIGraphicsEndImageContext();
+  if ( colorSpaceRef ) {
+
+    CGContextRef contextRef = CGBitmapContextCreate(NULL, imageWidth, imageHeight, 8, 0, colorSpaceRef, kCGImageAlphaPremultipliedFirst | kCGBitmapByteOrder32Host);
+    if ( contextRef ) {
+
+      CGFloat radius = cornerRadius * self.scale;
+      CGFloat minX = 0.0, midX = floor(imageWidth/2.0), maxX = floor(imageWidth);
+      CGFloat minY = 0.0, midY = floor(imageHeight/2.0), maxY = floor(imageHeight);
+
+      CGContextBeginPath(contextRef);
+      CGContextMoveToPoint(contextRef, minX, midY);
+      CGContextAddArcToPoint(contextRef, minX, minY, midX, minY, radius);
+      CGContextAddArcToPoint(contextRef, maxX, minY, maxX, midY, radius);
+      CGContextAddArcToPoint(contextRef, maxX, maxY, midX, maxY, radius);
+      CGContextAddArcToPoint(contextRef, minX, maxY, minX, midY, radius);
+      CGContextClosePath(contextRef);
+      CGContextClip(contextRef);
+
+      CGContextDrawImage(contextRef, CGRectMake(0.0, 0.0, imageWidth, imageHeight), self.CGImage);
+
+      CGImageRef resultImageRef = CGBitmapContextCreateImage(contextRef);
+      if ( resultImageRef ) {
+        resultImage = [UIImage imageWithCGImage:resultImageRef scale:self.scale orientation:UIImageOrientationUp];
+        CGImageRelease(resultImageRef);
+      }
+      CGContextRelease(contextRef);
+    }
+    CGColorSpaceRelease(colorSpaceRef);
+  }
+
   return resultImage;
+
+
+
+
+//  CGFloat scale = self.scale;
+//
+//  CGRect rect = CGRectMake(0.0, 0.0, scale*self.size.width, scale*self.size.height);
+//
+//  UIEdgeInsets cornerInset = UIEdgeInsetsMake(cornerRadius, cornerRadius, cornerRadius, cornerRadius);
+//  cornerInset.topRight *= scale;
+//  cornerInset.topLeft *= scale;
+//  cornerInset.bottomLeft *= scale;
+//  cornerInset.bottomRight *= scale;
+//
+//
+//  CGColorSpaceRef colorSpaceRef = CGColorSpaceCreateDeviceRGB();
+//  CGContextRef contextRef = CGBitmapContextCreate(NULL, rect.size.width, rect.size.height, 8, 0, colorSpace, (CGBitmapInfo)kCGImageAlphaPremultipliedLast);
+//  CGColorSpaceRelease(colorSpace);
+//
+//  if (context == NULL)
+//    return nil;
+//
+//  CGFloat minx = CGRectGetMinX(rect), midx = CGRectGetMidX(rect), maxx = CGRectGetMaxX(rect);
+//  CGFloat miny = CGRectGetMinY(rect), midy = CGRectGetMidY(rect), maxy = CGRectGetMaxY(rect);
+//  CGContextBeginPath(context);
+//  CGContextMoveToPoint(context, minx, midy);
+//  CGContextAddArcToPoint(context, minx, miny, midx, miny, cornerInset.bottomLeft);
+//  CGContextAddArcToPoint(context, maxx, miny, maxx, midy, cornerInset.bottomRight);
+//  CGContextAddArcToPoint(context, maxx, maxy, midx, maxy, cornerInset.topRight);
+//  CGContextAddArcToPoint(context, minx, maxy, minx, midy, cornerInset.topLeft);
+//  CGContextClosePath(context);
+//  CGContextClip(context);
+//
+//  CGContextDrawImage(context, rect, self.CGImage);
+//
+//  CGImageRef bitmapImageRef = CGBitmapContextCreateImage(context);
+//
+//  CGContextRelease(context);
+//
+//  UIImage *newImage = [UIImage imageWithCGImage:bitmapImageRef scale:scale orientation:UIImageOrientationUp];
+//
+//  CGImageRelease(bitmapImageRef);
+//
+//  return newImage;
 }
 
 
