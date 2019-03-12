@@ -54,7 +54,7 @@
     UIImage *image1 = [UIImage imageNamed:@"ic_a"];
     NSLog(@"%@ %f", NSStringFromCGSize(image1.size), image1.scale);
 
-    UIImage *image2 = [UIImage tk_decodedImageWithImage:image1];
+    UIImage *image2 = [UIImage tk_decodeImage:image1];
     NSLog(@"%@ %f", NSStringFromCGSize(image2.size), image2.scale);
 
     UIImage *image3 = [UIImage pin_decodedImageWithCGImageRef:image1.CGImage];
@@ -71,7 +71,7 @@
     UIImage *image1 = [UIImage imageNamed:@"ic_b"];
     NSLog(@"%@ %f", NSStringFromCGSize(image1.size), image1.scale);
 
-    UIImage *image2 = [UIImage tk_decodedImageWithImage:image1];
+    UIImage *image2 = [UIImage tk_decodeImage:image1];
     NSLog(@"%@ %f", NSStringFromCGSize(image2.size), image2.scale);
 
     UIImage *image3 = [UIImage pin_decodedImageWithCGImageRef:image1.CGImage];
@@ -83,6 +83,9 @@
     [dt1 writeToFile:TKPathForDocumentResource(@"bbb.jpg") atomically:YES];
   }
 
+
+//  UIImage *image1 = [UIImage imageNamed:@"hill"];
+//  _avatarView.image = [image1 tk_cornerRadius:150];
 
   
 

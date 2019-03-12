@@ -69,6 +69,24 @@
 }
 
 
+- (UIImage *)tk_cornerRadius:(CGFloat)cornerRadius
+{
+  UIGraphicsBeginImageContextWithOptions(self.size, NO, [UIScreen mainScreen].scale);
+
+  CGRect rect = CGRectMake(0.0, 0.0, self.size.width, self.size.height);
+  UIBezierPath *bezierPath = [UIBezierPath bezierPathWithRoundedRect:rect cornerRadius:cornerRadius];
+  CGContextAddPath(UIGraphicsGetCurrentContext(), bezierPath.CGPath);
+  CGContextClip(UIGraphicsGetCurrentContext());
+
+  [self drawInRect:rect];
+
+  CGContextDrawPath(UIGraphicsGetCurrentContext(), kCGPathFillStroke);
+  UIImage *resultImage = UIGraphicsGetImageFromCurrentImageContext();
+  UIGraphicsEndImageContext();
+  return resultImage;
+}
+
+
 + (UIImage *)tk_screenWImageNamed:(NSString *)name
 {
   NSString *imageName = [name stringByAppendingFormat:@"-%dw", (int)XYZ_SCREEN_WID];
@@ -91,14 +109,18 @@
   return image;
 }
 
-+ (UIImage *)tk_decodedImageWithImage:(UIImage *)image
++ (UIImage *)tk_decodeImage:(UIImage *)image
 {
   UIImage *decodedImage = nil;
 
   CGImageRef imageRef = image.CGImage;
 
+  // 返回结果的单位是像素，而不是点，所以结果是：
+  //   width = image.size.width * image.scale
+  //   height = image.size.height * image.scale
   size_t imageWidth = CGImageGetWidth(imageRef);
   size_t imageHeight = CGImageGetHeight(imageRef);
+  XYZLog(@"%@ %f, %d, %d", NSStringFromCGSize(image.size), image.scale, (int)imageWidth, (int)imageHeight);
 
   CGColorSpaceRef colorSpaceRef = CGColorSpaceCreateDeviceRGB();
 

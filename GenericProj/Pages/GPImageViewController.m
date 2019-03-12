@@ -49,7 +49,7 @@
 //      NSString *str = [NSString stringWithFormat:@"%02d.jpg", (int)(i+1)];
 //      UIImage *image = [UIImage imageNamed:str];
 //      //UIImage *result = image;
-//      UIImage *result = [UIImage tk_decodedImageWithImage:image];
+//      UIImage *result = [UIImage tk_decodeImage:image];
 //      //UIImage *result = [UIImage pin_decodedImageWithCGImageRef:image.CGImage];
 //      NSLog(@"%@ %f %@ %f", NSStringFromCGSize(image.size), image.scale,
 //            NSStringFromCGSize(result.size), result.scale);

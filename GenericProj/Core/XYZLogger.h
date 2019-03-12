@@ -27,7 +27,7 @@
  ******************************************************************************/
 
 /* [CONFIGURABLE_VALUE] */
-#define XYZ_USE_SYSTEM_LOG 0
+#define XYZ_USE_SYSTEM_LOG 1
 
 
 #if XYZ_USE_SYSTEM_LOG

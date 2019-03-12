@@ -16,6 +16,10 @@
 
 - (UIImage *)tk_scaleToFill:(CGSize)boundSize obligatory:(BOOL)obligatory;
 
+
+- (UIImage *)tk_cornerRadius:(CGFloat)cornerRadius;
+
+
 // https://www.paintcodeapp.com/news/ultimate-guide-to-iphone-resolutions
 //
 // 4/4s         {320, 480}  {640, 960}    2.0   2.0 image-320w@2x.png image-480h@2x.png
@@ -39,8 +43,8 @@
 // UIImage *image2 = [UIImage pin_decodedImageWithCGImageRef:image1.CGImage];
 //   size:512*512, scale:1.0
 //
-// UIImage *image3 = [UIImage tk_decodedImageWithImage:image1];
+// UIImage *image3 = [UIImage tk_decodeImage:image1];
 //   size:256*256, scale:2.0
-+ (UIImage *)tk_decodedImageWithImage:(UIImage *)image;
++ (UIImage *)tk_decodeImage:(UIImage *)image;
 
 @end
