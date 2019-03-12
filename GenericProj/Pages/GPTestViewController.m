@@ -7,6 +7,7 @@
 //
 
 #import "GPTestViewController.h"
+#import <PINRemoteImage/PINImage+DecodedImage.h>
 
 @implementation GPTestViewController
 
@@ -49,36 +50,44 @@
 //  [dt2 writeToFile:TKPathForDocumentResource(@"bbb.jpg") atomically:YES];
 
 
-//  {
-//    UIImage *image1 = [UIImage imageNamed:@"ic_a"];
-//    NSLog(@"%@ %f", NSStringFromCGSize(image1.size), image1.scale);
-//    //UIImage *image2 = [UIImage tk_decodedImageWithImage:image1];
+  {
+    UIImage *image1 = [UIImage imageNamed:@"ic_a"];
+    NSLog(@"%@ %f", NSStringFromCGSize(image1.size), image1.scale);
+
+    UIImage *image2 = [UIImage tk_decodedImageWithImage:image1];
+    NSLog(@"%@ %f", NSStringFromCGSize(image2.size), image2.scale);
+
+    UIImage *image3 = [UIImage pin_decodedImageWithCGImageRef:image1.CGImage];
+    NSLog(@"%@ %f", NSStringFromCGSize(image3.size), image3.scale);
+
 //    NSString *path = TKPathForBundleResource(nil, @"ic_a.png");
 //    NSData *data = [[NSData alloc] initWithContentsOfFile:path];
-//    UIImage *image2 = [UIImage pin_decodedImageWithCGImageRef:image1.CGImage];
-//    NSLog(@"%@ %f", NSStringFromCGSize(image2.size), image2.scale);
-//    NSData *dt1 = UIImageJPEGRepresentation(image1, 0.9);
-//    [dt1 writeToFile:TKPathForDocumentResource(@"aaa.jpg") atomically:YES];
-//  }
-//  NSLog(@" ");
-//  NSLog(@" ");
-//  {
-//    UIImage *image1 = [UIImage imageNamed:@"ic_b"];
-//    NSLog(@"%@ %f", NSStringFromCGSize(image1.size), image1.scale);
-//    //UIImage *image2 = [UIImage tk_decodedImageWithImage:image1];
-//    NSString *path = TKPathForBundleResource(nil, @"ic_b@2x.png");
-//    NSData *data = [[NSData alloc] initWithContentsOfFile:path];
-//    UIImage *image2 = [UIImage pin_decodedImageWithCGImageRef:image1.CGImage];
-//    NSLog(@"%@ %f", NSStringFromCGSize(image2.size), image2.scale);
-//    NSData *dt1 = UIImageJPEGRepresentation(image1, 0.9);
-//    [dt1 writeToFile:TKPathForDocumentResource(@"bbb.jpg") atomically:YES];
-//  }
+    NSData *dt1 = UIImageJPEGRepresentation(image2, 0.9);
+    [dt1 writeToFile:TKPathForDocumentResource(@"aaa.jpg") atomically:YES];
+  }
+  NSLog(@" ");
+  NSLog(@" ");
+  {
+    UIImage *image1 = [UIImage imageNamed:@"ic_b"];
+    NSLog(@"%@ %f", NSStringFromCGSize(image1.size), image1.scale);
+
+    UIImage *image2 = [UIImage tk_decodedImageWithImage:image1];
+    NSLog(@"%@ %f", NSStringFromCGSize(image2.size), image2.scale);
+
+    UIImage *image3 = [UIImage pin_decodedImageWithCGImageRef:image1.CGImage];
+    NSLog(@"%@ %f", NSStringFromCGSize(image3.size), image3.scale);
+
+    //    NSString *path = TKPathForBundleResource(nil, @"ic_a.png");
+    //    NSData *data = [[NSData alloc] initWithContentsOfFile:path];
+    NSData *dt1 = UIImageJPEGRepresentation(image2, 0.9);
+    [dt1 writeToFile:TKPathForDocumentResource(@"bbb.jpg") atomically:YES];
+  }
 
 
   
 
 
-  [self buildReport];
+//  [self buildReport];
 
 //  @weakify(self);
 //  [_button tk_addAction:^(UIButton *bt) {
@@ -90,9 +99,9 @@
 //  } forControlEvents:UIControlEventTouchUpInside];
 
 
-  NSString *originalValue = @"过年回家见家长，在饭桌上得知对方没买车买房后，二老两手一摆，一副要在饭桌上赶人走的架势，这个时候女婿拿出周黑鸭，二老笑逐颜开，不知道周黑鸭想要表达的是怎样的价值观。";
-
-  [_button setTitle:originalValue forState:UIControlStateNormal];
+//  NSString *originalValue = @"过年回家见家长，在饭桌上得知对方没买车买房后，二老两手一摆，一副要在饭桌上赶人走的架势，这个时候女婿拿出周黑鸭，二老笑逐颜开，不知道周黑鸭想要表达的是怎样的价值观。";
+//
+//  [_button setTitle:originalValue forState:UIControlStateNormal];
 
 //  _button.titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
 //  _button.titleLabel.textAlignment = NSTextAlignmentCenter;

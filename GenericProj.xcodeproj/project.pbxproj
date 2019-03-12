@@ -78,6 +78,8 @@
 		BB7EDE5720808C9900B44D0C /* GPTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB7EDE5520808C9900B44D0C /* GPTableViewController.xib */; };
 		BB7EDE5C20808D1600B44D0C /* GPTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BB7EDE5A20808D1600B44D0C /* GPTableViewCell.m */; };
 		BB7EDE5D20808D1600B44D0C /* GPTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB7EDE5B20808D1600B44D0C /* GPTableViewCell.xib */; };
+		BB826F6B2237540000BBB30B /* ic_b@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BB826F692237540000BBB30B /* ic_b@2x.png */; };
+		BB826F6C2237540000BBB30B /* ic_a.png in Resources */ = {isa = PBXBuildFile; fileRef = BB826F6A2237540000BBB30B /* ic_a.png */; };
 		BB8F97692050DAD5008A8CAD /* GPRuntimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB8F97672050DAD5008A8CAD /* GPRuntimeViewController.m */; };
 		BB8F976A2050DAD5008A8CAD /* GPRuntimeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB8F97682050DAD5008A8CAD /* GPRuntimeViewController.xib */; };
 		BB8F976D2050DD45008A8CAD /* GPRuntimeTest.m in Sources */ = {isa = PBXBuildFile; fileRef = BB8F976C2050DD45008A8CAD /* GPRuntimeTest.m */; };
@@ -229,6 +231,8 @@
 		BB7EDE5920808D1600B44D0C /* GPTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GPTableViewCell.h; sourceTree = "<group>"; };
 		BB7EDE5A20808D1600B44D0C /* GPTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GPTableViewCell.m; sourceTree = "<group>"; };
 		BB7EDE5B20808D1600B44D0C /* GPTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GPTableViewCell.xib; sourceTree = "<group>"; };
+		BB826F692237540000BBB30B /* ic_b@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_b@2x.png"; sourceTree = "<group>"; };
+		BB826F6A2237540000BBB30B /* ic_a.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_a.png; sourceTree = "<group>"; };
 		BB8F97662050DAD5008A8CAD /* GPRuntimeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GPRuntimeViewController.h; sourceTree = "<group>"; };
 		BB8F97672050DAD5008A8CAD /* GPRuntimeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GPRuntimeViewController.m; sourceTree = "<group>"; };
 		BB8F97682050DAD5008A8CAD /* GPRuntimeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GPRuntimeViewController.xib; sourceTree = "<group>"; };
@@ -586,6 +590,8 @@
 				0A4869651ED67FAF00F54D2F /* GPTestViewController.h */,
 				0A4869661ED67FAF00F54D2F /* GPTestViewController.m */,
 				0A4869671ED67FAF00F54D2F /* GPTestViewController.xib */,
+				BB826F6A2237540000BBB30B /* ic_a.png */,
+				BB826F692237540000BBB30B /* ic_b@2x.png */,
 				BB16F2981FF5E119004359B2 /* q5-1712.txt */,
 			);
 			name = Test;
@@ -828,6 +834,8 @@
 				0A0E6F0A1FA9B5FF00E26E42 /* GPDownloadViewController.xib in Resources */,
 				0A0E6F001FA9A7C800E26E42 /* GPDownloadCell.xib in Resources */,
 				0A3BB1E51E76821C00F11642 /* GPMessageViewController.xib in Resources */,
+				BB826F6B2237540000BBB30B /* ic_b@2x.png in Resources */,
+				BB826F6C2237540000BBB30B /* ic_a.png in Resources */,
 				0A2EA8631FC7AC4300A800C6 /* GPDatabaseViewController.xib in Resources */,
 				0A4869691ED67FAF00F54D2F /* GPTestViewController.xib in Resources */,
 				BBDC831220466CC700C3E554 /* ww.png in Resources */,

@@ -93,34 +93,48 @@
 
 + (UIImage *)tk_decodedImageWithImage:(UIImage *)image
 {
+  UIImage *decodedImage = nil;
+
   CGImageRef imageRef = image.CGImage;
-  // System only supports RGB, set explicitly and prevent context error
-  // if the downloaded image is not the supported format
-  CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
 
-  CGContextRef contextRef = CGBitmapContextCreate(NULL,
-                                               CGImageGetWidth(imageRef),
-                                               CGImageGetHeight(imageRef),
-                                               8,
-                                               // width * 4 will be enough because are in ARGB format, don't read from the image
-                                               CGImageGetWidth(imageRef) * 4,
-                                               colorSpace,
-                                               // kCGImageAlphaPremultipliedFirst | kCGBitmapByteOrder32Little
-                                               // makes system don't need to do extra conversion when displayed.
-                                               kCGImageAlphaPremultipliedFirst | kCGBitmapByteOrder32Little);
-  CGColorSpaceRelease(colorSpace);
+  size_t imageWidth = CGImageGetWidth(imageRef);
+  size_t imageHeight = CGImageGetHeight(imageRef);
 
-  if ( !contextRef ) { return nil; }
+  CGColorSpaceRef colorSpaceRef = CGColorSpaceCreateDeviceRGB();
 
-  CGRect rect = CGRectMake(0.0, 0.0, CGImageGetWidth(imageRef), CGImageGetHeight(imageRef));
-  CGContextDrawImage(contextRef, rect, imageRef);
-  CGImageRef decodedImageRef = CGBitmapContextCreateImage(contextRef);
-  CGContextRelease(contextRef);
+  if ( colorSpaceRef ) {
 
-  UIImage *decodedImage = [[UIImage alloc] initWithCGImage:decodedImageRef
-                                                          scale:image.scale
-                                                    orientation:image.imageOrientation];
-  CGImageRelease(decodedImageRef);
+    BOOL opaque = YES;
+    CGImageAlphaInfo alphaInfo = CGImageGetAlphaInfo(imageRef);
+    if (alphaInfo == kCGImageAlphaFirst
+        || alphaInfo == kCGImageAlphaLast
+        || alphaInfo == kCGImageAlphaOnly
+        || alphaInfo == kCGImageAlphaPremultipliedFirst
+        || alphaInfo == kCGImageAlphaPremultipliedLast)
+    {
+      opaque = NO;
+    }
+    CGBitmapInfo bitmapInfo = opaque ?
+    (kCGImageAlphaNoneSkipFirst | kCGBitmapByteOrder32Host) :
+    (kCGImageAlphaPremultipliedFirst | kCGBitmapByteOrder32Host);
+
+    CGContextRef contextRef = CGBitmapContextCreate(NULL, imageWidth, imageHeight, 8, 0, colorSpaceRef, bitmapInfo);
+    if ( contextRef ) {
+
+      CGContextDrawImage(contextRef, CGRectMake(0.0, 0.0, imageWidth, imageHeight), imageRef);
+      CGImageRef decodedImageRef = CGBitmapContextCreateImage(contextRef);
+
+      if ( decodedImageRef ) {
+        decodedImage = [[UIImage alloc] initWithCGImage:decodedImageRef
+                                                  scale:image.scale
+                                            orientation:image.imageOrientation];
+        CGImageRelease(decodedImageRef);
+      }
+      CGContextRelease(contextRef);
+    }
+    CGColorSpaceRelease(colorSpaceRef);
+  }
+
   return decodedImage;
 }
 

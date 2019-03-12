@@ -31,6 +31,16 @@
 + (UIImage *)tk_imageWithColor:(UIColor *)color size:(CGSize)size;
 
 
+// cover@2x.png 512*512
+//
+// UIImage *image1 = [UIImage imageNamed:@"cover"];
+//   size:256*256, scale:2.0
+//
+// UIImage *image2 = [UIImage pin_decodedImageWithCGImageRef:image1.CGImage];
+//   size:512*512, scale:1.0
+//
+// UIImage *image3 = [UIImage tk_decodedImageWithImage:image1];
+//   size:256*256, scale:2.0
 + (UIImage *)tk_decodedImageWithImage:(UIImage *)image;
 
 @end
