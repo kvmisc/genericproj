@@ -67,8 +67,4 @@
 
 - (void)setup;
 
-- (void)awakeFromNib;
-
-- (void)updateConstraints;
-
 @end

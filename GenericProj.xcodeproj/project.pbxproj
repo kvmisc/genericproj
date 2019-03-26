@@ -96,6 +96,9 @@
 		BBDC831220466CC700C3E554 /* ww.png in Resources */ = {isa = PBXBuildFile; fileRef = BBDC831120466CC700C3E554 /* ww.png */; };
 		BBE72F9921A53C7700B9CE37 /* GPTestObject.m in Sources */ = {isa = PBXBuildFile; fileRef = BBE72F9821A53C7700B9CE37 /* GPTestObject.m */; };
 		BBE77A712236596A007C7AA6 /* XYZNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBE77A702236596A007C7AA6 /* XYZNavigationController.m */; };
+		BBEDB5D422486C6200E55D89 /* GPObjcViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBEDB5D222486C6200E55D89 /* GPObjcViewController.m */; };
+		BBEDB5D522486C6200E55D89 /* GPObjcViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBEDB5D322486C6200E55D89 /* GPObjcViewController.xib */; };
+		BBEDB5D922486CB200E55D89 /* GPPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = BBEDB5D822486CB200E55D89 /* GPPerson.m */; };
 		BBFFBA8A2178417F00FB8159 /* XYZSampleObject.m in Sources */ = {isa = PBXBuildFile; fileRef = BBFFBA882178417E00FB8159 /* XYZSampleObject.m */; };
 		E2719F12FDE058AF8C1860D8 /* libPods-GenericProj.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2579012E5534F46C56F97098 /* libPods-GenericProj.a */; };
 /* End PBXBuildFile section */
@@ -269,6 +272,11 @@
 		BBE72F9821A53C7700B9CE37 /* GPTestObject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GPTestObject.m; sourceTree = "<group>"; };
 		BBE77A6F2236596A007C7AA6 /* XYZNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYZNavigationController.h; sourceTree = "<group>"; };
 		BBE77A702236596A007C7AA6 /* XYZNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XYZNavigationController.m; sourceTree = "<group>"; };
+		BBEDB5D122486C6200E55D89 /* GPObjcViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GPObjcViewController.h; sourceTree = "<group>"; };
+		BBEDB5D222486C6200E55D89 /* GPObjcViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GPObjcViewController.m; sourceTree = "<group>"; };
+		BBEDB5D322486C6200E55D89 /* GPObjcViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GPObjcViewController.xib; sourceTree = "<group>"; };
+		BBEDB5D722486CB200E55D89 /* GPPerson.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GPPerson.h; sourceTree = "<group>"; };
+		BBEDB5D822486CB200E55D89 /* GPPerson.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GPPerson.m; sourceTree = "<group>"; };
 		BBFFBA83217827C900FB8159 /* block_declaration.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = block_declaration.md; sourceTree = "<group>"; };
 		BBFFBA8521782E4B00FB8159 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		BBFFBA8721782F5100FB8159 /* bump_build_number.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = bump_build_number.sh; sourceTree = "<group>"; };
@@ -513,6 +521,7 @@
 				0A7AE5061D582C7A00B585D9 /* GPRootViewController.xib */,
 				0A883B821F62B6E400ED33EB /* Test */,
 				BB8F97652050DAB6008A8CAD /* Runtime */,
+				BBEDB5D622486C6B00E55D89 /* Objc */,
 				0A429B731E260653004CCA09 /* Hierarchy */,
 				0A429B751E26065C004CCA09 /* VCRestructure */,
 				0A3BB1E61E76822000F11642 /* MessageCenter */,
@@ -736,6 +745,18 @@
 			name = Image;
 			sourceTree = "<group>";
 		};
+		BBEDB5D622486C6B00E55D89 /* Objc */ = {
+			isa = PBXGroup;
+			children = (
+				BBEDB5D122486C6200E55D89 /* GPObjcViewController.h */,
+				BBEDB5D222486C6200E55D89 /* GPObjcViewController.m */,
+				BBEDB5D322486C6200E55D89 /* GPObjcViewController.xib */,
+				BBEDB5D722486CB200E55D89 /* GPPerson.h */,
+				BBEDB5D822486CB200E55D89 /* GPPerson.m */,
+			);
+			name = Objc;
+			sourceTree = "<group>";
+		};
 		BBFFBA82217827C900FB8159 /* Docs */ = {
 			isa = PBXGroup;
 			children = (
@@ -832,6 +853,7 @@
 				0A55A7D81F6664A3001A0C13 /* GPHTTPViewController.xib in Resources */,
 				BBDC831020466CAE00C3E554 /* hh.png in Resources */,
 				BB04B9582235F64C005E54C4 /* GPCollectionViewController.xib in Resources */,
+				BBEDB5D522486C6200E55D89 /* GPObjcViewController.xib in Resources */,
 				BB16F2991FF5E119004359B2 /* q5-1712.txt in Resources */,
 				0A883B871F62B87C00ED33EB /* GPHierarchyViewController.xib in Resources */,
 				0A883B8C1F62C4DE00ED33EB /* GPRestructureViewController.xib in Resources */,
@@ -946,6 +968,7 @@
 				BBDC83082046633200C3E554 /* GPImageViewController.m in Sources */,
 				BBBDFC6B21770C5400936776 /* XYZPaymentError.m in Sources */,
 				0A3D07F01F67BE5E00F19DF3 /* GPKVOObject.m in Sources */,
+				BBEDB5D422486C6200E55D89 /* GPObjcViewController.m in Sources */,
 				0AF669C42053E8FC00712772 /* XYZHTTPRequest.m in Sources */,
 				0A3BB1E41E76821C00F11642 /* GPMessageViewController.m in Sources */,
 				0A883B811F62B25E00ED33EB /* XYZBaseTableViewController.m in Sources */,
@@ -963,6 +986,7 @@
 				BBB32D9820DCE980008B3DA4 /* NSDictionaryParameter.m in Sources */,
 				0A7AE5071D582C7A00B585D9 /* GPRootViewController.m in Sources */,
 				0A1D15201FDD6CC200BDDF91 /* UITableViewCellExtentions.m in Sources */,
+				BBEDB5D922486CB200E55D89 /* GPPerson.m in Sources */,
 				0A57E1671FE257490037F94F /* XYZDateFormatter.m in Sources */,
 				0A57E1611FE208700037F94F /* XYZMessageCenter.m in Sources */,
 				BBDC830420463F4500C3E554 /* UIImageExtentions.m in Sources */,

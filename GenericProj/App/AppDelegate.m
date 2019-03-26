@@ -16,7 +16,6 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-
 //  [XYZLogger setup];
 //
 //  CGRect rect1 = [[UIScreen mainScreen] bounds];

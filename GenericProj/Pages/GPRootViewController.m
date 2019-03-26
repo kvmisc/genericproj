@@ -11,6 +11,7 @@
 #import "GPTestViewController.h"
 
 #import "GPRuntimeViewController.h"
+#import "GPObjcViewController.h"
 #import "GPHierarchyViewController.h"
 #import "GPRestructureViewController.h"
 #import "GPMessageViewController.h"
@@ -27,6 +28,8 @@
 
 @implementation GPRootViewController {
   NSArray *_sampleAry;
+
+  NSString *_defaultPage;
 }
 
 - (void)viewDidLoad
@@ -39,6 +42,7 @@
 
   [self addTitle:@"Test" class:[GPTestViewController class]];
   [self addTitle:@"Runtime" class:[GPRuntimeViewController class]];
+  [self addTitle:@"Objc" class:[GPObjcViewController class]];
   [self addTitle:@"Hierarchy" class:[GPHierarchyViewController class]];
   [self addTitle:@"Restructure" class:[GPRestructureViewController class]];
   [self addTitle:@"Message" class:[GPMessageViewController class]];
@@ -51,11 +55,27 @@
   [self addTitle:@"Image" class:[GPImageViewController class]];
   [self addTitle:@"TableView" class:[GPTableViewController class]];
   [self addTitle:@"CollectionView" class:[GPCollectionViewController class]];
+
+  _defaultPage = @"Objc";
 }
 
 - (void)addTitle:(NSString *)title class:(Class)cls
 {
   [(NSMutableArray *)_sampleAry addObject:@{ @"title":title, @"class":NSStringFromClass(cls) }];
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+  [super viewDidAppear:animated];
+
+  if ( _defaultPage.length>0 ) {
+    NSDictionary *map = [_sampleAry tk_objectForKeyPath:@"title" equalTo:_defaultPage];
+    if ( map ) {
+      Class cls = NSClassFromString(map[@"class"]);
+      UIViewController *vc = [[cls alloc] init];
+      [self.navigationController pushViewController:vc animated:YES];
+    }
+  }
 }
 
 
