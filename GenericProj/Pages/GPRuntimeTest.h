@@ -10,6 +10,4 @@
 
 @interface GPRuntimeTest : NSObject
 
-@property (nonatomic, weak) id forwardObject;
-
 @end

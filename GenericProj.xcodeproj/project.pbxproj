@@ -82,6 +82,7 @@
 		BB826F6C2237540000BBB30B /* ic_a.png in Resources */ = {isa = PBXBuildFile; fileRef = BB826F6A2237540000BBB30B /* ic_a.png */; };
 		BB826F6E22375EB400BBB30B /* haa.png in Resources */ = {isa = PBXBuildFile; fileRef = BB826F6D22375EB400BBB30B /* haa.png */; };
 		BB826F702237683A00BBB30B /* hbb@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BB826F6F2237683900BBB30B /* hbb@2x.png */; };
+		BB8931F9224A0C0E003B929D /* GPMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = BB8931F8224A0C0E003B929D /* GPMethod.m */; };
 		BB8F97692050DAD5008A8CAD /* GPRuntimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB8F97672050DAD5008A8CAD /* GPRuntimeViewController.m */; };
 		BB8F976A2050DAD5008A8CAD /* GPRuntimeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB8F97682050DAD5008A8CAD /* GPRuntimeViewController.xib */; };
 		BB8F976D2050DD45008A8CAD /* GPRuntimeTest.m in Sources */ = {isa = PBXBuildFile; fileRef = BB8F976C2050DD45008A8CAD /* GPRuntimeTest.m */; };
@@ -240,6 +241,8 @@
 		BB826F6A2237540000BBB30B /* ic_a.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_a.png; sourceTree = "<group>"; };
 		BB826F6D22375EB400BBB30B /* haa.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = haa.png; sourceTree = "<group>"; };
 		BB826F6F2237683900BBB30B /* hbb@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "hbb@2x.png"; sourceTree = "<group>"; };
+		BB8931F7224A0C0E003B929D /* GPMethod.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GPMethod.h; sourceTree = "<group>"; };
+		BB8931F8224A0C0E003B929D /* GPMethod.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GPMethod.m; sourceTree = "<group>"; };
 		BB8F97662050DAD5008A8CAD /* GPRuntimeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GPRuntimeViewController.h; sourceTree = "<group>"; };
 		BB8F97672050DAD5008A8CAD /* GPRuntimeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GPRuntimeViewController.m; sourceTree = "<group>"; };
 		BB8F97682050DAD5008A8CAD /* GPRuntimeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GPRuntimeViewController.xib; sourceTree = "<group>"; };
@@ -718,6 +721,8 @@
 				BB8F97682050DAD5008A8CAD /* GPRuntimeViewController.xib */,
 				BB8F976B2050DD45008A8CAD /* GPRuntimeTest.h */,
 				BB8F976C2050DD45008A8CAD /* GPRuntimeTest.m */,
+				BB8931F7224A0C0E003B929D /* GPMethod.h */,
+				BB8931F8224A0C0E003B929D /* GPMethod.m */,
 			);
 			name = Runtime;
 			sourceTree = "<group>";
@@ -951,6 +956,7 @@
 				0AD8DF381FE0C35B0092FF6D /* GPSourceView.m in Sources */,
 				BB04B962223606BA005E54C4 /* GPCollectionReusableView.m in Sources */,
 				0A3D07E01F67B82E00F19DF3 /* GPAspectViewController.m in Sources */,
+				BB8931F9224A0C0E003B929D /* GPMethod.m in Sources */,
 				BB8F976D2050DD45008A8CAD /* GPRuntimeTest.m in Sources */,
 				0A883B441F62380800ED33EB /* UIColorExtentions.m in Sources */,
 				BB78B337206C9B11000CEE6E /* XYZAnimation.m in Sources */,
