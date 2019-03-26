@@ -20,6 +20,18 @@
 //  return self;
 //}
 //+ (void)initialize { NSLog(@"p"); }
+//- (instancetype)init
+//{
+//  self = [super init];
+//  if (self) {
+//    NSLog(@"%@", [self class]);
+//    NSLog(@"%@", [self superclass]);
+//    NSLog(@"------");
+//    NSLog(@"%@", [super class]);
+//    NSLog(@"%@", [super superclass]);
+//  }
+//  return self;
+//}
 - (void)dealloc { NSLog(@"dlc"); }
 @end
 //@implementation GPPerson (P2)

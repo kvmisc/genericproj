@@ -20,7 +20,7 @@
   [super viewDidLoad];
 
   _test = [[GPRuntimeTest alloc] init];
-  _test.forwardObject = self;
+//  _test.forwardObject = self;
   NSLog(@"test: %p", _test);
 //  [_test performSelector:NSSelectorFromString(@"foobar")];
 

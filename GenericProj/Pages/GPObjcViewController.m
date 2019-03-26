@@ -18,7 +18,15 @@
 {
   [super viewDidLoad];
 
+//  NSLog(@"%@", [self class]);
+//  NSLog(@"%@", [self superclass]);
+//  NSLog(@"------");
+//  NSLog(@"%@", [super class]);
+//  NSLog(@"%@", [super superclass]);
+
   GPPerson *person = [[GPPerson alloc] init];
+  NSLog(@"%d", [NSObject isKindOfClass:[NSObject class]]);
+  NSLog(@"%d", [GPPerson isKindOfClass:[NSObject class]]);
 
 //  NSLog(@"bk %@", [^{
 //    NSLog(@"blk %d", age);
