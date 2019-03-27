@@ -24,9 +24,9 @@
 //  NSLog(@"%@", [super class]);
 //  NSLog(@"%@", [super superclass]);
 
-  GPPerson *person = [[GPPerson alloc] init];
-  NSLog(@"%d", [NSObject isKindOfClass:[NSObject class]]);
-  NSLog(@"%d", [GPPerson isKindOfClass:[NSObject class]]);
+//  GPPerson *person = [[GPPerson alloc] init];
+//  NSLog(@"%d", [NSObject isKindOfClass:[NSObject class]]);
+//  NSLog(@"%d", [GPPerson isKindOfClass:[NSObject class]]);
 
 //  NSLog(@"bk %@", [^{
 //    NSLog(@"blk %d", age);
@@ -90,6 +90,30 @@
 //  [GPPerson alloc];
 //  [GPStudent alloc];
 
+  NSLog(@"1 - %@", [NSThread currentThread]);
+
+  dispatch_async(dispatch_get_global_queue(0, 0), ^{
+
+    NSLog(@"2 - %@", [NSThread currentThread]);
+//    [self performSelector:@selector(test)
+//               withObject:nil
+//               afterDelay:0];
+//    [[NSRunLoop currentRunLoop] run];
+    [self performSelector:@selector(test)
+                 onThread:[NSThread currentThread]
+               withObject:nil
+            waitUntilDone:NO];
+    //[[NSRunLoop currentRunLoop] run];
+//    [[NSRunLoop currentRunLoop] runMode:NSRunLoopCommonModes beforeDate:[NSDate distantFuture]];
+    [[NSRunLoop currentRunLoop] runMode:NSDefaultRunLoopMode beforeDate:[NSDate distantFuture]];
+//    [[NSRunLoop currentRunLoop] runMode:UITrackingRunLoopMode beforeDate:[NSDate distantFuture]];
+    NSLog(@"4 - %@", [NSThread currentThread]);
+  });
+}
+
+- (void)test
+{
+  NSLog(@"3 - %@", [NSThread currentThread]);
 }
 
 //- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey, id> *)change context:(void *)context
