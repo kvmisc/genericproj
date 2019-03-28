@@ -10,6 +10,11 @@
 #import "GPCollectionViewCell.h"
 #import "GPCollectionReusableView.h"
 
+//  UICollectionView 的自定义布局可以分为三种方式：
+//    1) 初始化时传入的 UICollectionViewLayout 对象，通过设置 UICollectionViewLayout 对象属性的值可以设置 item 的基本布局，包括大小、间距等；
+//    2) 实现 UICollectionViewLayoutDelegate 协议对应的方法，返回布局需要的值；
+//    3) 继承 UICollectionViewLayout 类实现自定义的 MyCollectionViewLayout，重写相关方法返回自定义的布局。
+
 @interface GPCollectionViewController () <
     UICollectionViewDelegate,
     UICollectionViewDataSource,

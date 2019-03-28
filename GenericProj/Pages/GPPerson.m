@@ -9,16 +9,16 @@
 #import "GPPerson.h"
 
 @implementation GPPerson
-//- (instancetype)init
-//{
-//  self = [super init];
-//  if (self) {
-//    _age = 1;
-////    _gender = 2;
-////    _grade = 3;
-//  }
-//  return self;
-//}
+- (instancetype)init
+{
+  self = [super init];
+  if (self) {
+    self.name = @"";
+//    _gender = 2;
+//    _grade = 3;
+  }
+  return self;
+}
 //+ (void)initialize { NSLog(@"p"); }
 //- (instancetype)init
 //{
@@ -32,7 +32,7 @@
 //  }
 //  return self;
 //}
-- (void)dealloc { NSLog(@"dlc"); }
+//- (void)dealloc { NSLog(@"dlc"); }
 @end
 //@implementation GPPerson (P2)
 //+ (void)initialize { NSLog(@"p2"); }
@@ -41,7 +41,7 @@
 //+ (void)initialize { NSLog(@"p1"); }
 //@end
 
-//@implementation GPStudent
+@implementation GPStudent
 //- (instancetype)init
 //{
 //  self = [super init];
@@ -53,7 +53,11 @@
 //  return self;
 //}
 //+ (void)initialize { NSLog(@"s"); }
-//@end
+- (void)setName:(NSString *)name
+{
+  [super setName:@"xx"];
+}
+@end
 //@implementation GPStudent (S1)
 //+ (void)initialize { NSLog(@"s1"); }
 //@end

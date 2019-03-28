@@ -18,6 +18,9 @@
 {
   [super viewDidLoad];
 
+  GPStudent *student = [[GPStudent alloc] init];
+  NSLog(@"%@", student.name);
+
 //  NSLog(@"%@", [self class]);
 //  NSLog(@"%@", [self superclass]);
 //  NSLog(@"------");

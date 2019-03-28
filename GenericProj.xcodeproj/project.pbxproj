@@ -91,6 +91,7 @@
 		BBD5C47B202B02330093AE9E /* UINavigationControllerExtentions.m in Sources */ = {isa = PBXBuildFile; fileRef = BBD5C47A202B02330093AE9E /* UINavigationControllerExtentions.m */; };
 		BBDC2643224C7C96000394B0 /* YYWeakProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = BBDC263F224C7C96000394B0 /* YYWeakProxy.m */; };
 		BBDC2644224C7C96000394B0 /* YYFPSLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = BBDC2641224C7C96000394B0 /* YYFPSLabel.m */; };
+		BBDC2647224CABB9000394B0 /* GPResponderView.m in Sources */ = {isa = PBXBuildFile; fileRef = BBDC2646224CABB9000394B0 /* GPResponderView.m */; };
 		BBDC830420463F4500C3E554 /* UIImageExtentions.m in Sources */ = {isa = PBXBuildFile; fileRef = BBDC830320463F4500C3E554 /* UIImageExtentions.m */; };
 		BBDC83082046633200C3E554 /* GPImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBDC83062046633200C3E554 /* GPImageViewController.m */; };
 		BBDC83092046633200C3E554 /* GPImageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBDC83072046633200C3E554 /* GPImageViewController.xib */; };
@@ -269,6 +270,8 @@
 		BBDC2640224C7C96000394B0 /* YYFPSLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYFPSLabel.h; sourceTree = "<group>"; };
 		BBDC2641224C7C96000394B0 /* YYFPSLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYFPSLabel.m; sourceTree = "<group>"; };
 		BBDC2642224C7C96000394B0 /* YYWeakProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYWeakProxy.h; sourceTree = "<group>"; };
+		BBDC2645224CABB9000394B0 /* GPResponderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GPResponderView.h; sourceTree = "<group>"; };
+		BBDC2646224CABB9000394B0 /* GPResponderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GPResponderView.m; sourceTree = "<group>"; };
 		BBDC830220463F4500C3E554 /* UIImageExtentions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIImageExtentions.h; sourceTree = "<group>"; };
 		BBDC830320463F4500C3E554 /* UIImageExtentions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UIImageExtentions.m; sourceTree = "<group>"; };
 		BBDC83052046633200C3E554 /* GPImageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GPImageViewController.h; sourceTree = "<group>"; };
@@ -612,6 +615,8 @@
 				0A4869651ED67FAF00F54D2F /* GPTestViewController.h */,
 				0A4869661ED67FAF00F54D2F /* GPTestViewController.m */,
 				0A4869671ED67FAF00F54D2F /* GPTestViewController.xib */,
+				BBDC2645224CABB9000394B0 /* GPResponderView.h */,
+				BBDC2646224CABB9000394B0 /* GPResponderView.m */,
 				BB826F6A2237540000BBB30B /* ic_a.png */,
 				BB826F692237540000BBB30B /* ic_b@2x.png */,
 				BB826F6D22375EB400BBB30B /* haa.png */,
@@ -965,6 +970,7 @@
 				0AA817BE1D61B59B009F831A /* XYZGlobal.m in Sources */,
 				BB7EDE52208087C600B44D0C /* XYZBaseTableViewCell.m in Sources */,
 				BB04B95D2235F923005E54C4 /* GPCollectionViewCell.m in Sources */,
+				BBDC2647224CABB9000394B0 /* GPResponderView.m in Sources */,
 				0A883B4D1F623D8200ED33EB /* UIButtonExtentions.m in Sources */,
 				0A883B861F62B87C00ED33EB /* GPHierarchyViewController.m in Sources */,
 				0A883B411F6237AC00ED33EB /* NSObjectExtentions.m in Sources */,

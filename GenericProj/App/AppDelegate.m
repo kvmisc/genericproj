@@ -91,8 +91,8 @@
   nc.navigationBarHidden = YES;
   _window.rootViewController = nc;
 
-  YYFPSLabel *FPSLabel = [[YYFPSLabel alloc] initWithFrame:CGRectMake(0.0, XYZ_SCREEN_HET-30.0, 50.0, 30.0)];
-  [nc.view addSubview:FPSLabel];
+//  YYFPSLabel *FPSLabel = [[YYFPSLabel alloc] initWithFrame:CGRectMake(0.0, XYZ_SCREEN_HET-30.0, 50.0, 30.0)];
+//  [nc.view addSubview:FPSLabel];
 
 
   UISwipeGestureRecognizer *gr = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipe:)];

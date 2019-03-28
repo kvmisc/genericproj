@@ -24,4 +24,35 @@
 
 参考：[iOS 的离屏渲染](https://imlifengfeng.github.io/article/593/ "")  
 
+## init 点语法
+
+不要在 init 方法中用点语法访问成员变量，因为子类可能重载 setter，创建子类的时候，父类使用点语法访问的是子类的方法。
+
+    @interface GPPerson : NSObject
+    @property (nonatomic, copy) NSString *name;
+    @end
+    @implementation GPPerson
+    - (instancetype)init
+    {
+      self = [super init];
+      if (self) {
+        self.name = @"";
+      }
+      return self;
+    }
+    @end
+    
+    @interface GPStudent : GPPerson
+    @end
+    @implementation GPStudent
+    - (void)setName:(NSString *)name
+    {
+      [super setName:@"xxx"];
+    }
+    @end
+    
+    GPStudent *student = [[GPStudent alloc] init];
+    NSLog(@"%@", student.name); // 打印 xxx，但 student 根本没设置名字。
+
+
 

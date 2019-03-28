@@ -56,7 +56,7 @@
   [self addTitle:@"TableView" class:[GPTableViewController class]];
   [self addTitle:@"CollectionView" class:[GPCollectionViewController class]];
 
-  //_defaultPage = @"Objc";
+  _defaultPage = @"Test";
 }
 
 - (void)addTitle:(NSString *)title class:(Class)cls

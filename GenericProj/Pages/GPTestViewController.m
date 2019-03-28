@@ -9,6 +9,24 @@
 #import "GPTestViewController.h"
 #import <PINRemoteImage/PINImage+DecodedImage.h>
 
+#import "GPResponderView.h"
+
+void bubble_sort(int arr[], int len) {
+
+  for ( int i=0; i<len-1; i++ ) {
+    //printf("%d:", i);
+    for ( int j=0; j<len-1-i; j++ ) {
+      if ( arr[j]>arr[j+1] ) {
+        int temp = arr[j];
+        arr[j] = arr[j+1];
+        arr[j+1] = temp;
+      }
+      printf("[%d %d]: %d %d %d %d %d\n", i, j, arr[0], arr[1], arr[2], arr[3], arr[4]);
+    }
+    printf("\n");
+  }
+}
+
 @implementation GPTestViewController
 
 #ifdef DEBUG
@@ -24,9 +42,54 @@
 }
 
 
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
+{
+  //[super touchesBegan:touches withEvent:event];
+  NSLog(@"vc touch began");
+}
+
+- (void)touchesMoved:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
+{
+  //[super touchesMoved:touches withEvent:event];
+  NSLog(@"vc touch moved");
+}
+
+- (void)touchesCancelled:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
+{
+  //[super touchesCancelled:touches withEvent:event];
+  NSLog(@"vc touch cancelled");
+}
+
+- (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
+{
+  //[super touchesEnded:touches withEvent:event];
+  NSLog(@"vc touch ended");
+}
+
+
 - (void)viewDidLoad
 {
   [super viewDidLoad];
+
+  int arr[] = { 3, 5, 1, 4, 2 };
+  bubble_sort(arr, 5);
+
+
+  GPResponderView *v1 = [[GPResponderView alloc] init];
+  v1.backgroundColor = [UIColor redColor];
+  v1.name = @"111";
+  [self.view addSubview:v1];
+  v1.frame = CGRectMake(50, 200, 200, 200);
+
+  GPResponderView *v2 = [[GPResponderView alloc] init];
+  v2.backgroundColor = [UIColor greenColor];
+  v2.name = @"222";
+  [v1 addSubview:v2];
+  v2.frame = CGRectMake(0, 100, 100, 100);
+
+  NSLog(@"SEL = %s", @selector(viewDidAppear:));
+
+//  self.view.layer.cornerRadius = 5;
 
   // iPhone X         1125 x 2436 375 x 812  3      3   image-812h@3x.png 1125*2436
   // iPhone 7P/8P     1080 x 1920 414 x 736  2.608  3

@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @interface GPPerson : NSObject
+@property (nonatomic, copy) NSString *name;
 @end
 //@interface GPPerson (P2)
 //@end
@@ -16,8 +17,8 @@
 //@end
 
 
-//@interface GPStudent : GPPerson
-//@end
+@interface GPStudent : GPPerson
+@end
 //@interface GPStudent (S1)
 //@end
 //@interface GPStudent (S2)

@@ -18,11 +18,10 @@
 ## Runtime
 
 * OC 编译时可以调用任何函数，即使函数不存在，只要有函数声明就行，在运行的时候才决定真正调用哪个函数，而 C 语言在编译时就决定调用哪个函数；
-* isa 是一个 Class 类型的指针，Class 是一个 objc_class 结构体的指针，id 是一个 objc_object 结构体的指针；
 * Runtime 应用：关联对象、方法交换、KVO、NSCoding 自动归档/解档、字典和模型转换、热更新（消息转发）；
-* SEL 本质是 int 类型的地址，地址中存放着方法名；
-* IMP
-* Method
+* id 是 objc_object 结构体指针，isa 是 Class 类型，Class 是 objc_class 结构体指针；
+* Method 是 objc_method 结构体指针，里面包含：方法名（SEL）、方法信息、方法实现（IMP），SEL 是 objc_selector 指针，会被映射为 C 字符串，IMP 是函数指针；
+* NSMethodSignature 是一个方法的返回类型和参数类型，不包括方法名称。
 
 ## isa 和 super_class
 
@@ -147,3 +146,26 @@
 * 使用互斥锁的情况：预计线程等待时间较长；单核处理器；临界区有 I/O 操作；临界区代码复杂或循环量大；临界区竞争非常激烈；
 * atomic 只能保证 getter 和 setter 内部区域是安全的, 但是外部使用无法保证；
 * 读写问题可以用读写锁（pthread_rwlock）和异步栅栏（dispatch_barrier_async）来解决；
+
+## 冒泡排序
+
+将大的数字往后放，外循环 i=len-1 次，内循环 j=len-1-i 次。
+
+    void bubble_sort(int arr[], int len) {
+      for ( int i=0; i<len-1; i++ ) {
+        for ( int j=0; j<len-1-i; j++ ) {
+          if ( arr[j]>arr[j+1] ) {
+            int temp = arr[j];
+            arr[j] = arr[j+1];
+            arr[j+1] = temp;
+          }
+        }
+      }
+    }
+
+## 其它
+
+* hash 方法只在对象被添加至 NSSet 和设置为 NSDictionary 的 key 时会调用；
+
+
+
