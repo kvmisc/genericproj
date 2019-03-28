@@ -89,6 +89,10 @@
 //  [GPStudent alloc];
 //  [GPPerson alloc];
 //  [GPStudent alloc];
+  CGRect rect1 = CGRectMake(10.5, 11.5, 20.5, 21.5);
+  NSLog(@"%@", NSStringFromCGRect(rect1));
+  CGRect rect2 = CGRectIntegral(rect1);
+  NSLog(@"%@", NSStringFromCGRect(rect2));
 
   NSLog(@"1 - %@", [NSThread currentThread]);
 

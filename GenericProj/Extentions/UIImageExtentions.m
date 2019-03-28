@@ -36,7 +36,7 @@
     CGFloat ratioMax = MAX(ratioWidth, ratioHeight);
 
     return [self tk_scaleTo:CGSizeMake(ratioMax*width, ratioMax*height)
-                   viewport:CGSizeMake(floor(boundSize.width), floor(boundSize.height))];
+                   viewport:CGSizeMake(ceil(boundSize.width), ceil(boundSize.height))];
   }
   return self;
 }
@@ -54,8 +54,8 @@
 
 - (UIImage *)tk_scaleTo:(CGSize)boundSize viewport:(CGSize)viewportSize
 {
-  CGSize bound = CGSizeMake(floor(boundSize.width), floor(boundSize.height));
-  CGSize viewport = CGSizeMake(floor(viewportSize.width), floor(viewportSize.height));
+  CGSize bound = CGSizeMake(ceil(boundSize.width), ceil(boundSize.height));
+  CGSize viewport = CGSizeMake(ceil(viewportSize.width), ceil(viewportSize.height));
 
   UIGraphicsBeginImageContextWithOptions(viewport, NO, 0);
   CGRect rect = CGRectMake(floor((viewport.width-bound.width)/2.0),
@@ -169,7 +169,7 @@
 
 + (UIImage *)tk_imageWithColor:(UIColor *)color size:(CGSize)size
 {
-  CGRect bounds = CGRectMake(0.0, 0.0, floor(size.width), floor(size.height));
+  CGRect bounds = CGRectMake(0.0, 0.0, ceil(size.width), ceil(size.height));
   UIGraphicsBeginImageContextWithOptions(bounds.size, NO, 0);
   [color setFill];
   UIRectFill(bounds);
