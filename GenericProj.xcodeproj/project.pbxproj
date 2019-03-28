@@ -272,6 +272,7 @@
 		BBDC2642224C7C96000394B0 /* YYWeakProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYWeakProxy.h; sourceTree = "<group>"; };
 		BBDC2645224CABB9000394B0 /* GPResponderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GPResponderView.h; sourceTree = "<group>"; };
 		BBDC2646224CABB9000394B0 /* GPResponderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GPResponderView.m; sourceTree = "<group>"; };
+		BBDC2648224CC6CA000394B0 /* dp.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = dp.txt; sourceTree = "<group>"; };
 		BBDC830220463F4500C3E554 /* UIImageExtentions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIImageExtentions.h; sourceTree = "<group>"; };
 		BBDC830320463F4500C3E554 /* UIImageExtentions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UIImageExtentions.m; sourceTree = "<group>"; };
 		BBDC83052046633200C3E554 /* GPImageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GPImageViewController.h; sourceTree = "<group>"; };
@@ -788,6 +789,7 @@
 				BBFFBA8521782E4B00FB8159 /* README.md */,
 				BB8C8EB2224B3F790068928F /* job_tech.md */,
 				BBFFBA83217827C900FB8159 /* block_declaration.md */,
+				BBDC2648224CC6CA000394B0 /* dp.txt */,
 				BB8C8EB1224B386E0068928F /* gcd_timer_sample.m */,
 				BBFFBA8C2178423900FB8159 /* SampleObject */,
 			);
