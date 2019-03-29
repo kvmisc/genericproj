@@ -165,7 +165,7 @@ void bubble_sort(int arr[], int len) {
   
 
 
-//  [self buildReport];
+  [self buildReport];
 
 //  @weakify(self);
 //  [_button tk_addAction:^(UIButton *bt) {

@@ -1,9 +1,8 @@
 ## Objective-C 本质
 
 * OC 的类在底层是 C/C++ 中的结构体类型，NSObject 对象在内存中就是一个结构体对象；
-* NSObject 对象只有一个指针变量，64 位系统中指针变量占用 8B 空间，系统为 NSObject 对象分配 16B 内存；
+* NSObject 对象只有一个指针变量，64 位系统中指针变量占用 8B 空间，系统为 NSObject 对象分配 16B 内存，OC 是按照 16 的整倍数给实例分配内存的；
 * `class_getInstanceSize` 方法获取的是内存对齐后的大小，即占用内存最大成员所需空间的整倍数，`malloc_size` 方法获取的是系统实际分配的内存大小；
-* OC 是按照 16 的整倍数给实例分配内存的；
 
 ## Objective-C 对象
 
@@ -166,6 +165,5 @@
 ## 其它
 
 * hash 方法只在对象被添加至 NSSet 和设置为 NSDictionary 的 key 时会调用；
-
 
 

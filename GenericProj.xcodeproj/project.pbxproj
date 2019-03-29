@@ -284,6 +284,7 @@
 		BBE72F9821A53C7700B9CE37 /* GPTestObject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GPTestObject.m; sourceTree = "<group>"; };
 		BBE77A6F2236596A007C7AA6 /* XYZNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYZNavigationController.h; sourceTree = "<group>"; };
 		BBE77A702236596A007C7AA6 /* XYZNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XYZNavigationController.m; sourceTree = "<group>"; };
+		BBED5D7E224E0BE70032A53F /* cv.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = cv.txt; sourceTree = "<group>"; };
 		BBEDB5D122486C6200E55D89 /* GPObjcViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GPObjcViewController.h; sourceTree = "<group>"; };
 		BBEDB5D222486C6200E55D89 /* GPObjcViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GPObjcViewController.m; sourceTree = "<group>"; };
 		BBEDB5D322486C6200E55D89 /* GPObjcViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GPObjcViewController.xib; sourceTree = "<group>"; };
@@ -788,6 +789,7 @@
 			children = (
 				BBFFBA8521782E4B00FB8159 /* README.md */,
 				BB8C8EB2224B3F790068928F /* job_tech.md */,
+				BBED5D7E224E0BE70032A53F /* cv.txt */,
 				BBFFBA83217827C900FB8159 /* block_declaration.md */,
 				BBDC2648224CC6CA000394B0 /* dp.txt */,
 				BB8C8EB1224B386E0068928F /* gcd_timer_sample.m */,
