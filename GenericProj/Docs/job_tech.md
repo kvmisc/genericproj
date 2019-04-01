@@ -11,7 +11,7 @@
 * 类对象通过 `- (Class)class`、`+ (Class)class` 或 `Class object_getClass(id obj)` 获取，每个类有且只有一个类对象；
 * 类对象主要包含：isa 指针、super_class 指针、成员变量信息、实例方法、协议信息等；
 * NSObject 的两个 `class` 方法只能获取类对象，元类对象只能通过 `Class object_getClass(id obj)` 获取，每个类有且只有一个元类对象；
-* `Class object_getClass(id obj)` 能接受三种对象人微言轻参数，传实例对象返回类对象，传类对象返回元类对象，传元类对象返回根元类对象；
+* `Class object_getClass(id obj)` 能接受三种对象作为参数，传实例对象返回类对象，传类对象返回元类对象，传元类对象返回根元类对象；
 * 元类对象的数据结构与类对象一样，主要包含：isa 指针、super_class 指针和类方法；
 
 ## Runtime
@@ -166,4 +166,17 @@
 
 * hash 方法只在对象被添加至 NSSet 和设置为 NSDictionary 的 key 时会调用；
 
+## 设计模式
 
+适配器模式、迭代器、观察者、责任链、原型、代理
+
+
+* block 被编译后是以结构体的形式表示，代码块会生成一个静态函数，block 结构体包含 isa、函数地址、捕获的变量等信息，block 本质是封装了函数调用以及函数调用环境的 OC 对象；
+* ...
+
+* 分类被编译后是以结构体的形式表示，并不会被并入类对象和元类对象，runtime 会将分类并入类对象和元类对象；
+
+* Runtime 应用：关联对象、方法交换、KVO、NSCoding 自动归档/解档、字典和模型转换、热更新（消息转发）；
+* Runloop 保存在一个全局字典中，线程作为 Key，Runloop 作为 value；
+* 读写问题可以用读写锁（pthread_rwlock）和异步栅栏（dispatch_barrier_async）来解决；
+* hash 方法只在对象被添加至 NSSet 和设置为 NSDictionary 的 key 时会调用；
