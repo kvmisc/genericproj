@@ -85,6 +85,11 @@
 		BB8F97692050DAD5008A8CAD /* GPRuntimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB8F97672050DAD5008A8CAD /* GPRuntimeViewController.m */; };
 		BB8F976A2050DAD5008A8CAD /* GPRuntimeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB8F97682050DAD5008A8CAD /* GPRuntimeViewController.xib */; };
 		BB8F976D2050DD45008A8CAD /* GPRuntimeTest.m in Sources */ = {isa = PBXBuildFile; fileRef = BB8F976C2050DD45008A8CAD /* GPRuntimeTest.m */; };
+		BBA112F52256E8A400678404 /* GPRedrawViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBA112F32256E8A400678404 /* GPRedrawViewController.m */; };
+		BBA112F62256E8A400678404 /* GPRedrawViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBA112F42256E8A400678404 /* GPRedrawViewController.xib */; };
+		BBA112FA2256E96900678404 /* GPRedrawAAAView.m in Sources */ = {isa = PBXBuildFile; fileRef = BBA112F92256E96900678404 /* GPRedrawAAAView.m */; };
+		BBA112FD2256E97C00678404 /* GPRedrawBBBView.m in Sources */ = {isa = PBXBuildFile; fileRef = BBA112FC2256E97C00678404 /* GPRedrawBBBView.m */; };
+		BBA113002256E98B00678404 /* GPRedrawCCCView.m in Sources */ = {isa = PBXBuildFile; fileRef = BBA112FF2256E98B00678404 /* GPRedrawCCCView.m */; };
 		BBB32D9820DCE980008B3DA4 /* NSDictionaryParameter.m in Sources */ = {isa = PBXBuildFile; fileRef = BBB32D9720DCE980008B3DA4 /* NSDictionaryParameter.m */; };
 		BBBDFC672177090F00936776 /* XYZPaymentManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BBBDFC662177090F00936776 /* XYZPaymentManager.m */; };
 		BBBDFC6B21770C5400936776 /* XYZPaymentError.m in Sources */ = {isa = PBXBuildFile; fileRef = BBBDFC6A21770C5400936776 /* XYZPaymentError.m */; };
@@ -250,6 +255,15 @@
 		BB8F97682050DAD5008A8CAD /* GPRuntimeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GPRuntimeViewController.xib; sourceTree = "<group>"; };
 		BB8F976B2050DD45008A8CAD /* GPRuntimeTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GPRuntimeTest.h; sourceTree = "<group>"; };
 		BB8F976C2050DD45008A8CAD /* GPRuntimeTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GPRuntimeTest.m; sourceTree = "<group>"; };
+		BBA112F22256E8A400678404 /* GPRedrawViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GPRedrawViewController.h; sourceTree = "<group>"; };
+		BBA112F32256E8A400678404 /* GPRedrawViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GPRedrawViewController.m; sourceTree = "<group>"; };
+		BBA112F42256E8A400678404 /* GPRedrawViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GPRedrawViewController.xib; sourceTree = "<group>"; };
+		BBA112F82256E96900678404 /* GPRedrawAAAView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GPRedrawAAAView.h; sourceTree = "<group>"; };
+		BBA112F92256E96900678404 /* GPRedrawAAAView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GPRedrawAAAView.m; sourceTree = "<group>"; };
+		BBA112FB2256E97C00678404 /* GPRedrawBBBView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GPRedrawBBBView.h; sourceTree = "<group>"; };
+		BBA112FC2256E97C00678404 /* GPRedrawBBBView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GPRedrawBBBView.m; sourceTree = "<group>"; };
+		BBA112FE2256E98B00678404 /* GPRedrawCCCView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GPRedrawCCCView.h; sourceTree = "<group>"; };
+		BBA112FF2256E98B00678404 /* GPRedrawCCCView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GPRedrawCCCView.m; sourceTree = "<group>"; };
 		BBB32D9620DCE980008B3DA4 /* NSDictionaryParameter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NSDictionaryParameter.h; sourceTree = "<group>"; };
 		BBB32D9720DCE980008B3DA4 /* NSDictionaryParameter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NSDictionaryParameter.m; sourceTree = "<group>"; };
 		BBBDFC652177090F00936776 /* XYZPaymentManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYZPaymentManager.h; sourceTree = "<group>"; };
@@ -535,6 +549,7 @@
 				0A883B821F62B6E400ED33EB /* Test */,
 				BB8F97652050DAB6008A8CAD /* Runtime */,
 				BBEDB5D622486C6B00E55D89 /* Objc */,
+				BBA112F72256E8AC00678404 /* Redraw */,
 				0A429B731E260653004CCA09 /* Hierarchy */,
 				0A429B751E26065C004CCA09 /* VCRestructure */,
 				0A3BB1E61E76822000F11642 /* MessageCenter */,
@@ -738,6 +753,22 @@
 			name = Runtime;
 			sourceTree = "<group>";
 		};
+		BBA112F72256E8AC00678404 /* Redraw */ = {
+			isa = PBXGroup;
+			children = (
+				BBA112F22256E8A400678404 /* GPRedrawViewController.h */,
+				BBA112F32256E8A400678404 /* GPRedrawViewController.m */,
+				BBA112F42256E8A400678404 /* GPRedrawViewController.xib */,
+				BBA112F82256E96900678404 /* GPRedrawAAAView.h */,
+				BBA112F92256E96900678404 /* GPRedrawAAAView.m */,
+				BBA112FB2256E97C00678404 /* GPRedrawBBBView.h */,
+				BBA112FC2256E97C00678404 /* GPRedrawBBBView.m */,
+				BBA112FE2256E98B00678404 /* GPRedrawCCCView.h */,
+				BBA112FF2256E98B00678404 /* GPRedrawCCCView.m */,
+			);
+			name = Redraw;
+			sourceTree = "<group>";
+		};
 		BBBDFC682177091400936776 /* Payment */ = {
 			isa = PBXGroup;
 			children = (
@@ -884,6 +915,7 @@
 				0A55A7D81F6664A3001A0C13 /* GPHTTPViewController.xib in Resources */,
 				BBDC831020466CAE00C3E554 /* hh.png in Resources */,
 				BB04B9582235F64C005E54C4 /* GPCollectionViewController.xib in Resources */,
+				BBA112F62256E8A400678404 /* GPRedrawViewController.xib in Resources */,
 				BBEDB5D522486C6200E55D89 /* GPObjcViewController.xib in Resources */,
 				BB16F2991FF5E119004359B2 /* q5-1712.txt in Resources */,
 				0A883B871F62B87C00ED33EB /* GPHierarchyViewController.xib in Resources */,
@@ -983,10 +1015,12 @@
 				0AD8DF381FE0C35B0092FF6D /* GPSourceView.m in Sources */,
 				BB04B962223606BA005E54C4 /* GPCollectionReusableView.m in Sources */,
 				0A3D07E01F67B82E00F19DF3 /* GPAspectViewController.m in Sources */,
+				BBA113002256E98B00678404 /* GPRedrawCCCView.m in Sources */,
 				BB8F976D2050DD45008A8CAD /* GPRuntimeTest.m in Sources */,
 				0A883B441F62380800ED33EB /* UIColorExtentions.m in Sources */,
 				BB78B337206C9B11000CEE6E /* XYZAnimation.m in Sources */,
 				0A8C61A41D5B97DD000D882E /* XYZCancelableBlock.m in Sources */,
+				BBA112FA2256E96900678404 /* GPRedrawAAAView.m in Sources */,
 				BB145D56207DC8110087D55F /* XYZWebViewController.m in Sources */,
 				0A7AE4FC1D58294200B585D9 /* main.m in Sources */,
 				0A883B8B1F62C4DE00ED33EB /* GPRestructureViewController.m in Sources */,
@@ -996,6 +1030,7 @@
 				0A29B0AB1FE12A3400F007FE /* XYZHUDView.m in Sources */,
 				0AFEA2261E14EE2A00F0C4C6 /* XYZBaseViewController.m in Sources */,
 				BB7EDE5C20808D1600B44D0C /* GPTableViewCell.m in Sources */,
+				BBA112FD2256E97C00678404 /* GPRedrawBBBView.m in Sources */,
 				0A3D07D91F67729300F19DF3 /* XYZHTTPError.m in Sources */,
 				BBDC83082046633200C3E554 /* GPImageViewController.m in Sources */,
 				BBBDFC6B21770C5400936776 /* XYZPaymentError.m in Sources */,
@@ -1016,6 +1051,7 @@
 				BBBDFC672177090F00936776 /* XYZPaymentManager.m in Sources */,
 				0A4EB5041DDD3A9100A77974 /* NSStringUnicode.m in Sources */,
 				0A7AE4FA1D58294200B585D9 /* AppDelegate.m in Sources */,
+				BBA112F52256E8A400678404 /* GPRedrawViewController.m in Sources */,
 				BBB32D9820DCE980008B3DA4 /* NSDictionaryParameter.m in Sources */,
 				0A7AE5071D582C7A00B585D9 /* GPRootViewController.m in Sources */,
 				0A1D15201FDD6CC200BDDF91 /* UITableViewCellExtentions.m in Sources */,

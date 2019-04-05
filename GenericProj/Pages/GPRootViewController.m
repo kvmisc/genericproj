@@ -12,6 +12,7 @@
 
 #import "GPRuntimeViewController.h"
 #import "GPObjcViewController.h"
+#import "GPRedrawViewController.h"
 #import "GPHierarchyViewController.h"
 #import "GPRestructureViewController.h"
 #import "GPMessageViewController.h"
@@ -43,6 +44,7 @@
   [self addTitle:@"Test" class:[GPTestViewController class]];
   [self addTitle:@"Runtime" class:[GPRuntimeViewController class]];
   [self addTitle:@"Objc" class:[GPObjcViewController class]];
+  [self addTitle:@"Redraw" class:[GPRedrawViewController class]];
   [self addTitle:@"Hierarchy" class:[GPHierarchyViewController class]];
   [self addTitle:@"Restructure" class:[GPRestructureViewController class]];
   [self addTitle:@"Message" class:[GPMessageViewController class]];

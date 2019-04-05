@@ -52,6 +52,15 @@
 
  
  Ref: http://stackoverflow.com/questions/20609206/setneedslayout-vs-setneedsupdateconstraints-and-layoutifneeded-vs-updateconstra
+
+ 1) setNeedsUpdateConstraints makes sure a future call to
+    updateConstraintsIfNeeded calls updateConstraints.
+ 2) setNeedsLayout makes sure a future call to layoutIfNeeded calls layoutSubviews.
+
+ When layoutSubviews is called, it also calls updateConstraintsIfNeeded, so
+ calling it manually is rarely needed in my experience. In fact, I have never
+ called it except when debugging layouts.
+
  1) If you manipulated constraints directly, call setNeedsLayout.
  2) If you changed some conditions (like offsets or smth) which would change 
     constraints in your overridden updateConstraints method (a recommended way 
