@@ -51,7 +51,8 @@ void bubble_sort(int arr[], int len) {
   //[super touchesBegan:touches withEvent:event];
   NSLog(@"vc touch began");
 
-  NSLog(@"%@", BaseUrl);
+  NSLog(@"%@", BASE_URL);
+  _titleLabel.text = BASE_URL;
 }
 
 - (void)touchesMoved:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event

@@ -218,6 +218,8 @@
 		2579012E5534F46C56F97098 /* libPods-GenericProj.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GenericProj.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		515BB722BAC56AAD43AD1865 /* Pods-GenericProj.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GenericProj.release.xcconfig"; path = "Pods/Target Support Files/Pods-GenericProj/Pods-GenericProj.release.xcconfig"; sourceTree = "<group>"; };
 		6CC8B4CFFD62002DD8FEA6DF /* Pods-GenericProj.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GenericProj.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GenericProj/Pods-GenericProj.debug.xcconfig"; sourceTree = "<group>"; };
+		BB02403F225B023A006A0F40 /* Update_Pods.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Update_Pods.txt; sourceTree = "<group>"; };
+		BB024040225B0293006A0F40 /* bump_build_number.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = bump_build_number.sh; sourceTree = "<group>"; };
 		BB04B9542235F64C005E54C4 /* GPCollectionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GPCollectionViewController.h; sourceTree = "<group>"; };
 		BB04B9552235F64C005E54C4 /* GPCollectionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GPCollectionViewController.m; sourceTree = "<group>"; };
 		BB04B9562235F64C005E54C4 /* GPCollectionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GPCollectionViewController.xib; sourceTree = "<group>"; };
@@ -306,7 +308,6 @@
 		BBEDB5D822486CB200E55D89 /* GPPerson.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GPPerson.m; sourceTree = "<group>"; };
 		BBFFBA83217827C900FB8159 /* block_declaration.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = block_declaration.md; sourceTree = "<group>"; };
 		BBFFBA8521782E4B00FB8159 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		BBFFBA8721782F5100FB8159 /* bump_build_number.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = bump_build_number.sh; sourceTree = "<group>"; };
 		BBFFBA882178417E00FB8159 /* XYZSampleObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYZSampleObject.m; sourceTree = "<group>"; };
 		BBFFBA892178417F00FB8159 /* XYZSampleObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYZSampleObject.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -572,7 +573,6 @@
 				0A7AE4F71D58294200B585D9 /* README.md */,
 				0A7AE51C1D58407000B585D9 /* Podfile */,
 				BBCA25AA21533D10004906B1 /* build.sh */,
-				BBFFBA8721782F5100FB8159 /* bump_build_number.sh */,
 			);
 			path = Support;
 			sourceTree = "<group>";
@@ -820,10 +820,12 @@
 			children = (
 				BBFFBA8521782E4B00FB8159 /* README.md */,
 				BB8C8EB2224B3F790068928F /* job_tech.md */,
-				BBED5D7E224E0BE70032A53F /* cv.txt */,
 				BBFFBA83217827C900FB8159 /* block_declaration.md */,
-				BBDC2648224CC6CA000394B0 /* dp.txt */,
 				BB8C8EB1224B386E0068928F /* gcd_timer_sample.m */,
+				BB024040225B0293006A0F40 /* bump_build_number.sh */,
+				BB02403F225B023A006A0F40 /* Update_Pods.txt */,
+				BBED5D7E224E0BE70032A53F /* cv.txt */,
+				BBDC2648224CC6CA000394B0 /* dp.txt */,
 				BBFFBA8C2178423900FB8159 /* SampleObject */,
 			);
 			path = Docs;

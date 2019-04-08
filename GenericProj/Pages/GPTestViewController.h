@@ -9,25 +9,26 @@
 #import <UIKit/UIKit.h>
 
 
-#ifdef DEBUG
+#ifdef DAILY_DEBUG
 
-//NSLog(@"[xx] debug: debug server");
-#define BaseUrl          @"http://debug"
-
-#elif defined DAILY_DEBUG
-
-//NSLog(@"[xx] daily: debug server");
-#define BaseUrl          @"http://daily.debug"
+// 用命令行打包，release 配置，debug 服务器
+#define BASE_URL @"http://daily.debug"
 
 #elif defined DAILY_RELEASE
 
-//NSLog(@"[xx] daily: debug server");
-#define BaseUrl          @"http://daily.release"
+// 用命令行打包，release 配置，release 服务器
+#define BASE_URL @"http://daily.release"
+
+#elif defined DEBUG
+
+// 用 xcode 运行，debug 配置，debug 服务器
+#define BASE_URL @"http://debug"
 
 #else
 
-//NSLog(@"[xx] release: release server");
-#define BaseUrl          @"http://release"
+// 用 xcode 运行，release 配置，release 服务器
+// App Store 发布，release 配置，release 服务器
+#define BASE_URL @"http://release"
 
 #endif
 
@@ -39,5 +40,6 @@
 @property (weak, nonatomic) IBOutlet UIView *greenView;
 
 @property (weak, nonatomic) IBOutlet UIImageView *avatarView;
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 
 @end

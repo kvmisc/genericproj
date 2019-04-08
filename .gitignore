@@ -8,4 +8,6 @@
 Pods/*.xcodeproj/*
 !Pods/*.xcodeproj/project.pbxproj
 
+build/
+
 .DS_Store
