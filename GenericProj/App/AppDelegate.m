@@ -18,6 +18,31 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+  NSString *str = @"ae\u0301z";
+  NSLog(@"str = [%@]", str);                         // str = [aéz]
+  NSLog(@"length = %lu", [str length]);              // length = 4
+  NSLog(@"char_0 = [%c]", [str characterAtIndex:0]); // char_0 = [a]
+  NSLog(@"char_1 = [%c]", [str characterAtIndex:1]); // char_1 = [e]
+  NSLog(@"char_2 = [%c]", [str characterAtIndex:2]); // char_2 = []
+  NSLog(@"char_3 = [%c]", [str characterAtIndex:3]); // char_3 = [z]
+
+  NSRange range0 = [str rangeOfComposedCharacterSequenceAtIndex:0];
+  NSLog(@"range0 = (%lu %lu), char_0 = [%@]", range0.location, range0.length, [str substringWithRange:range0]);
+  // range0 = (0 1), char_0 = [a]
+
+  NSRange range1 = [str rangeOfComposedCharacterSequenceAtIndex:1];
+  NSLog(@"range1 = (%lu %lu), char_1 = [%@]", range1.location, range1.length, [str substringWithRange:range1]);
+  // range1 = (1 2), char_1 = [é]
+
+  NSRange range2 = [str rangeOfComposedCharacterSequenceAtIndex:2];
+  NSLog(@"range2 = (%lu %lu), char_2 = [%@]", range2.location, range2.length, [str substringWithRange:range2]);
+  // range2 = (1 2), char_2 = [é]
+
+  NSRange range3 = [str rangeOfComposedCharacterSequenceAtIndex:3];
+  NSLog(@"range3 = (%lu %lu), char_3 = [%@]", range3.location, range3.length, [str substringWithRange:range3]);
+  // range3 = (3 1), char_3 = [z]
+
+
 //  [XYZLogger setup];
 //
 //  CGRect rect1 = [[UIScreen mainScreen] bounds];
