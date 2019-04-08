@@ -13,6 +13,8 @@
 
 #import <QuartzCore/QuartzCore.h>
 
+
+
 void bubble_sort(int arr[], int len) {
 
   for ( int i=0; i<len-1; i++ ) {
@@ -48,6 +50,8 @@ void bubble_sort(int arr[], int len) {
 {
   //[super touchesBegan:touches withEvent:event];
   NSLog(@"vc touch began");
+
+  NSLog(@"%@", BaseUrl);
 }
 
 - (void)touchesMoved:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event

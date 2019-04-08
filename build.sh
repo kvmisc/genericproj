@@ -6,11 +6,11 @@ if [ $# -ne 1 ]; then
 fi
 
 if [ $1 = "debug" ]; then
-SETTING_TYPE="SETTING_DEBUG=1"
+BUILD_SETTING="DAILY_DEBUG=1"
 elif [ $1 = "release" ]; then
-SETTING_TYPE="SETTING_RELEASE=1"
+BUILD_SETTING="DAILY_RELEASE=1"
 fi
-if [ -z ${SETTING_TYPE} ]; then
+if [ -z ${BUILD_SETTING} ]; then
   printf "\n\n\n    Failed: Setting type must not be empty\n\n\n"
   exit 2
 fi
@@ -23,7 +23,7 @@ fi
 # CONFIGURATION=Daily
 WORKSPACE_NAME=GenericProj.xcworkspace
 SCHEME_NAME=GenericProj
-CONFIGURATION=Debug
+CONFIGURATION=Release
 BUILD_ROOT="`pwd`/build"
 PACKAGE_NAME="$1`date +'%m%d%H%M'`"
 
@@ -39,7 +39,7 @@ xcodebuild \
   -destination generic/platform=iOS \
   -configuration ${CONFIGURATION} \
   -sdk iphoneos \
-  OBJROOT=${BUILD_ROOT} SYMROOT=${BUILD_ROOT} GCC_PREPROCESSOR_DEFINITIONS='${inherited}'" ${SETTING_TYPE}"
+  OBJROOT=${BUILD_ROOT} SYMROOT=${BUILD_ROOT} GCC_PREPROCESSOR_DEFINITIONS='${inherited}'" ${BUILD_SETTING}"
 if [[ $? -ne 0 ]]; then
   printf "\n\n\n    Failed: There's something wrong while building\n\n\n"
   exit 3
