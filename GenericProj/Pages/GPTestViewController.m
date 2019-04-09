@@ -173,7 +173,10 @@ void bubble_sort(int arr[], int len) {
     UIImage *image1 = [UIImage imageNamed:@"ic_b"];
     NSLog(@"%@ %f", NSStringFromCGSize(image1.size), image1.scale);
     _avatarView.layer.contents = (__bridge id)[image1 CGImage];
-//    _avatarView.layer.contentsScale = image1.scale;
+    _avatarView.layer.masksToBounds = YES;
+    _avatarView.layer.contentsScale = image1.scale;
+    _avatarView.layer.contentsGravity = kCAGravityResizeAspect;
+    _avatarView.layer.contentsRect = CGRectMake(0.5, 0, 0.5, 0.5);
   }
 
 //  NSObject *obj = [[NSObject alloc] init];
@@ -186,10 +189,10 @@ void bubble_sort(int arr[], int len) {
 //  NSLog(@"%ld", (long)CFArrayGetCount(arrayRef));
 //  CFRelease(arrayRef);
 
-  CFStringRef strs[3] = {CFSTR("aaa"), CFSTR("bbb"), CFSTR("ccc")};
-  CFArrayRef arrayRef = CFArrayCreate(NULL, (const void **)strs, 3, &kCFTypeArrayCallBacks);
-  NSArray *array = (__bridge_transfer NSArray *)arrayRef;
-  NSLog(@"%@", array);
+//  CFStringRef strs[3] = {CFSTR("aaa"), CFSTR("bbb"), CFSTR("ccc")};
+//  CFArrayRef arrayRef = CFArrayCreate(NULL, (const void **)strs, 3, &kCFTypeArrayCallBacks);
+//  NSArray *array = (__bridge_transfer NSArray *)arrayRef;
+//  NSLog(@"%@", array);
 
   
 
