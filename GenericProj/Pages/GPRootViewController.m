@@ -25,6 +25,7 @@
 #import "GPImageViewController.h"
 #import "GPTableViewController.h"
 #import "GPCollectionViewController.h"
+#import "GPNavigationTransitionViewController.h"
 
 
 @implementation GPRootViewController {
@@ -57,8 +58,9 @@
   [self addTitle:@"Image" class:[GPImageViewController class]];
   [self addTitle:@"TableView" class:[GPTableViewController class]];
   [self addTitle:@"CollectionView" class:[GPCollectionViewController class]];
+  [self addTitle:@"NavigationTransition" class:[GPNavigationTransitionViewController class]];
 
-  //_defaultPage = @"Test";
+  _defaultPage = @"Test";
 }
 
 - (void)addTitle:(NSString *)title class:(Class)cls

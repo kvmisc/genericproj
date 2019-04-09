@@ -62,6 +62,11 @@
 		0AEF637F1D5B0BB90081D6B7 /* sql_main in Resources */ = {isa = PBXBuildFile; fileRef = 0AEF637E1D5B0BB90081D6B7 /* sql_main */; };
 		0AF669C42053E8FC00712772 /* XYZHTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AF669C32053E8FC00712772 /* XYZHTTPRequest.m */; };
 		0AFEA2261E14EE2A00F0C4C6 /* XYZBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AFEA2251E14EE2A00F0C4C6 /* XYZBaseViewController.m */; };
+		BB024044225B3764006A0F40 /* GPNavigationTransitionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB024042225B3764006A0F40 /* GPNavigationTransitionViewController.m */; };
+		BB024045225B3764006A0F40 /* GPNavigationTransitionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB024043225B3764006A0F40 /* GPNavigationTransitionViewController.xib */; };
+		BB024049225B3878006A0F40 /* GPPushAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = BB024048225B3878006A0F40 /* GPPushAnimator.m */; };
+		BB02404C225B3885006A0F40 /* GPPopAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = BB02404B225B3885006A0F40 /* GPPopAnimator.m */; };
+		BB02404F225B3B24006A0F40 /* GPKeyframeAnimationView.m in Sources */ = {isa = PBXBuildFile; fileRef = BB02404E225B3B24006A0F40 /* GPKeyframeAnimationView.m */; };
 		BB04B9572235F64C005E54C4 /* GPCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB04B9552235F64C005E54C4 /* GPCollectionViewController.m */; };
 		BB04B9582235F64C005E54C4 /* GPCollectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB04B9562235F64C005E54C4 /* GPCollectionViewController.xib */; };
 		BB04B95D2235F923005E54C4 /* GPCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BB04B95B2235F923005E54C4 /* GPCollectionViewCell.m */; };
@@ -220,6 +225,15 @@
 		6CC8B4CFFD62002DD8FEA6DF /* Pods-GenericProj.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GenericProj.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GenericProj/Pods-GenericProj.debug.xcconfig"; sourceTree = "<group>"; };
 		BB02403F225B023A006A0F40 /* Update_Pods.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Update_Pods.txt; sourceTree = "<group>"; };
 		BB024040225B0293006A0F40 /* bump_build_number.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = bump_build_number.sh; sourceTree = "<group>"; };
+		BB024041225B3764006A0F40 /* GPNavigationTransitionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GPNavigationTransitionViewController.h; sourceTree = "<group>"; };
+		BB024042225B3764006A0F40 /* GPNavigationTransitionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GPNavigationTransitionViewController.m; sourceTree = "<group>"; };
+		BB024043225B3764006A0F40 /* GPNavigationTransitionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GPNavigationTransitionViewController.xib; sourceTree = "<group>"; };
+		BB024047225B3878006A0F40 /* GPPushAnimator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GPPushAnimator.h; sourceTree = "<group>"; };
+		BB024048225B3878006A0F40 /* GPPushAnimator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GPPushAnimator.m; sourceTree = "<group>"; };
+		BB02404A225B3885006A0F40 /* GPPopAnimator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GPPopAnimator.h; sourceTree = "<group>"; };
+		BB02404B225B3885006A0F40 /* GPPopAnimator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GPPopAnimator.m; sourceTree = "<group>"; };
+		BB02404D225B3B24006A0F40 /* GPKeyframeAnimationView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GPKeyframeAnimationView.h; sourceTree = "<group>"; };
+		BB02404E225B3B24006A0F40 /* GPKeyframeAnimationView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GPKeyframeAnimationView.m; sourceTree = "<group>"; };
 		BB04B9542235F64C005E54C4 /* GPCollectionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GPCollectionViewController.h; sourceTree = "<group>"; };
 		BB04B9552235F64C005E54C4 /* GPCollectionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GPCollectionViewController.m; sourceTree = "<group>"; };
 		BB04B9562235F64C005E54C4 /* GPCollectionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GPCollectionViewController.xib; sourceTree = "<group>"; };
@@ -563,6 +577,7 @@
 				BBDC830A2046633700C3E554 /* Image */,
 				BB7EDE5820808C9D00B44D0C /* TableView */,
 				BB04B9592235F65D005E54C4 /* CollectionView */,
+				BB024046225B376E006A0F40 /* NavigationTransition */,
 			);
 			path = Pages;
 			sourceTree = "<group>";
@@ -688,6 +703,22 @@
 				515BB722BAC56AAD43AD1865 /* Pods-GenericProj.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		BB024046225B376E006A0F40 /* NavigationTransition */ = {
+			isa = PBXGroup;
+			children = (
+				BB024041225B3764006A0F40 /* GPNavigationTransitionViewController.h */,
+				BB024042225B3764006A0F40 /* GPNavigationTransitionViewController.m */,
+				BB024043225B3764006A0F40 /* GPNavigationTransitionViewController.xib */,
+				BB02404D225B3B24006A0F40 /* GPKeyframeAnimationView.h */,
+				BB02404E225B3B24006A0F40 /* GPKeyframeAnimationView.m */,
+				BB024047225B3878006A0F40 /* GPPushAnimator.h */,
+				BB024048225B3878006A0F40 /* GPPushAnimator.m */,
+				BB02404A225B3885006A0F40 /* GPPopAnimator.h */,
+				BB02404B225B3885006A0F40 /* GPPopAnimator.m */,
+			);
+			name = NavigationTransition;
 			sourceTree = "<group>";
 		};
 		BB04B9592235F65D005E54C4 /* CollectionView */ = {
@@ -936,6 +967,7 @@
 				BBDC831220466CC700C3E554 /* ww.png in Resources */,
 				BB7EDE5D20808D1600B44D0C /* GPTableViewCell.xib in Resources */,
 				BB04B963223606BA005E54C4 /* GPCollectionReusableView.xib in Resources */,
+				BB024045225B3764006A0F40 /* GPNavigationTransitionViewController.xib in Resources */,
 				0AAB27211FDFC5B800BD2451 /* GPCoverViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1005,6 +1037,7 @@
 				0A3D07EB1F67BE0A00F19DF3 /* GPKVOViewController.m in Sources */,
 				0A57E1641FE234FC0037F94F /* UIAlertControllerExtentions.m in Sources */,
 				0A0E6F091FA9B5FF00E26E42 /* GPDownloadViewController.m in Sources */,
+				BB02404C225B3885006A0F40 /* GPPopAnimator.m in Sources */,
 				0AA817BE1D61B59B009F831A /* XYZGlobal.m in Sources */,
 				BB7EDE52208087C600B44D0C /* XYZBaseTableViewCell.m in Sources */,
 				BB04B95D2235F923005E54C4 /* GPCollectionViewCell.m in Sources */,
@@ -1050,6 +1083,7 @@
 				0A2BD38B1D5D5CEA009D1CEF /* XYZBaseView.m in Sources */,
 				BB78B33A206CA40C000CEE6E /* INTUEasingFunctions.m in Sources */,
 				BB7EDE5620808C9900B44D0C /* GPTableViewController.m in Sources */,
+				BB02404F225B3B24006A0F40 /* GPKeyframeAnimationView.m in Sources */,
 				BBBDFC672177090F00936776 /* XYZPaymentManager.m in Sources */,
 				0A4EB5041DDD3A9100A77974 /* NSStringUnicode.m in Sources */,
 				0A7AE4FA1D58294200B585D9 /* AppDelegate.m in Sources */,
@@ -1058,6 +1092,7 @@
 				0A7AE5071D582C7A00B585D9 /* GPRootViewController.m in Sources */,
 				0A1D15201FDD6CC200BDDF91 /* UITableViewCellExtentions.m in Sources */,
 				BBEDB5D922486CB200E55D89 /* GPPerson.m in Sources */,
+				BB024044225B3764006A0F40 /* GPNavigationTransitionViewController.m in Sources */,
 				0A57E1671FE257490037F94F /* XYZDateFormatter.m in Sources */,
 				0A57E1611FE208700037F94F /* XYZMessageCenter.m in Sources */,
 				BBDC830420463F4500C3E554 /* UIImageExtentions.m in Sources */,
@@ -1067,6 +1102,7 @@
 				0AAB271C1FDFC42D00BD2451 /* XYZCoverView.m in Sources */,
 				BBDC2643224C7C96000394B0 /* YYWeakProxy.m in Sources */,
 				0A55A7D71F6664A2001A0C13 /* GPHTTPViewController.m in Sources */,
+				BB024049225B3878006A0F40 /* GPPushAnimator.m in Sources */,
 				0A972A4D1FC3F88200396FBD /* NSStringExtentions.m in Sources */,
 				BB04B9572235F64C005E54C4 /* GPCollectionViewController.m in Sources */,
 				BB8F97692050DAD5008A8CAD /* GPRuntimeViewController.m in Sources */,

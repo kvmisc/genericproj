@@ -150,17 +150,19 @@
 
 将大的数字往后放，外循环 i=len-1 次，内循环 j=len-1-i 次。
 
-    void bubble_sort(int arr[], int len) {
-      for ( int i=0; i<len-1; i++ ) {
-        for ( int j=0; j<len-1-i; j++ ) {
-          if ( arr[j]>arr[j+1] ) {
-            int temp = arr[j];
-            arr[j] = arr[j+1];
-            arr[j+1] = temp;
-          }
-        }
+~~~
+void bubble_sort(int arr[], int len) {
+  for ( int i=0; i<len-1; i++ ) {
+    for ( int j=0; j<len-1-i; j++ ) {
+      if ( arr[j]>arr[j+1] ) {
+        int temp = arr[j];
+        arr[j] = arr[j+1];
+        arr[j+1] = temp;
       }
     }
+  }
+}
+~~~
 
 ## 其它
 

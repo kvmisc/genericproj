@@ -161,18 +161,40 @@ void bubble_sort(int arr[], int len) {
 //    NSLog(@"%@ %f", NSStringFromCGSize(image2.size), image2.scale);
 //    _avatarView.image = image2;
 //  }
+//  {
+//    UIImage *image1 = [UIImage imageNamed:@"haa"];
+//    NSLog(@"%@ %f", NSStringFromCGSize(image1.size), image1.scale);
+//    UIImage *image2 = [image1 tk_roundedCornerImage:30];
+//    NSLog(@"%@ %f", NSStringFromCGSize(image2.size), image2.scale);
+//    _avatarView.image = image2;
+//  }
+
   {
-    UIImage *image1 = [UIImage imageNamed:@"haa"];
+    UIImage *image1 = [UIImage imageNamed:@"ic_b"];
     NSLog(@"%@ %f", NSStringFromCGSize(image1.size), image1.scale);
-    UIImage *image2 = [image1 tk_roundedCornerImage:30];
-    NSLog(@"%@ %f", NSStringFromCGSize(image2.size), image2.scale);
-    _avatarView.image = image2;
+    _avatarView.layer.contents = (__bridge id)[image1 CGImage];
+//    _avatarView.layer.contentsScale = image1.scale;
   }
+
+//  NSObject *obj = [[NSObject alloc] init];
+//  void *p = (__bridge_retained void *)obj;
+//  NSLog(@"%p", p);
+//  CFRelease(p);
+
+//  NSArray *array = [[NSArray alloc] initWithObjects:@"aaa", @"bbb", @"ccc", nil];
+//  CFArrayRef arrayRef = (__bridge_retained CFArrayRef)array;
+//  NSLog(@"%ld", (long)CFArrayGetCount(arrayRef));
+//  CFRelease(arrayRef);
+
+  CFStringRef strs[3] = {CFSTR("aaa"), CFSTR("bbb"), CFSTR("ccc")};
+  CFArrayRef arrayRef = CFArrayCreate(NULL, (const void **)strs, 3, &kCFTypeArrayCallBacks);
+  NSArray *array = (__bridge_transfer NSArray *)arrayRef;
+  NSLog(@"%@", array);
 
   
 
 
-  [self buildReport];
+//  [self buildReport];
 
 //  @weakify(self);
 //  [_button tk_addAction:^(UIButton *bt) {

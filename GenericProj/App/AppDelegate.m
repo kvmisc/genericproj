@@ -14,6 +14,9 @@
 
 #import "GPTestObject.h"
 
+#import "../Pages/GPPushAnimator.h"
+#import "../Pages/GPPopAnimator.h"
+
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -114,7 +117,9 @@
   UIViewController *vc = [[GPRootViewController alloc] init];
   UINavigationController *nc = [[XYZNavigationController alloc] initWithRootViewController:vc];
   nc.navigationBarHidden = YES;
+  //nc.delegate = self;
   _window.rootViewController = nc;
+
 
 //  YYFPSLabel *FPSLabel = [[YYFPSLabel alloc] initWithFrame:CGRectMake(0.0, XYZ_SCREEN_HET-30.0, 50.0, 30.0)];
 //  [nc.view addSubview:FPSLabel];
@@ -141,6 +146,22 @@
   if ( [top isKindOfClass:[UINavigationController class]] ) {
     [(UINavigationController *)top popViewControllerAnimated:YES];
   }
+}
+
+- (id<UIViewControllerAnimatedTransitioning>)navigationController:(UINavigationController *)navigationController
+                                  animationControllerForOperation:(UINavigationControllerOperation)operation
+                                               fromViewController:(UIViewController*)fromVC
+                                                 toViewController:(UIViewController*)toVC
+{
+  if ( operation==UINavigationControllerOperationPush ) {
+    return [[GPPushAnimator alloc] init];
+  }
+
+  if ( operation==UINavigationControllerOperationPop ) {
+    return [[GPPopAnimator alloc] init];
+  }
+
+  return nil;
 }
 
 

@@ -29,31 +29,70 @@
 
 不要在 init 方法中用点语法访问成员变量，因为子类可能重载 setter，创建子类的时候，父类使用点语法访问的是子类的方法。
 
-    @interface GPPerson : NSObject
-    @property (nonatomic, copy) NSString *name;
-    @end
-    @implementation GPPerson
-    - (instancetype)init
-    {
-      self = [super init];
-      if (self) {
-        self.name = @"";
-      }
-      return self;
-    }
-    @end
-    
-    @interface GPStudent : GPPerson
-    @end
-    @implementation GPStudent
-    - (void)setName:(NSString *)name
-    {
-      [super setName:@"xxx"];
-    }
-    @end
-    
-    GPStudent *student = [[GPStudent alloc] init];
-    NSLog(@"%@", student.name); // 打印 xxx，但 student 根本没设置名字。
+~~~
+@interface GPPerson : NSObject
+@property (nonatomic, copy) NSString *name;
+@end
+@implementation GPPerson
+- (instancetype)init
+{
+  self = [super init];
+  if (self) {
+    self.name = @"";
+  }
+  return self;
+}
+@end
 
+@interface GPStudent : GPPerson
+@end
+@implementation GPStudent
+- (void)setName:(NSString *)name
+{
+  [super setName:@"xxx"];
+}
+@end
 
+GPStudent *student = [[GPStudent alloc] init];
+NSLog(@"%@", student.name); // 打印 xxx，但 student 根本没设置名字。
+~~~
 
+## ARC 桥
+
+  * `-fobjc-arc`
+  * `-fno-objc-arc`
+
+`__bridge` 可以实现 OC 对象与 CoreFoundation 对象之间的互相转换，转换不会改变对象的持有情况。
+
+~~~
+// CF->OC，内存泄漏，并未改变对象持有情况，arrayRef 应负责释放
+CFStringRef strs[3] = {CFSTR("aaa"), CFSTR("bbb"), CFSTR("ccc")};
+CFArrayRef arrayRef = CFArrayCreate(NULL, (const void **)strs, 3, &kCFTypeArrayCallBacks);
+NSArray *array = (__bridge NSArray *)arrayRef;
+NSLog(@"%@", array);
+
+OC->CF，内存不泄漏，并未改变对象持有情况，array 会被 ARC 释放
+NSArray *array = [[NSArray alloc] initWithObjects:@"aaa", @"bbb", @"ccc", nil];
+CFArrayRef arrayRef = (__bridge CFArrayRef)array;
+NSLog(@"%ld", (long)CFArrayGetCount(arrayRef));
+~~~
+
+`__bridge_retained` 用于将 OC 变量转换为 CoreFoundation 对象，赋值完成以后，ARC 将不再管理此对象。
+
+~~~
+// OC->CF，无内存泄漏，ARC 已不再管理此对象，不会帮助释放，CF 负责释放
+NSArray *array = [[NSArray alloc] initWithObjects:@"aaa", @"bbb", @"ccc", nil];
+CFArrayRef arrayRef = (__bridge_retained CFArrayRef)array;
+NSLog(@"%ld", (long)CFArrayGetCount(arrayRef));
+CFRelease(arrayRef);
+~~~
+
+`__bridge_transfer` 用于将 CoreFoundation 对象转换为 OC 对象，赋值完成以后，ARC 将接手管理此对象。
+
+~~~
+// CF->OC，无内存泄漏，CF 所创建对象的管理权已经转交给 ARC，不需要 CF 做释放操作
+CFStringRef strs[3] = {CFSTR("aaa"), CFSTR("bbb"), CFSTR("ccc")};
+CFArrayRef arrayRef = CFArrayCreate(NULL, (const void **)strs, 3, &kCFTypeArrayCallBacks);
+NSArray *array = (__bridge_transfer NSArray *)arrayRef;
+NSLog(@"%@", array);
+~~~
