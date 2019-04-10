@@ -76,6 +76,10 @@
 		BB145D56207DC8110087D55F /* XYZWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB145D54207DC8100087D55F /* XYZWebViewController.m */; };
 		BB145D59207DCA1D0087D55F /* XYZWeakScriptMessageHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = BB145D58207DCA1D0087D55F /* XYZWeakScriptMessageHandler.m */; };
 		BB16F2991FF5E119004359B2 /* q5-1712.txt in Resources */ = {isa = PBXBuildFile; fileRef = BB16F2981FF5E119004359B2 /* q5-1712.txt */; };
+		BB270279225DD1CD00F68CAF /* mask_black.png in Resources */ = {isa = PBXBuildFile; fileRef = BB270276225DD1CC00F68CAF /* mask_black.png */; };
+		BB27027A225DD1CD00F68CAF /* mask_red@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BB270277225DD1CC00F68CAF /* mask_red@2x.png */; };
+		BB27027B225DD1CD00F68CAF /* mask_blue@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BB270278225DD1CC00F68CAF /* mask_blue@2x.png */; };
+		BB527F0A225C8CC400B37621 /* mickey@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BB527F09225C8CC400B37621 /* mickey@2x.png */; };
 		BB78B337206C9B11000CEE6E /* XYZAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = BB78B336206C9B11000CEE6E /* XYZAnimation.m */; };
 		BB78B33A206CA40C000CEE6E /* INTUEasingFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = BB78B338206CA40B000CEE6E /* INTUEasingFunctions.m */; };
 		BB7EDE52208087C600B44D0C /* XYZBaseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BB7EDE51208087C600B44D0C /* XYZBaseTableViewCell.m */; };
@@ -248,6 +252,11 @@
 		BB145D57207DCA1D0087D55F /* XYZWeakScriptMessageHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYZWeakScriptMessageHandler.h; sourceTree = "<group>"; };
 		BB145D58207DCA1D0087D55F /* XYZWeakScriptMessageHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XYZWeakScriptMessageHandler.m; sourceTree = "<group>"; };
 		BB16F2981FF5E119004359B2 /* q5-1712.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "q5-1712.txt"; sourceTree = "<group>"; };
+		BB27026F225DBDC500F68CAF /* dp3.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = dp3.md; sourceTree = "<group>"; };
+		BB270276225DD1CC00F68CAF /* mask_black.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mask_black.png; sourceTree = "<group>"; };
+		BB270277225DD1CC00F68CAF /* mask_red@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mask_red@2x.png"; sourceTree = "<group>"; };
+		BB270278225DD1CC00F68CAF /* mask_blue@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mask_blue@2x.png"; sourceTree = "<group>"; };
+		BB527F09225C8CC400B37621 /* mickey@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mickey@2x.png"; sourceTree = "<group>"; };
 		BB78B335206C9B11000CEE6E /* XYZAnimation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYZAnimation.h; sourceTree = "<group>"; };
 		BB78B336206C9B11000CEE6E /* XYZAnimation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XYZAnimation.m; sourceTree = "<group>"; };
 		BB78B338206CA40B000CEE6E /* INTUEasingFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = INTUEasingFunctions.m; sourceTree = "<group>"; };
@@ -649,6 +658,10 @@
 				0A4869671ED67FAF00F54D2F /* GPTestViewController.xib */,
 				BBDC2645224CABB9000394B0 /* GPResponderView.h */,
 				BBDC2646224CABB9000394B0 /* GPResponderView.m */,
+				BB527F09225C8CC400B37621 /* mickey@2x.png */,
+				BB270276225DD1CC00F68CAF /* mask_black.png */,
+				BB270278225DD1CC00F68CAF /* mask_blue@2x.png */,
+				BB270277225DD1CC00F68CAF /* mask_red@2x.png */,
 				BB826F6A2237540000BBB30B /* ic_a.png */,
 				BB826F692237540000BBB30B /* ic_b@2x.png */,
 				BB826F6D22375EB400BBB30B /* haa.png */,
@@ -857,6 +870,7 @@
 				BB02403F225B023A006A0F40 /* Update_Pods.txt */,
 				BBED5D7E224E0BE70032A53F /* cv.txt */,
 				BBDC2648224CC6CA000394B0 /* dp.txt */,
+				BB27026F225DBDC500F68CAF /* dp3.md */,
 				BBFFBA8C2178423900FB8159 /* SampleObject */,
 			);
 			path = Docs;
@@ -949,6 +963,8 @@
 				BBDC831020466CAE00C3E554 /* hh.png in Resources */,
 				BB04B9582235F64C005E54C4 /* GPCollectionViewController.xib in Resources */,
 				BBA112F62256E8A400678404 /* GPRedrawViewController.xib in Resources */,
+				BB27027B225DD1CD00F68CAF /* mask_blue@2x.png in Resources */,
+				BB27027A225DD1CD00F68CAF /* mask_red@2x.png in Resources */,
 				BBEDB5D522486C6200E55D89 /* GPObjcViewController.xib in Resources */,
 				BB16F2991FF5E119004359B2 /* q5-1712.txt in Resources */,
 				0A883B871F62B87C00ED33EB /* GPHierarchyViewController.xib in Resources */,
@@ -966,9 +982,11 @@
 				0A4869691ED67FAF00F54D2F /* GPTestViewController.xib in Resources */,
 				BBDC831220466CC700C3E554 /* ww.png in Resources */,
 				BB7EDE5D20808D1600B44D0C /* GPTableViewCell.xib in Resources */,
+				BB270279225DD1CD00F68CAF /* mask_black.png in Resources */,
 				BB04B963223606BA005E54C4 /* GPCollectionReusableView.xib in Resources */,
 				BB024045225B3764006A0F40 /* GPNavigationTransitionViewController.xib in Resources */,
 				0AAB27211FDFC5B800BD2451 /* GPCoverViewController.xib in Resources */,
+				BB527F0A225C8CC400B37621 /* mickey@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

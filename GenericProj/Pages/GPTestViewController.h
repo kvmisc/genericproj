@@ -33,7 +33,9 @@
 #endif
 
 
-@interface GPTestViewController : XYZBaseViewController
+@interface GPTestViewController : XYZBaseViewController <
+    CALayerDelegate
+>
 
 @property (weak, nonatomic) IBOutlet UIButton *button;
 
@@ -41,5 +43,7 @@
 
 @property (weak, nonatomic) IBOutlet UIImageView *avatarView;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+
+@property (weak, nonatomic) IBOutlet UIView *displayView;
 
 @end

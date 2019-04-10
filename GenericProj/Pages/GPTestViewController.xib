@@ -11,8 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GPTestViewController">
             <connections>
-                <outlet property="avatarView" destination="8Vv-ne-XMN" id="AhS-aQ-2DR"/>
-                <outlet property="titleLabel" destination="P1P-dS-jxz" id="QsI-gt-vMm"/>
+                <outlet property="displayView" destination="XZF-jm-Q9A" id="J2R-9W-cW6"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -21,28 +20,13 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8Vv-ne-XMN">
-                    <rect key="frame" x="142.5" y="88" width="90" height="90"/>
+                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XZF-jm-Q9A">
+                    <rect key="frame" x="10" y="50" width="100" height="100"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="90" id="3m0-3a-uaA"/>
-                        <constraint firstAttribute="width" constant="90" id="OXw-IH-CxQ"/>
-                    </constraints>
-                </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P1P-dS-jxz">
-                    <rect key="frame" x="0.0" y="646" width="42" height="21"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
+                </view>
             </subviews>
             <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-            <constraints>
-                <constraint firstItem="P1P-dS-jxz" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="DOs-bl-vNj"/>
-                <constraint firstItem="8Vv-ne-XMN" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="E3j-0P-vAa"/>
-                <constraint firstItem="8Vv-ne-XMN" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="88" id="rEp-rm-4Z4"/>
-                <constraint firstAttribute="bottom" secondItem="P1P-dS-jxz" secondAttribute="bottom" id="tPH-Q3-ty9"/>
-            </constraints>
             <point key="canvasLocation" x="-2708" y="-490"/>
         </view>
     </objects>

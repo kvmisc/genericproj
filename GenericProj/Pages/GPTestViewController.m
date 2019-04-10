@@ -31,7 +31,10 @@ void bubble_sort(int arr[], int len) {
   }
 }
 
-@implementation GPTestViewController
+@implementation GPTestViewController {
+  CALayer *_greenLayer;
+  CALayer *_blueLayer;
+}
 
 #ifdef DEBUG
 - (void)dealloc
@@ -51,8 +54,21 @@ void bubble_sort(int arr[], int len) {
   //[super touchesBegan:touches withEvent:event];
   NSLog(@"vc touch began");
 
-  NSLog(@"%@", BASE_URL);
-  _titleLabel.text = BASE_URL;
+//  NSLog(@"%@", BASE_URL);
+//  _titleLabel.text = BASE_URL;
+//
+//  //[self.displayView setNeedsDisplay];
+//  [_blueLayer display];
+
+  CGPoint point1 = [[touches anyObject] locationInView:self.view];
+  CGPoint point = [[touches anyObject] locationInView:_displayView];
+  NSLog(@"%@ %@", NSStringFromCGPoint(point1), NSStringFromCGPoint(point));
+  CALayer *layer = [_displayView.layer hitTest:point];
+  if ( layer==_blueLayer ) {
+    NSLog(@"blue layer touched");
+  } else if ( layer==_greenLayer ) {
+    NSLog(@"green layer touched");
+  }
 }
 
 - (void)touchesMoved:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
@@ -70,7 +86,14 @@ void bubble_sort(int arr[], int len) {
 - (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
 {
   //[super touchesEnded:touches withEvent:event];
-  NSLog(@"vc touch ended");
+  //NSLog(@"vc touch ended");
+}
+
+- (void)viewWillLayoutSubviews
+{
+  [super viewWillLayoutSubviews];
+
+  _displayView.frame = CGRectMake(40, 40, 150, 150);
 }
 
 
@@ -78,23 +101,118 @@ void bubble_sort(int arr[], int len) {
 {
   [super viewDidLoad];
 
-  int arr[] = { 3, 5, 1, 4, 2 };
-  bubble_sort(arr, 5);
+//  {
+//    CALayer *layer = [CALayer layer];
+//    layer.frame = CGRectMake(10, 10, 280, 280);
+//    layer.backgroundColor = [[UIColor greenColor] CGColor];
+//    [_displayView.layer addSublayer:layer];
+//    _greenLayer = layer;
+//  }
+  {
+//    CALayer *layer = [CALayer layer];
+//    layer.frame = CGRectMake(50, 50, 100, 100);
+//    //layer.backgroundColor = [[UIColor blueColor] CGColor];
+//    [_displayView.layer addSublayer:layer];
+//    _blueLayer = layer;
+//
+//    UIImage *image = [UIImage imageNamed:@"line"];
+//    _blueLayer.contents = (__bridge id)[image CGImage];
+//
+//    _blueLayer.shadowColor = [[UIColor redColor] CGColor];
+//    _blueLayer.shadowOpacity = 1.0;
+//    _blueLayer.shadowOffset = CGSizeMake(-2.0, 10.0);
+//    _blueLayer.shadowRadius = 10.0;
+  }
+
+//  self.view.backgroundColor = [UIColor whiteColor];
+//  _displayView.backgroundColor = [UIColor clearColor];
+
+//  UIImage *image = [UIImage imageNamed:@"mickey"];
+//  _displayView.layer.contents = (__bridge id)[image CGImage];
+
+//  _displayView.layer.shadowColor = [[UIColor redColor] CGColor];
+//  _displayView.layer.shadowOpacity = 1.0;
+//  _displayView.layer.shadowOffset = CGSizeMake(-2.0, 10.0);
+//  _displayView.layer.shadowRadius = 10.0;
+
+//  UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+//  [self.view addSubview:button];
+//  button.frame = CGRectMake(50, 50, 80, 40);
+//  [button setTitle:@"ASDF" forState:UIControlStateNormal];
+//  button.backgroundColor = [UIColor whiteColor];
+//  button.titleLabel.backgroundColor = [UIColor whiteColor];
+//  button.alpha = 0.5;
+//  button.layer.shouldRasterize = NO;
+
+  UIView *boxView = [[UIView alloc] init];
+  boxView.backgroundColor = [UIColor whiteColor];
+  boxView.frame = CGRectMake(50, 100, 150, 50);
+  [self.view addSubview:boxView];
+
+  UILabel *label = [[UILabel alloc] init];
+  label.frame = CGRectMake(30, 10, 90, 30);
+  label.backgroundColor = [UIColor whiteColor];
+  [boxView addSubview:label];
+  label.textColor = [UIColor blackColor];
+  label.textAlignment = NSTextAlignmentCenter;
+  label.text = @"ASDF";
+
+  boxView.alpha = 0.5;
+  NSLog(@"%d", boxView.layer.shouldRasterize);
 
 
-  GPResponderView *v1 = [[GPResponderView alloc] init];
-  v1.backgroundColor = [UIColor redColor];
-  v1.name = @"111";
-  [self.view addSubview:v1];
-  v1.frame = CGRectMake(50, 200, 200, 200);
+//  CALayer *maskLayer = [CALayer layer];
+//  maskLayer.frame = _displayView.bounds;
+//  UIImage *maskImage = [UIImage imageNamed:@"mask_blue"];
+//  maskLayer.contents = (__bridge id)maskImage.CGImage;
+//  maskLayer.contentsGravity = kCAGravityResize;
+//  _displayView.layer.mask = maskLayer;
+//
+//  _displayView.layer.borderWidth = 1.0;
+//  _displayView.layer.borderColor = [[UIColor redColor] CGColor];
+//
+//  maskLayer.borderWidth = 1.0;
+//  maskLayer.borderColor = [[UIColor greenColor] CGColor];
 
-  GPResponderView *v2 = [[GPResponderView alloc] init];
-  v2.backgroundColor = [UIColor greenColor];
-  v2.name = @"222";
-  [v1 addSubview:v2];
-  v2.frame = CGRectMake(0, 100, 100, 100);
 
-  NSLog(@"SEL = %s", @selector(viewDidAppear:));
+
+
+//  _displayView.layer.cornerRadius = 10.0;
+//  _displayView.layer.masksToBounds = YES;
+
+//  UIView *redView = [[UIView alloc] init];
+//  redView.backgroundColor = [UIColor redColor];
+//  redView.frame = CGRectMake(0, 0, 50, 50);
+//  [_displayView addSubview:redView];
+//
+//  _displayView.layer.cornerRadius = 10.0;
+//  //_displayView.layer.masksToBounds = YES;
+
+//  _displayView.layer.borderColor = [[UIColor redColor] CGColor];
+//  _displayView.layer.borderWidth = 10.0;
+
+
+
+
+
+
+//  int arr[] = { 3, 5, 1, 4, 2 };
+//  bubble_sort(arr, 5);
+
+
+//  GPResponderView *v1 = [[GPResponderView alloc] init];
+//  v1.backgroundColor = [UIColor redColor];
+//  v1.name = @"111";
+//  [self.view addSubview:v1];
+//  v1.frame = CGRectMake(50, 50, 100, 100);
+//
+//  GPResponderView *v2 = [[GPResponderView alloc] init];
+//  v2.backgroundColor = [UIColor greenColor];
+//  v2.name = @"222";
+//  [self.view addSubview:v2];
+//  v2.frame = CGRectMake(100, 100, 100, 100);
+//
+//  v1.layer.zPosition = 2.0;
 
 //  self.view.layer.cornerRadius = 5;
 
@@ -170,13 +288,30 @@ void bubble_sort(int arr[], int len) {
 //  }
 
   {
-    UIImage *image1 = [UIImage imageNamed:@"ic_b"];
-    NSLog(@"%@ %f", NSStringFromCGSize(image1.size), image1.scale);
-    _avatarView.layer.contents = (__bridge id)[image1 CGImage];
-    _avatarView.layer.masksToBounds = YES;
-    _avatarView.layer.contentsScale = image1.scale;
-    _avatarView.layer.contentsGravity = kCAGravityResizeAspect;
-    _avatarView.layer.contentsRect = CGRectMake(0.5, 0, 0.5, 0.5);
+//    UIImage *image = [UIImage imageNamed:@"mickey"];
+//    _displayView.layer.contents = (__bridge id)[image CGImage];
+
+//    // 类似于 UIView 的 clipsToBounds 属性
+//    _displayView.layer.masksToBounds = YES;
+//
+//    // 类似于 UIView 的 contentMode 属性
+//    _displayView.layer.contentsGravity = kCAGravityCenter;
+//
+//    // 定义了寄宿图的像素尺寸和视图大小的比例，默认情况下它是一个值为 1.0 的浮点数，它其实属于
+//    // 支持高分辨率屏幕机制的一部分。如果设置为 1.0，将会以每个点 1 个像素绘制图片；如果设置
+//    // 为 2.0，则会以每个点 2 个像素绘制图片，这就是我们熟知的 Retina 屏幕。
+//    // 如果 contentsGravity 有拉伸效果，会发现这个属性对展示没有任何影响，因为图片已经被拉伸
+//    // 以适应图层的边界。
+//    // 当用代码的方式来处理寄宿图的时候，一定要手动的设置此属性，否则，图片在 Retina 设备上就不
+//    // 能正确显示。
+//    _displayView.layer.contentsScale = image.scale;
+//
+//    // 此属性允许我们在图层边框里显示寄宿图的一个子域。多张图片可以拼合成一张大图并一次性载入，相
+//    // 比多次载入不同的图片，这样做能够带来很多方面的好处：内存使用、载入时间、渲染性能等等。
+//    _displayView.layer.contentsRect = CGRectMake(0, 0, 0.3, 0.3);
+//
+//    // 定义了图层中的可拉伸区域和一个固定的边框
+//    _displayView.layer.contentsCenter = CGRectMake(0.25, 0.25, 0.5, 0.5);
   }
 
 //  NSObject *obj = [[NSObject alloc] init];
