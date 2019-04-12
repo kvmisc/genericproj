@@ -1,14 +1,14 @@
 //
-//  XYZCVSpringView.m
+//  XYZCoverSpringView.m
 //  GenericProj
 //
 //  Created by Haiping Wu on 2019/4/12.
 //  Copyright © 2019 firefly.com. All rights reserved.
 //
 
-#import "XYZCVSpringView.h"
+#import "XYZCoverSpringView.h"
 
-@implementation XYZCVSpringView
+@implementation XYZCoverSpringView
 
 - (id)init
 {
@@ -28,17 +28,16 @@
                           100);
   self.layer.transform = CATransform3DMakeScale(0.3, 0.3, 1.0);
 }
-
 - (void)updateStateFromAnimation:(BOOL)completion
 {
   if ( completion ) {
-    if ( self.coverView.status==XYZCVViewStatusShowing ) {
+    if ( self.coverView.status==XYZCoverViewStatusShowing ) {
       self.layer.transform = CATransform3DIdentity;
-    } else if ( self.coverView.status==XYZCVViewStatusHiding ) {
+    } else if ( self.coverView.status==XYZCoverViewStatusHiding ) {
       self.layer.transform = CATransform3DMakeScale(0.3, 0.3, 1.0);
     }
   } else {
-    if ( (self.coverView.status==XYZCVViewStatusShowing) || (self.coverView.status==XYZCVViewStatusHiding) ) {
+    if ( (self.coverView.status==XYZCoverViewStatusShowing) || (self.coverView.status==XYZCoverViewStatusHiding) ) {
       if ( self.layer.presentationLayer ) {
         self.layer.transform = self.layer.presentationLayer.transform;
       }

@@ -19,10 +19,26 @@
 
 @implementation XYZHUDView
 
+- (id)initWithFrame:(CGRect)frame
+{
+  self = [super initWithFrame:frame];
+  if (self) {
+    [self setup];
+  }
+  return self;
+}
+
+- (id)initWithCoder:(NSCoder *)coder
+{
+  self = [super initWithCoder:coder];
+  if (self) {
+    [self setup];
+  }
+  return self;
+}
+
 - (void)setup
 {
-  [super setup];
-
   self.backgroundColor = [UIColor clearColor];
   self.alpha = 0.0;
 
@@ -161,29 +177,41 @@
   [super prepareForView:inView viewport:viewport];
 
   @weakify(self);
-
-  self.showAnimation = ^(CGFloat progress) {
-    @strongify(self);
-    CGFloat value = self.beginAlpha + progress * (1.0-self.beginAlpha);
-    self.alpha = value;
-  };
-
-  self.hideAnimation = ^(CGFloat progress) {
-    @strongify(self);
-    CGFloat value = self.beginAlpha + progress * (0.0-self.beginAlpha);
-    self.alpha = value;
-  };
-
   [self mas_remakeConstraints:^(MASConstraintMaker *make) {
     @strongify(self);
     make.center.equalTo(self.superview);
     make.width.lessThanOrEqualTo(self.superview).offset(-40.0);
   }];
 }
-
-- (void)prepareForAnimation
+- (void)updateStateFromAnimation:(BOOL)completion
 {
-  _beginAlpha = self.alpha;
+  if ( completion ) {
+    if ( self.coverView.status==XYZCoverViewStatusShowing ) {
+      self.layer.opacity = 1.0;
+    } else if ( self.coverView.status==XYZCoverViewStatusHiding ) {
+      self.layer.opacity = 0.0;
+    }
+  } else {
+    if ( (self.coverView.status==XYZCoverViewStatusShowing) || (self.coverView.status==XYZCoverViewStatusHiding) ) {
+      if ( self.layer.presentationLayer ) {
+        self.layer.opacity = self.layer.presentationLayer.opacity;
+      }
+    }
+  }
+}
+- (CAAnimation *)showAnimation
+{
+  CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"opacity"];
+  animation.fromValue = @(self.layer.opacity);
+  animation.toValue = @(1.0);
+  return animation;
+}
+- (CAAnimation *)hideAnimation
+{
+  CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"opacity"];
+  animation.fromValue = @(self.layer.opacity);
+  animation.toValue = @(0.0);
+  return animation;
 }
 
 @end

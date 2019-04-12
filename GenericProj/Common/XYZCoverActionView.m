@@ -1,14 +1,14 @@
 //
-//  XYZCVActionView.m
+//  XYZCoverActionView.m
 //  GenericProj
 //
 //  Created by Haiping Wu on 2019/4/12.
 //  Copyright © 2019 firefly.com. All rights reserved.
 //
 
-#import "XYZCVActionView.h"
+#import "XYZCoverActionView.h"
 
-@implementation XYZCVActionView
+@implementation XYZCoverActionView
 
 - (id)init
 {
@@ -27,19 +27,18 @@
                           self.coverView.bounds.size.width,
                           100);
 }
-
 - (void)updateStateFromAnimation:(BOOL)completion
 {
   if ( completion ) {
-    if ( self.coverView.status==XYZCVViewStatusShowing ) {
+    if ( self.coverView.status==XYZCoverViewStatusShowing ) {
       self.layer.position = CGPointMake(floor(self.coverView.bounds.size.width/2.0),
                                         floor(self.coverView.bounds.size.height-50.0));
-    } else if ( self.coverView.status==XYZCVViewStatusHiding ) {
+    } else if ( self.coverView.status==XYZCoverViewStatusHiding ) {
       self.layer.position = CGPointMake(floor(self.coverView.bounds.size.width/2.0),
                                         floor(self.coverView.bounds.size.height+50.0));
     }
   } else {
-    if ( (self.coverView.status==XYZCVViewStatusShowing) || (self.coverView.status==XYZCVViewStatusHiding) ) {
+    if ( (self.coverView.status==XYZCoverViewStatusShowing) || (self.coverView.status==XYZCoverViewStatusHiding) ) {
       if ( self.layer.presentationLayer ) {
         self.layer.position = self.layer.presentationLayer.position;
       }

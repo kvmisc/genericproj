@@ -1,14 +1,14 @@
 //
-//  XYZCVAlertView.m
+//  XYZCoverAlertView.m
 //  GenericProj
 //
 //  Created by Haiping Wu on 2019/4/12.
 //  Copyright © 2019 firefly.com. All rights reserved.
 //
 
-#import "XYZCVAlertView.h"
+#import "XYZCoverAlertView.h"
 
-@implementation XYZCVAlertView
+@implementation XYZCoverAlertView
 
 - (id)init
 {
@@ -28,17 +28,16 @@
                           self.coverView.bounds.size.width-2*50,
                           100);
 }
-
 - (void)updateStateFromAnimation:(BOOL)completion
 {
   if ( completion ) {
-    if ( self.coverView.status==XYZCVViewStatusShowing ) {
+    if ( self.coverView.status==XYZCoverViewStatusShowing ) {
       self.layer.opacity = 1.0;
-    } else if ( self.coverView.status==XYZCVViewStatusHiding ) {
+    } else if ( self.coverView.status==XYZCoverViewStatusHiding ) {
       self.layer.opacity = 0.0;
     }
   } else {
-    if ( (self.coverView.status==XYZCVViewStatusShowing) || (self.coverView.status==XYZCVViewStatusHiding) ) {
+    if ( (self.coverView.status==XYZCoverViewStatusShowing) || (self.coverView.status==XYZCoverViewStatusHiding) ) {
       if ( self.layer.presentationLayer ) {
         self.layer.opacity = self.layer.presentationLayer.opacity;
       }

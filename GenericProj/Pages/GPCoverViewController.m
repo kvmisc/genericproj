@@ -7,14 +7,12 @@
 //
 
 #import "GPCoverViewController.h"
-#import "GPSourceView.h"
-
-#import "XYZAnimation.h"
-
-#import "INTUEasingFunctions.h"
+#import "../Common/XYZCoverAlertView.h"
+#import "../Common/XYZCoverActionView.h"
+#import "../Common/XYZCoverSpringView.h"
 
 @implementation GPCoverViewController {
-  GPSourceView *_sourceView;
+  XYZCoverContentView *_sourceView;
 
 //  CADisplayLink *_displayLink;
 //  XYZAnimation *_animation;
@@ -43,13 +41,12 @@
 {
   //[_sourceView removeFromSuperview];
 
-  GPSourceView *sourceView = [[GPSourceView alloc] init];
-  [sourceView prepareForView:_containerView viewport:nil];
-  sourceView.coverView.completion = ^{
+  _sourceView = [[XYZCoverActionView alloc] init];
+  [_sourceView prepareForView:_containerView viewport:nil];
+  _sourceView.coverView.completion = ^{
     NSLog(@"xxx: cover done");
   };
-  [sourceView.coverView show:YES];
-  _sourceView = sourceView;
+  [_sourceView.coverView show:YES];
   //[sourceView.coverView hide:YES afterDelay:5.0];
 
 

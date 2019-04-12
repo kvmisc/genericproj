@@ -1,5 +1,5 @@
 //
-//  XYZCVActionView.h
+//  XYZCoverActionView.h
 //  GenericProj
 //
 //  Created by Haiping Wu on 2019/4/12.
@@ -7,8 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "XYZCVView.h"
+#import "XYZCoverView.h"
 
-@interface XYZCVActionView : XYZCVContentView
+@interface XYZCoverActionView : XYZCoverContentView
 
 @end

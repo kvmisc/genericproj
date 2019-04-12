@@ -91,9 +91,8 @@ static UIWindow *LastVisibleTopmostWindow = nil;
   XYZCoverView *coverView = [self HUDInView:inView];
   XYZHUDView *hud = nil;
   if ( coverView ) {
-    [coverView prepareForPresent];
-    [coverView layoutForViewport:viewport];
     hud = (XYZHUDView *)(coverView.contentView);
+    [hud prepareForView:inView viewport:viewport];
   } else {
     hud = [[XYZHUDView alloc] init];
     [hud prepareForView:inView viewport:viewport];

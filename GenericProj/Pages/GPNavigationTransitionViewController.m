@@ -8,17 +8,17 @@
 
 #import "GPNavigationTransitionViewController.h"
 #import "GPKeyframeAnimationView.h"
-#import "../Common/XYZCVAlertView.h"
-#import "../Common/XYZCVActionView.h"
-#import "../Common/XYZCVSpringView.h"
+#import "../Common/XYZCoverAlertView.h"
+#import "../Common/XYZCoverActionView.h"
+#import "../Common/XYZCoverSpringView.h"
 
 @interface GPNavigationTransitionViewController () <
     CAAnimationDelegate
 >
 @property (nonatomic, strong) GPKeyframeAnimationView *animationView;
 @property (nonatomic, strong) UIView *redView;
-@property (nonatomic, strong) XYZCVAlertView *alertView;
-@property (nonatomic, strong) XYZCVActionView *actionView;
+@property (nonatomic, strong) XYZCoverAlertView *alertView;
+@property (nonatomic, strong) XYZCoverActionView *actionView;
 @end
 
 @implementation GPNavigationTransitionViewController
@@ -51,7 +51,7 @@
 //
 //  NSLog(@"PRE: %@", _redView.layer.presentationLayer);
 
-//  _alertView = [[XYZCVAlertView alloc] init];
+//  _alertView = [[XYZCoverAlertView alloc] init];
 //  [_alertView prepareForView:self.view viewport:nil];
 //  [_alertView.coverView show:YES];
 }
@@ -74,17 +74,17 @@
 //
 //  NSLog(@"%@ %@ %@", NSStringFromCGRect(_redView.frame), NSStringFromCGPoint(_redView.layer.position), NSStringFromCGPoint(_redView.layer.presentationLayer.position));
 
-//  _alertView = [[XYZCVAlertView alloc] init];
+//  _alertView = [[XYZCoverAlertView alloc] init];
 //  [_alertView prepareForView:self.view viewport:nil];
 //  [_alertView.coverView show:YES];
 //  [_alertView.coverView hide:YES afterDelay:3.0];
 
-  _actionView = [[XYZCVActionView alloc] init];
+  _actionView = [[XYZCoverActionView alloc] init];
   [_actionView prepareForView:self.view viewport:nil];
   [_actionView.coverView show:YES];
 //  [_actionView.coverView hide:YES afterDelay:3.0];
 
-//  XYZCVSpringView *springView = [[XYZCVSpringView alloc] init];
+//  XYZCoverSpringView *springView = [[XYZCoverSpringView alloc] init];
 //  [springView prepareForView:self.view viewport:nil];
 //  [springView.coverView show:YES];
 }

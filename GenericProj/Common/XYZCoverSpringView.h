@@ -1,5 +1,5 @@
 //
-//  XYZCVSpringView.h
+//  XYZCoverSpringView.h
 //  GenericProj
 //
 //  Created by Haiping Wu on 2019/4/12.
@@ -7,8 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "XYZCVView.h"
+#import "XYZCoverView.h"
 
-@interface XYZCVSpringView : XYZCVContentView
+@interface XYZCoverSpringView : XYZCoverContentView
 
 @end

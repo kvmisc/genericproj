@@ -60,7 +60,7 @@
   [self addTitle:@"CollectionView" class:[GPCollectionViewController class]];
   [self addTitle:@"NavigationTransition" class:[GPNavigationTransitionViewController class]];
 
-  _defaultPage = @"NavigationTransition";
+//  _defaultPage = @"Message";
 }
 
 - (void)addTitle:(NSString *)title class:(Class)cls

@@ -1,5 +1,5 @@
 //
-//  XYZCVContentView.h
+//  XYZCoverContentView.h
 //  GenericProj
 //
 //  Created by Haiping Wu on 2019/4/12.
@@ -8,13 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@class XYZCVView;
+@class XYZCoverView;
 
 
-@interface XYZCVContentView : UIView
+@interface XYZCoverContentView : UIView
 
-@property (nonatomic, weak, readonly) XYZCVView *coverView;
-
+@property (nonatomic, weak, readonly) XYZCoverView *coverView;
 
 - (void)prepareForView:(UIView *)inView viewport:(UIView *)viewport;
 

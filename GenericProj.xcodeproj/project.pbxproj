@@ -56,7 +56,6 @@
 		0AAB27201FDFC5B800BD2451 /* GPCoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AAB271E1FDFC5B800BD2451 /* GPCoverViewController.m */; };
 		0AAB27211FDFC5B800BD2451 /* GPCoverViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0AAB271F1FDFC5B800BD2451 /* GPCoverViewController.xib */; };
 		0AD420D11E78CF8900EC9EF7 /* GPMessageContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AD420D01E78CF8900EC9EF7 /* GPMessageContentViewController.m */; };
-		0AD8DF381FE0C35B0092FF6D /* GPSourceView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AD8DF371FE0C35B0092FF6D /* GPSourceView.m */; };
 		0AEF637F1D5B0BB90081D6B7 /* sql_main in Resources */ = {isa = PBXBuildFile; fileRef = 0AEF637E1D5B0BB90081D6B7 /* sql_main */; };
 		0AF669C42053E8FC00712772 /* XYZHTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AF669C32053E8FC00712772 /* XYZHTTPRequest.m */; };
 		0AFEA2261E14EE2A00F0C4C6 /* XYZBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AFEA2251E14EE2A00F0C4C6 /* XYZBaseViewController.m */; };
@@ -79,12 +78,10 @@
 		BB27027B225DD1CD00F68CAF /* mask_blue@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BB270278225DD1CC00F68CAF /* mask_blue@2x.png */; };
 		BB476E7F22601D2A009A5AE1 /* XYZCoverView.m in Sources */ = {isa = PBXBuildFile; fileRef = BB476E7E22601D2A009A5AE1 /* XYZCoverView.m */; };
 		BB476E8222601D6B009A5AE1 /* XYZCoverContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = BB476E8122601D6B009A5AE1 /* XYZCoverContentView.m */; };
-		BB476E8822606E3C009A5AE1 /* XYZCVAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = BB476E8722606E3C009A5AE1 /* XYZCVAlertView.m */; };
-		BB476E8B22606E54009A5AE1 /* XYZCVActionView.m in Sources */ = {isa = PBXBuildFile; fileRef = BB476E8A22606E54009A5AE1 /* XYZCVActionView.m */; };
-		BB476E8F2260745A009A5AE1 /* XYZCVSpringView.m in Sources */ = {isa = PBXBuildFile; fileRef = BB476E8E2260745A009A5AE1 /* XYZCVSpringView.m */; };
+		BB476E8822606E3C009A5AE1 /* XYZCoverAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = BB476E8722606E3C009A5AE1 /* XYZCoverAlertView.m */; };
+		BB476E8B22606E54009A5AE1 /* XYZCoverActionView.m in Sources */ = {isa = PBXBuildFile; fileRef = BB476E8A22606E54009A5AE1 /* XYZCoverActionView.m */; };
+		BB476E8F2260745A009A5AE1 /* XYZCoverSpringView.m in Sources */ = {isa = PBXBuildFile; fileRef = BB476E8E2260745A009A5AE1 /* XYZCoverSpringView.m */; };
 		BB527F0A225C8CC400B37621 /* mickey@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BB527F09225C8CC400B37621 /* mickey@2x.png */; };
-		BB78B337206C9B11000CEE6E /* XYZAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = BB78B336206C9B11000CEE6E /* XYZAnimation.m */; };
-		BB78B33A206CA40C000CEE6E /* INTUEasingFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = BB78B338206CA40B000CEE6E /* INTUEasingFunctions.m */; };
 		BB7EDE52208087C600B44D0C /* XYZBaseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BB7EDE51208087C600B44D0C /* XYZBaseTableViewCell.m */; };
 		BB7EDE5620808C9900B44D0C /* GPTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB7EDE5420808C9900B44D0C /* GPTableViewController.m */; };
 		BB7EDE5720808C9900B44D0C /* GPTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB7EDE5520808C9900B44D0C /* GPTableViewController.xib */; };
@@ -212,8 +209,6 @@
 		0AAB271F1FDFC5B800BD2451 /* GPCoverViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GPCoverViewController.xib; sourceTree = "<group>"; };
 		0AD420CF1E78CF8900EC9EF7 /* GPMessageContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPMessageContentViewController.h; sourceTree = "<group>"; };
 		0AD420D01E78CF8900EC9EF7 /* GPMessageContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPMessageContentViewController.m; sourceTree = "<group>"; };
-		0AD8DF361FE0C35B0092FF6D /* GPSourceView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GPSourceView.h; sourceTree = "<group>"; };
-		0AD8DF371FE0C35B0092FF6D /* GPSourceView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GPSourceView.m; sourceTree = "<group>"; };
 		0AEF637E1D5B0BB90081D6B7 /* sql_main */ = {isa = PBXFileReference; lastKnownFileType = folder; path = sql_main; sourceTree = "<group>"; };
 		0AF669C22053E8FC00712772 /* XYZHTTPRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYZHTTPRequest.h; sourceTree = "<group>"; };
 		0AF669C32053E8FC00712772 /* XYZHTTPRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XYZHTTPRequest.m; sourceTree = "<group>"; };
@@ -260,17 +255,13 @@
 		BB476E7E22601D2A009A5AE1 /* XYZCoverView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XYZCoverView.m; sourceTree = "<group>"; };
 		BB476E8022601D6B009A5AE1 /* XYZCoverContentView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYZCoverContentView.h; sourceTree = "<group>"; };
 		BB476E8122601D6B009A5AE1 /* XYZCoverContentView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XYZCoverContentView.m; sourceTree = "<group>"; };
-		BB476E8622606E3C009A5AE1 /* XYZCVAlertView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYZCVAlertView.h; sourceTree = "<group>"; };
-		BB476E8722606E3C009A5AE1 /* XYZCVAlertView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XYZCVAlertView.m; sourceTree = "<group>"; };
-		BB476E8922606E54009A5AE1 /* XYZCVActionView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYZCVActionView.h; sourceTree = "<group>"; };
-		BB476E8A22606E54009A5AE1 /* XYZCVActionView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XYZCVActionView.m; sourceTree = "<group>"; };
-		BB476E8D2260745A009A5AE1 /* XYZCVSpringView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYZCVSpringView.h; sourceTree = "<group>"; };
-		BB476E8E2260745A009A5AE1 /* XYZCVSpringView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XYZCVSpringView.m; sourceTree = "<group>"; };
+		BB476E8622606E3C009A5AE1 /* XYZCoverAlertView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYZCoverAlertView.h; sourceTree = "<group>"; };
+		BB476E8722606E3C009A5AE1 /* XYZCoverAlertView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XYZCoverAlertView.m; sourceTree = "<group>"; };
+		BB476E8922606E54009A5AE1 /* XYZCoverActionView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYZCoverActionView.h; sourceTree = "<group>"; };
+		BB476E8A22606E54009A5AE1 /* XYZCoverActionView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XYZCoverActionView.m; sourceTree = "<group>"; };
+		BB476E8D2260745A009A5AE1 /* XYZCoverSpringView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYZCoverSpringView.h; sourceTree = "<group>"; };
+		BB476E8E2260745A009A5AE1 /* XYZCoverSpringView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XYZCoverSpringView.m; sourceTree = "<group>"; };
 		BB527F09225C8CC400B37621 /* mickey@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mickey@2x.png"; sourceTree = "<group>"; };
-		BB78B335206C9B11000CEE6E /* XYZAnimation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYZAnimation.h; sourceTree = "<group>"; };
-		BB78B336206C9B11000CEE6E /* XYZAnimation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XYZAnimation.m; sourceTree = "<group>"; };
-		BB78B338206CA40B000CEE6E /* INTUEasingFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = INTUEasingFunctions.m; sourceTree = "<group>"; };
-		BB78B339206CA40C000CEE6E /* INTUEasingFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = INTUEasingFunctions.h; sourceTree = "<group>"; };
 		BB7EDE50208087C600B44D0C /* XYZBaseTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYZBaseTableViewCell.h; sourceTree = "<group>"; };
 		BB7EDE51208087C600B44D0C /* XYZBaseTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XYZBaseTableViewCell.m; sourceTree = "<group>"; };
 		BB7EDE5320808C9900B44D0C /* GPTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GPTableViewController.h; sourceTree = "<group>"; };
@@ -687,12 +678,6 @@
 				0AAB271D1FDFC5B800BD2451 /* GPCoverViewController.h */,
 				0AAB271E1FDFC5B800BD2451 /* GPCoverViewController.m */,
 				0AAB271F1FDFC5B800BD2451 /* GPCoverViewController.xib */,
-				BB78B335206C9B11000CEE6E /* XYZAnimation.h */,
-				BB78B336206C9B11000CEE6E /* XYZAnimation.m */,
-				BB78B339206CA40C000CEE6E /* INTUEasingFunctions.h */,
-				BB78B338206CA40B000CEE6E /* INTUEasingFunctions.m */,
-				0AD8DF361FE0C35B0092FF6D /* GPSourceView.h */,
-				0AD8DF371FE0C35B0092FF6D /* GPSourceView.m */,
 			);
 			name = Cover;
 			sourceTree = "<group>";
@@ -775,12 +760,12 @@
 		BB476E8C2260741C009A5AE1 /* samples */ = {
 			isa = PBXGroup;
 			children = (
-				BB476E8622606E3C009A5AE1 /* XYZCVAlertView.h */,
-				BB476E8722606E3C009A5AE1 /* XYZCVAlertView.m */,
-				BB476E8922606E54009A5AE1 /* XYZCVActionView.h */,
-				BB476E8A22606E54009A5AE1 /* XYZCVActionView.m */,
-				BB476E8D2260745A009A5AE1 /* XYZCVSpringView.h */,
-				BB476E8E2260745A009A5AE1 /* XYZCVSpringView.m */,
+				BB476E8622606E3C009A5AE1 /* XYZCoverAlertView.h */,
+				BB476E8722606E3C009A5AE1 /* XYZCoverAlertView.m */,
+				BB476E8922606E54009A5AE1 /* XYZCoverActionView.h */,
+				BB476E8A22606E54009A5AE1 /* XYZCoverActionView.m */,
+				BB476E8D2260745A009A5AE1 /* XYZCoverSpringView.h */,
+				BB476E8E2260745A009A5AE1 /* XYZCoverSpringView.m */,
 			);
 			name = samples;
 			sourceTree = "<group>";
@@ -1084,7 +1069,7 @@
 				BB02404C225B3885006A0F40 /* GPPopAnimator.m in Sources */,
 				0AA817BE1D61B59B009F831A /* XYZGlobal.m in Sources */,
 				BB7EDE52208087C600B44D0C /* XYZBaseTableViewCell.m in Sources */,
-				BB476E8B22606E54009A5AE1 /* XYZCVActionView.m in Sources */,
+				BB476E8B22606E54009A5AE1 /* XYZCoverActionView.m in Sources */,
 				BB04B95D2235F923005E54C4 /* GPCollectionViewCell.m in Sources */,
 				BBDC2647224CABB9000394B0 /* GPResponderView.m in Sources */,
 				0A883B4D1F623D8200ED33EB /* UIButtonExtentions.m in Sources */,
@@ -1092,13 +1077,11 @@
 				0A883B411F6237AC00ED33EB /* NSObjectExtentions.m in Sources */,
 				0A883B4A1F623C5400ED33EB /* UITextXXXMaxLength.m in Sources */,
 				0A7AE5221D58576700B585D9 /* XYZLogger.m in Sources */,
-				0AD8DF381FE0C35B0092FF6D /* GPSourceView.m in Sources */,
 				BB04B962223606BA005E54C4 /* GPCollectionReusableView.m in Sources */,
 				0A3D07E01F67B82E00F19DF3 /* GPAspectViewController.m in Sources */,
 				BBA113002256E98B00678404 /* GPRedrawCCCView.m in Sources */,
 				BB8F976D2050DD45008A8CAD /* GPRuntimeTest.m in Sources */,
 				0A883B441F62380800ED33EB /* UIColorExtentions.m in Sources */,
-				BB78B337206C9B11000CEE6E /* XYZAnimation.m in Sources */,
 				0A8C61A41D5B97DD000D882E /* XYZCancelableBlock.m in Sources */,
 				BBA112FA2256E96900678404 /* GPRedrawAAAView.m in Sources */,
 				BB145D56207DC8110087D55F /* XYZWebViewController.m in Sources */,
@@ -1125,9 +1108,8 @@
 				BBE77A712236596A007C7AA6 /* XYZNavigationController.m in Sources */,
 				BBFFBA8A2178417F00FB8159 /* XYZSampleObject.m in Sources */,
 				BBD5C47B202B02330093AE9E /* UINavigationControllerExtentions.m in Sources */,
-				BB476E8822606E3C009A5AE1 /* XYZCVAlertView.m in Sources */,
+				BB476E8822606E3C009A5AE1 /* XYZCoverAlertView.m in Sources */,
 				0A2BD38B1D5D5CEA009D1CEF /* XYZBaseView.m in Sources */,
-				BB78B33A206CA40C000CEE6E /* INTUEasingFunctions.m in Sources */,
 				BB7EDE5620808C9900B44D0C /* GPTableViewController.m in Sources */,
 				BB02404F225B3B24006A0F40 /* GPKeyframeAnimationView.m in Sources */,
 				BBBDFC672177090F00936776 /* XYZPaymentManager.m in Sources */,
@@ -1136,7 +1118,7 @@
 				BBA112F52256E8A400678404 /* GPRedrawViewController.m in Sources */,
 				BBB32D9820DCE980008B3DA4 /* NSDictionaryParameter.m in Sources */,
 				0A7AE5071D582C7A00B585D9 /* GPRootViewController.m in Sources */,
-				BB476E8F2260745A009A5AE1 /* XYZCVSpringView.m in Sources */,
+				BB476E8F2260745A009A5AE1 /* XYZCoverSpringView.m in Sources */,
 				0A1D15201FDD6CC200BDDF91 /* UITableViewCellExtentions.m in Sources */,
 				BBEDB5D922486CB200E55D89 /* GPPerson.m in Sources */,
 				BB024044225B3764006A0F40 /* GPNavigationTransitionViewController.m in Sources */,

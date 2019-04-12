@@ -1,5 +1,5 @@
 //
-//  XYZCVView.h
+//  XYZCoverView.h
 //  GenericProj
 //
 //  Created by Haiping Wu on 2019/4/12.
@@ -8,24 +8,24 @@
 
 #import <UIKit/UIKit.h>
 
-#import "XYZCVContentView.h"
+#import "XYZCoverContentView.h"
 
 typedef enum : NSUInteger {
-  XYZCVViewStatusUnknown = 0,
-  XYZCVViewStatusShowing,
-  XYZCVViewStatusShowFailed,
-  XYZCVViewStatusPresented,
-  XYZCVViewStatusHiding,
-  XYZCVViewStatusHideFailed,
-} XYZCVViewStatus;
+  XYZCoverViewStatusUnknown = 0,
+  XYZCoverViewStatusShowing,
+  XYZCoverViewStatusShowFailed,
+  XYZCoverViewStatusPresented,
+  XYZCoverViewStatusHiding,
+  XYZCoverViewStatusHideFailed,
+} XYZCoverViewStatus;
 
-@interface XYZCVView : UIView
+@interface XYZCoverView : UIView
 
 @property (nonatomic, strong, readonly) UIImageView *backgroundView;
 
-@property (nonatomic, strong, readonly) XYZCVContentView *contentView;
+@property (nonatomic, strong) XYZCoverContentView *contentView;
 
-@property (nonatomic, assign, readonly) XYZCVViewStatus status;
+@property (nonatomic, assign) XYZCoverViewStatus status;
 
 // 点击灰色的遮罩隐藏此视图，默认 YES
 @property (nonatomic, assign) BOOL touchBackgroundToHide;
@@ -33,18 +33,19 @@ typedef enum : NSUInteger {
 @property (nonatomic, copy) void (^completion)(void);
 
 
-- (void)cancelDelayHide;
-
-- (void)updateStateFromAnimation:(BOOL)completion;
-
-- (void)removeAllAnimations;
-
-- (void)layoutForViewport:(UIView *)viewport;
-
-- (void)addContentView:(XYZCVContentView *)contentView;
-
 - (void)show:(BOOL)animated;
 - (void)hide:(BOOL)animated;
 - (void)hide:(BOOL)animated afterDelay:(NSTimeInterval)delay;
+
+
+////////////////////////////////////////////////////////////////////////////////
+
+- (void)cancelDelayHide;
+
+// 同步自身状态，contentView 的状态不管
+// 只在显示动画或隐藏动画期间有作用，参数为 YES 时直接设置成最终状态，否则同步动画的状态
+- (void)updateStateFromAnimation:(BOOL)completion;
+
+- (void)removeAllAnimations;
 
 @end
