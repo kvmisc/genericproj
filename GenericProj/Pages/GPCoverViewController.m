@@ -7,8 +7,6 @@
 //
 
 #import "GPCoverViewController.h"
-#import "../Common/XYZCoverAlertView.h"
-#import "../Common/XYZCoverActionView.h"
 #import "../Common/XYZCoverSpringView.h"
 
 @implementation GPCoverViewController {
@@ -41,7 +39,7 @@
 {
   //[_sourceView removeFromSuperview];
 
-  _sourceView = [[XYZCoverAlertContentView alloc] init];
+  _sourceView = [[XYZCoverSpringView alloc] init];
   [_sourceView prepareForView:_containerView viewport:nil];
   _sourceView.coverView.completion = ^{
     NSLog(@"xxx: cover done");
