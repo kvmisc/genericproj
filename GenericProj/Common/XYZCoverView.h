@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 
 #import "XYZCoverContentView.h"
+#import "XYZCoverAlertContentView.h"
+#import "XYZCoverActionContentView.h"
 
 typedef enum : NSUInteger {
   XYZCoverViewStatusUnknown = 0,
