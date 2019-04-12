@@ -50,8 +50,6 @@
   CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"opacity"];
   animation.fromValue = @(self.layer.opacity);
   animation.toValue = @(1.0);
-  animation.removedOnCompletion = NO;
-  animation.fillMode = kCAFillModeForwards;
   return animation;
 }
 - (CAAnimation *)hideAnimation
@@ -59,8 +57,6 @@
   CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"opacity"];
   animation.fromValue = @(self.layer.opacity);
   animation.toValue = @(0.0);
-  animation.removedOnCompletion = NO;
-  animation.fillMode = kCAFillModeForwards;
   return animation;
 }
 

@@ -10,6 +10,7 @@
 #import "GPKeyframeAnimationView.h"
 #import "../Common/XYZCVAlertView.h"
 #import "../Common/XYZCVActionView.h"
+#import "../Common/XYZCVSpringView.h"
 
 @interface GPNavigationTransitionViewController () <
     CAAnimationDelegate
@@ -82,6 +83,10 @@
   [_actionView prepareForView:self.view viewport:nil];
   [_actionView.coverView show:YES];
 //  [_actionView.coverView hide:YES afterDelay:3.0];
+
+//  XYZCVSpringView *springView = [[XYZCVSpringView alloc] init];
+//  [springView prepareForView:self.view viewport:nil];
+//  [springView.coverView show:YES];
 }
 
 //- (void)updateViewConstraints

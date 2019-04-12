@@ -1,25 +1,26 @@
 //
-//  XYZCoverContentView.h
+//  XYZCVContentView.h
 //  GenericProj
 //
-//  Created by Kevin Wu on 13/12/2017.
-//  Copyright © 2017 firefly.com. All rights reserved.
+//  Created by Haiping Wu on 2019/4/12.
+//  Copyright © 2019 firefly.com. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-@class XYZCoverView;
+@class XYZCVView;
 
-@interface XYZCoverContentView : XYZBaseView
 
-@property (nonatomic, weak, readonly) XYZCoverView *coverView;
+@interface XYZCVContentView : UIView
 
-@property (nonatomic, copy) void (^showAnimation)(CGFloat progress);
-@property (nonatomic, copy) void (^hideAnimation)(CGFloat progress);
+@property (nonatomic, weak, readonly) XYZCVView *coverView;
+
 
 - (void)prepareForView:(UIView *)inView viewport:(UIView *)viewport;
 
-// 记录当前的状态，动画会从当前状态开始
-- (void)prepareForAnimation;
+- (void)updateStateFromAnimation:(BOOL)completion;
+
+- (CAAnimation *)showAnimation;
+- (CAAnimation *)hideAnimation;
 
 @end

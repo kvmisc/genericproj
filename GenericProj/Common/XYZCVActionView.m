@@ -53,8 +53,6 @@
   CGPoint point = CGPointMake(floor(self.coverView.bounds.size.width/2.0),
                               floor(self.coverView.bounds.size.height-50.0));
   animation.toValue = [NSValue valueWithCGPoint:point];
-  animation.removedOnCompletion = NO;
-  animation.fillMode = kCAFillModeForwards;
   return animation;
 }
 - (CAAnimation *)hideAnimation
@@ -64,8 +62,6 @@
   CGPoint point = CGPointMake(floor(self.coverView.bounds.size.width/2.0),
                               floor(self.coverView.bounds.size.height+50.0));
   animation.toValue = [NSValue valueWithCGPoint:point];
-  animation.removedOnCompletion = NO;
-  animation.fillMode = kCAFillModeForwards;
   return animation;
 }
 

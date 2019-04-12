@@ -1,23 +1,47 @@
 //
-//  XYZCoverView.m
+//  XYZCVView.m
 //  GenericProj
 //
-//  Created by Kevin Wu on 12/12/2017.
-//  Copyright © 2017 firefly.com. All rights reserved.
+//  Created by Haiping Wu on 2019/4/12.
+//  Copyright © 2019 firefly.com. All rights reserved.
 //
 
-#import "XYZCoverView.h"
+#import "XYZCVView.h"
 
 /* [CONFIGURABLE_VALUE] */
-#define DURATION_SHOW_SELF    0.08
-#define DURATION_SHOW_CONTENT 0.12
-#define DURATION_HIDE_CONTENT 0.12
-#define DURATION_HIDE_SELF    0.08
+//#define DURATION_SHOW_SELF    3.0
+//#define DURATION_SHOW_CONTENT 5.0
+//#define DURATION_HIDE_CONTENT 5.0
+//#define DURATION_HIDE_SELF    3.0
+#define DURATION_SHOW_SELF    0.12
+#define DURATION_SHOW_CONTENT 0.25
+#define DURATION_HIDE_CONTENT 0.25
+#define DURATION_HIDE_SELF    0.12
 
-@implementation XYZCoverView {
-  CADisplayLink *_displayLink;
-  NSMutableDictionary *_animation;
-  CGFloat _beginAlpha;
+@interface XYZCVView () <
+    CAAnimationDelegate
+>
+
+@end
+
+@implementation XYZCVView
+
+- (id)initWithFrame:(CGRect)frame
+{
+  self = [super initWithFrame:frame];
+  if (self) {
+    [self setup];
+  }
+  return self;
+}
+
+- (id)initWithCoder:(NSCoder *)coder
+{
+  self = [super initWithCoder:coder];
+  if (self) {
+    [self setup];
+  }
+  return self;
 }
 
 - (void)setup
@@ -59,111 +83,35 @@
 #endif
 
 
+- (void)cancelDelayHide
+{
+  [NSObject cancelPreviousPerformRequestsWithTarget:self];
+}
+
+- (void)updateStateFromAnimation:(BOOL)completion
+{
+  // 只有在有动画的时候才能将状态同步过去
+  if ( completion ) {
+    if ( _status==XYZCVViewStatusShowing ) {
+      self.layer.opacity = 1.0;
+    } else if ( _status==XYZCVViewStatusHiding ) {
+      self.layer.opacity = 0.0;
+    }
+  } else {
+    if ( (_status==XYZCVViewStatusShowing) || (_status==XYZCVViewStatusHiding) ) {
+      if ( self.layer.presentationLayer ) {
+        self.layer.opacity = self.layer.presentationLayer.opacity;
+      }
+    }
+  }
+}
 
 - (void)removeAllAnimations
 {
-  _animation = nil;
-
-  _displayLink.paused = YES;
-  [_displayLink invalidate];
-  _displayLink = nil;
-}
-
-- (void)setUpDisplayLinkIfNeeded
-{
-  if ( !_displayLink ) {
-    _displayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(tick:)];
-    _displayLink.paused = YES;
-    [_displayLink addToRunLoop:[NSRunLoop mainRunLoop] forMode:NSRunLoopCommonModes];
-  }
-  if ( _displayLink.paused ) {
-    _displayLink.paused = NO;
-  }
-}
-
-- (void)tick:(CADisplayLink *)displayLink
-{
-  if ( _status==XYZCoverViewStatusShowing ) {
-    CFTimeInterval duration1 = [[_animation objectForKey:@"duration1"] doubleValue];
-    CFTimeInterval duration2 = [[_animation objectForKey:@"duration2"] doubleValue];
-    CFTimeInterval startTime = [[_animation objectForKey:@"startTime"] doubleValue];
-
-    CFTimeInterval currentTime = CACurrentMediaTime();
-    CFTimeInterval interval = currentTime - startTime;
-
-    if ( interval<=duration1 ) {
-      // 正在显示 self
-      CGFloat progress = [XYZGlobal boundFlt:interval/duration1 left:0.0 right:1.0];
-      self.alpha = _beginAlpha + progress * (1.0-_beginAlpha);
-      XYZLogDebug(@"CoverView", @"%.04f - %.04f = %.04f / %.04f = %.04f", currentTime, startTime, interval, duration1, progress);
-    } else if ( interval<=(duration1+duration2) ) {
-      // 正在显示 contentView
-      if ( _contentView.showAnimation ) {
-        CGFloat progress = [XYZGlobal boundFlt:(interval-duration1)/duration2 left:0.0 right:1.0];
-        _contentView.showAnimation(progress);
-        XYZLogDebug(@"CoverView", @"%.04f - %.04f = (%.04f - %.04f) / %.04f = %.04f", currentTime, startTime, interval, duration1, duration2, progress);
-      }
-    } else {
-      // 完成显示
-      [self removeAllAnimations];
-      self.alpha = 1.0;
-      if ( _contentView.showAnimation ) { _contentView.showAnimation(1.0); }
-      _status = XYZCoverViewStatusPresented;
-    }
-
-    return;
-  }
-
-  if ( _status==XYZCoverViewStatusHiding ) {
-    CFTimeInterval duration1 = [[_animation objectForKey:@"duration1"] doubleValue];
-    CFTimeInterval duration2 = [[_animation objectForKey:@"duration2"] doubleValue];
-    CFTimeInterval startTime = [[_animation objectForKey:@"startTime"] doubleValue];
-
-    CFTimeInterval currentTime = CACurrentMediaTime();
-    CFTimeInterval interval = currentTime - startTime;
-
-    if ( interval<=duration1 ) {
-      // 正在隐藏 contentView
-      if ( _contentView.hideAnimation ) {
-        CGFloat progress = [XYZGlobal boundFlt:interval/duration1 left:0.0 right:1.0];
-        _contentView.hideAnimation(progress);
-        XYZLogDebug(@"CoverView", @"%.04f - %.04f = %.04f / %.04f = %.04f", currentTime, startTime, interval, duration1, progress);
-      }
-    } else if ( interval<=(duration1+duration2) ) {
-      // 正在隐藏 self
-      CGFloat progress = [XYZGlobal boundFlt:(interval-duration1)/duration2 left:0.0 right:1.0];
-      self.alpha = _beginAlpha + progress * (0.0-_beginAlpha);
-      XYZLogDebug(@"CoverView", @"%.04f - %.04f = (%.04f - %.04f) / %.04f = %.04f", currentTime, startTime, interval, duration1, duration2, progress);
-    } else {
-      // 完成隐藏
-      [self removeAllAnimations];
-      self.alpha = 0.0;
-      if ( _contentView.hideAnimation ) { _contentView.hideAnimation(1.0); }
-      [self removeFromSuperview];
-      _status = XYZCoverViewStatusUnknown;
-      if ( _completion ) { _completion(); }
-      XYZLogDebug(@"CoverView", @"hide done");
-    }
-
-    return;
-  }
-
-  [self removeAllAnimations];
-}
-
-
-
-- (void)prepareForPresent
-{
-  [NSObject cancelPreviousPerformRequestsWithTarget:self];
-
-  [self removeAllAnimations];
-}
-
-- (void)prepareForAnimation
-{
-  _beginAlpha = self.alpha;
-  [_contentView prepareForAnimation];
+  [self.layer removeAnimationForKey:@"ShowSelf"];
+  [_contentView.layer removeAnimationForKey:@"ShowContent"];
+  [_contentView.layer removeAnimationForKey:@"HideContent"];
+  [self.layer removeAnimationForKey:@"HideSelf"];
 }
 
 - (void)layoutForViewport:(UIView *)viewport
@@ -188,7 +136,7 @@
   }
 }
 
-- (void)addContentView:(XYZCoverContentView *)contentView
+- (void)addContentView:(XYZCVContentView *)contentView
 {
   if ( contentView!=_contentView ) {
     [_contentView removeFromSuperview];
@@ -200,52 +148,151 @@
       [self addSubview:contentView];
       _contentView = contentView;
     }
-    if ( _contentView.showAnimation ) {
-      _contentView.showAnimation(0.0);
-    }
   }
 }
+
+
+- (void)animationDidStart:(CAAnimation *)anim
+{
+  XYZLogDebug(@"CoverView", @"animation start: %@", anim);
+}
+- (void)animationDidStop:(CAAnimation *)anim finished:(BOOL)flag
+{
+  if ( anim==[self.layer animationForKey:@"ShowSelf"] ) {
+    XYZLogDebug(@"CoverView", @"show self stop: %@", anim);
+    [self updateStateFromAnimation:flag];
+    if ( flag ) {
+      // 已完成 ShowSelf，启动 ShowContent
+      CAAnimation *animation = [_contentView showAnimation];
+      if ( animation.duration<=0.0 ) {
+        animation.duration = DURATION_SHOW_CONTENT;
+      }
+      animation.delegate = self;
+      animation.removedOnCompletion = NO;
+      animation.fillMode = kCAFillModeForwards;
+      [_contentView.layer addAnimation:animation forKey:@"ShowContent"];
+    } else {
+      // 未完成 ShowSelf，非程序取消，置于 ShowFailed 状态
+      _status = XYZCVViewStatusShowFailed;
+    }
+    [self.layer removeAnimationForKey:@"ShowSelf"];
+    return;
+  }
+
+  if ( anim==[_contentView.layer animationForKey:@"ShowContent"] ) {
+    XYZLogDebug(@"CoverView", @"show content stop: %@", anim);
+    [_contentView updateStateFromAnimation:flag];
+    if ( flag ) {
+      // 已完成 ShowContent，置于 Presented 状态
+      _status = XYZCVViewStatusPresented;
+    } else {
+      // 未完成 ShowContent，非程序取消，置于 ShowFailed 状态
+      _status = XYZCVViewStatusShowFailed;
+    }
+    [_contentView.layer removeAnimationForKey:@"ShowContent"];
+    return;
+  }
+
+  if ( anim==[_contentView.layer animationForKey:@"HideContent"] ) {
+    XYZLogDebug(@"CoverView", @"hide content stop: %@", anim);
+    [_contentView updateStateFromAnimation:flag];
+    if ( flag ) {
+      // 已完成 HideContent，启动 HideSelf
+      CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"opacity"];
+      animation.fromValue = @(self.layer.opacity);
+      animation.toValue = @(0.0);
+      animation.duration = DURATION_HIDE_SELF;
+      animation.removedOnCompletion = NO;
+      animation.fillMode = kCAFillModeForwards;
+      animation.delegate = self;
+      [self.layer addAnimation:animation forKey:@"HideSelf"];
+    } else {
+      // 未完成 HideContent，非程序取消，置于 HideFailed 状态
+      _status = XYZCVViewStatusHideFailed;
+    }
+    [_contentView.layer removeAnimationForKey:@"HideContent"];
+    return;
+  }
+
+  if ( anim==[self.layer animationForKey:@"HideSelf"] ) {
+    XYZLogDebug(@"CoverView", @"hide self stop: %@", anim);
+    [self updateStateFromAnimation:flag];
+    if ( flag ) {
+      // 已完成 HideSelf，置于 Unknown 状态
+      _status = XYZCVViewStatusUnknown;
+    } else {
+      // 未完成 HideSelf，非程序取消，置于 HideFailed 状态
+      _status = XYZCVViewStatusHideFailed;
+    }
+    [self.layer removeAnimationForKey:@"HideSelf"];
+
+    [self removeFromSuperview];
+    if ( _completion ) { _completion(); }
+    XYZLogDebug(@"CoverView", @"hide done");
+    return;
+  }
+}
+
+
 
 - (void)show:(BOOL)animated
 {
   // 取消之前可能已经调度的延迟隐藏请求
-  [NSObject cancelPreviousPerformRequestsWithTarget:self];
+  [self cancelDelayHide];
 
-  if ( _status==XYZCoverViewStatusShowing ) {
-    // 正在显示，不管
-  } else if ( _status==XYZCoverViewStatusPresented ) {
-    // 已经显示，不管
-  } else {
-    if ( _status==XYZCoverViewStatusHiding ) {
-      // 正在隐藏，启动显示，里面会保存状态且取消隐藏动画
+  if ( animated ) {
+    // 需要动画
+    if ( _status==XYZCVViewStatusShowing ) {
+      // 正在显示，不管
+    } else if ( _status==XYZCVViewStatusShowFailed ) {
+      // 显示失败，重启显示
+      [self doShow:YES];
+    } else if ( _status==XYZCVViewStatusPresented ) {
+      // 已经显示，不管
+    } else if ( _status==XYZCVViewStatusHiding ) {
+      // 正在隐藏，保存视图状态且取消隐藏动画，启动显示
+      [self updateStateFromAnimation:NO];
+      [_contentView updateStateFromAnimation:NO];
+      // 为了防止移除动画时候再保存视图状态，置为 Unknown 状态
+      _status = XYZCVViewStatusUnknown;
+      [self removeAllAnimations];
+      [self doShow:YES];
+    } else if ( _status==XYZCVViewStatusHideFailed ) {
+      // 隐藏失败，启动显示
+      [self doShow:YES];
+    } else {
+      [self doShow:YES];
     }
-    // 显示
-    [self doShow:animated];
+  } else {
+    // 不要动画，保存视图状态且取消动画，启动显示
+    [self updateStateFromAnimation:NO];
+    [_contentView updateStateFromAnimation:NO];
+    // 为了防止移除动画时候再保存视图状态，置为 Unknown 状态
+    _status = XYZCVViewStatusUnknown;
+    [self removeAllAnimations];
+    [self doShow:NO];
   }
 }
 - (void)doShow:(BOOL)animated
 {
-  [self removeAllAnimations];
-  [self prepareForAnimation];
-
-  _status = XYZCoverViewStatusShowing;
+  _status = XYZCVViewStatusShowing;
 
   if ( animated ) {
 
-    _animation = [[NSMutableDictionary alloc] init];
-    [_animation setObject:[NSNumber numberWithDouble:DURATION_SHOW_SELF] forKey:@"duration1"];
-    [_animation setObject:[NSNumber numberWithDouble:DURATION_SHOW_CONTENT] forKey:@"duration2"];
-    CFTimeInterval currentTime = CACurrentMediaTime();
-    XYZLogDebug(@"CoverView", @"current:%.04f", currentTime);
-    [_animation setObject:[NSNumber numberWithDouble:currentTime] forKey:@"startTime"];
-
-    [self setUpDisplayLinkIfNeeded];
+    CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"opacity"];
+    animation.fromValue = @(self.layer.opacity);
+    animation.toValue = @(1.0);
+    animation.duration = DURATION_SHOW_SELF;
+    animation.removedOnCompletion = NO;
+    animation.fillMode = kCAFillModeForwards;
+    animation.delegate = self;
+    [self.layer addAnimation:animation forKey:@"ShowSelf"];
 
   } else {
 
-    self.alpha = 1.0;
-    if ( _contentView.showAnimation ) { _contentView.showAnimation(1.0); }
-    _status = XYZCoverViewStatusPresented;
+    [self updateStateFromAnimation:YES];
+    [_contentView updateStateFromAnimation:YES];
+    _status = XYZCVViewStatusPresented;
 
   }
 }
@@ -257,28 +304,30 @@
 - (void)hide:(BOOL)animated afterDelay:(NSTimeInterval)delay
 {
   // 不管是延迟隐藏还是直接隐藏，都应该取消之前可能已经调度的延迟隐藏请求
-  [NSObject cancelPreviousPerformRequestsWithTarget:self];
+  [self cancelDelayHide];
 
   // 没加到任何视图上，直接返回
   if ( !(self.superview) ) { return; }
 
   if ( delay>0.0 ) {
-    if ( _status==XYZCoverViewStatusShowing ) {
+    if ( _status==XYZCVViewStatusShowing ) {
       // 正在显示，用户调用显示功能的时候应该允许他马上启动延迟隐藏
       [self performSelector:@selector(delayHide:) withObject:@(animated) afterDelay:delay];
-    } else if ( _status==XYZCoverViewStatusPresented ) {
+    } else if ( _status==XYZCVViewStatusShowFailed ) {
+      // 显示失败，可以启动延迟隐藏
+      [self performSelector:@selector(delayHide:) withObject:@(animated) afterDelay:delay];
+    } else if ( _status==XYZCVViewStatusPresented ) {
       // 已经显示，可以启动延迟隐藏
       [self performSelector:@selector(delayHide:) withObject:@(animated) afterDelay:delay];
+    } else if ( _status==XYZCVViewStatusHiding ) {
+      // 正在隐藏，让它自己继续隐藏
+      // 要不要取消这次隐藏，再延迟隐藏呢？
+    } else if ( _status==XYZCVViewStatusHideFailed ) {
+      // 隐藏失败，可以启动延迟隐藏
+      [self performSelector:@selector(delayHide:) withObject:@(animated) afterDelay:delay];
     } else {
-      if ( _status==XYZCoverViewStatusHiding ) {
-        // 正在隐藏，让它自己继续隐藏
-        //
-      } else {
-        // 加到父视图还没显示过，或已经被隐藏，直接移除视图并通知
-        [self delayHide:@(NO)];
-      }
+      [self performSelector:@selector(delayHide:) withObject:@(animated) afterDelay:delay];
     }
-
   } else {
     [self delayHide:@(animated)];
   }
@@ -287,45 +336,61 @@
 {
   if ( [object boolValue] ) {
     // 需要动画
-    if ( _status==XYZCoverViewStatusShowing ) {
-      // 正在显示，启动隐藏，里面会保存状态且取消动画
+    if ( _status==XYZCVViewStatusShowing ) {
+      // 正在显示，保存视图状态且取消显示动画，启动隐藏
+      [self updateStateFromAnimation:NO];
+      [_contentView updateStateFromAnimation:NO];
+      // 为了防止移除动画时候再保存视图状态，置为 Unknown 状态
+      _status = XYZCVViewStatusUnknown;
+      [self removeAllAnimations];
       [self doHide:YES];
-    } else if ( _status==XYZCoverViewStatusPresented ) {
-      // 已经显示，启动隐藏，里面会保存状态且取消动画
+    } else if ( _status==XYZCVViewStatusShowFailed ) {
+      // 显示失败，启动隐藏
       [self doHide:YES];
-    } else if ( _status==XYZCoverViewStatusHiding ) {
+    } else if ( _status==XYZCVViewStatusPresented ) {
+      // 已经显示，启动隐藏
+      [self doHide:YES];
+    } else if ( _status==XYZCVViewStatusHiding ) {
       // 正在隐藏，不管它
+    } else if ( _status==XYZCVViewStatusHideFailed ) {
+      // 隐藏失败，重启隐藏
+      [self doHide:YES];
     } else {
-      // 加到父视图还没显示过，或已经被隐藏，直接移除视图并通知
-      [self doHide:NO];
+      [self doHide:YES];
     }
   } else {
-    // 不要动画，直接移除视图并通知
+    // 不要动画，保存视图状态且取消动画，启动隐藏
+    [self updateStateFromAnimation:NO];
+    [_contentView updateStateFromAnimation:NO];
+    // 为了防止移除动画时候再保存视图状态，置为 Unknown 状态
+    _status = XYZCVViewStatusUnknown;
+    [self removeAllAnimations];
     [self doHide:NO];
   }
 }
 - (void)doHide:(BOOL)animated
 {
-  [self removeAllAnimations];
-  [self prepareForAnimation];
+  [self cancelDelayHide];
 
-  _status = XYZCoverViewStatusHiding;
+  _status = XYZCVViewStatusHiding;
 
   if ( animated ) {
 
-    _animation = [[NSMutableDictionary alloc] init];
-    [_animation setObject:[NSNumber numberWithDouble:DURATION_HIDE_CONTENT] forKey:@"duration1"];
-    [_animation setObject:[NSNumber numberWithDouble:DURATION_HIDE_SELF] forKey:@"duration2"];
-    CFTimeInterval currentTime = CACurrentMediaTime();
-    XYZLogDebug(@"CoverView", @"current:%.04f", currentTime);
-    [_animation setObject:[NSNumber numberWithDouble:currentTime] forKey:@"startTime"];
-
-    [self setUpDisplayLinkIfNeeded];
+    CAAnimation *animation = [_contentView hideAnimation];
+    if ( animation.duration<=0.0 ) {
+      animation.duration = DURATION_HIDE_CONTENT;
+    }
+    animation.delegate = self;
+    animation.removedOnCompletion = NO;
+    animation.fillMode = kCAFillModeForwards;
+    [_contentView.layer addAnimation:animation forKey:@"HideContent"];
 
   } else {
 
+    [self updateStateFromAnimation:YES];
+    [_contentView updateStateFromAnimation:YES];
+    _status = XYZCVViewStatusUnknown;
     [self removeFromSuperview];
-    _status = XYZCoverViewStatusUnknown;
     if ( _completion ) { _completion(); }
     XYZLogDebug(@"CoverView", @"hide done");
 
