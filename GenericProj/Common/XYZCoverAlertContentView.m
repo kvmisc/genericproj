@@ -34,13 +34,19 @@
   self.alpha = 0.0;
 }
 
+- (CGSize)intrinsicContentSize
+{
+  return CGSizeMake(200.0, 100.0);
+}
+
 - (void)prepareForView:(UIView *)inView viewport:(UIView *)viewport
 {
   [super prepareForView:inView viewport:viewport];
-  self.frame = CGRectMake(50,
-                          floor((self.coverView.bounds.size.height-100)/2.0),
-                          self.coverView.bounds.size.width-2*50,
-                          100);
+  CGSize contentSize = [self intrinsicContentSize];
+  self.frame = CGRectMake(floor((self.coverView.bounds.size.width-contentSize.width)/2.0),
+                          floor((self.coverView.bounds.size.height-contentSize.height)/2.0),
+                          contentSize.width,
+                          contentSize.height);
 }
 - (void)updateStateFromAnimation:(BOOL)completion
 {

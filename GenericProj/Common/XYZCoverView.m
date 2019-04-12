@@ -51,7 +51,7 @@
   self.alpha = 0.0;
 
   _backgroundView = [[UIImageView alloc] init];
-  _backgroundView.backgroundColor = TKRGBA(0, 0, 0, 0.20);
+  _backgroundView.backgroundColor = [UIColor clearColor]; //TKRGBA(0, 0, 0, 0.1);
   [self addSubview:_backgroundView];
 
   _touchBackgroundToHide = YES;
