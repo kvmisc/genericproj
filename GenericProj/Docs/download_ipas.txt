@@ -1,0 +1,8 @@
+
+1. 去 Mac 上的 App Store 下载 Apple Configurator 2；
+2. 把 iPhone 连接上 Mac，打开 Apple Configurator；
+3. 菜单->Account->Sign In；
+4. 选中 iPhone 右键->Add->Apps...；
+5. 找到想要应用并添加，添加后会显示正在下载 App Store 上的应用，当设备上存在这个应用的时候会询问怎么操作。此时不要点击任何按钮。
+6. 前往 ~/Library/Group Containers/K36BKF7T3D.group.com.apple.configurator/Library/Caches/Assets/TemporaryItems/MobileApps/ 找到需要的包，一定要将包拷贝出来。点击第 5 步的停止会删除包。
+7. 拿到包后，你爱咋滴咋滴！

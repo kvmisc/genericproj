@@ -79,6 +79,10 @@
 		BB270279225DD1CD00F68CAF /* mask_black.png in Resources */ = {isa = PBXBuildFile; fileRef = BB270276225DD1CC00F68CAF /* mask_black.png */; };
 		BB27027A225DD1CD00F68CAF /* mask_red@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BB270277225DD1CC00F68CAF /* mask_red@2x.png */; };
 		BB27027B225DD1CD00F68CAF /* mask_blue@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BB270278225DD1CC00F68CAF /* mask_blue@2x.png */; };
+		BB476E7F22601D2A009A5AE1 /* XYZCVView.m in Sources */ = {isa = PBXBuildFile; fileRef = BB476E7E22601D2A009A5AE1 /* XYZCVView.m */; };
+		BB476E8222601D6B009A5AE1 /* XYZCVContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = BB476E8122601D6B009A5AE1 /* XYZCVContentView.m */; };
+		BB476E8822606E3C009A5AE1 /* XYZCVAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = BB476E8722606E3C009A5AE1 /* XYZCVAlertView.m */; };
+		BB476E8B22606E54009A5AE1 /* XYZCVActionView.m in Sources */ = {isa = PBXBuildFile; fileRef = BB476E8A22606E54009A5AE1 /* XYZCVActionView.m */; };
 		BB527F0A225C8CC400B37621 /* mickey@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BB527F09225C8CC400B37621 /* mickey@2x.png */; };
 		BB78B337206C9B11000CEE6E /* XYZAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = BB78B336206C9B11000CEE6E /* XYZAnimation.m */; };
 		BB78B33A206CA40C000CEE6E /* INTUEasingFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = BB78B338206CA40B000CEE6E /* INTUEasingFunctions.m */; };
@@ -227,7 +231,7 @@
 		2579012E5534F46C56F97098 /* libPods-GenericProj.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GenericProj.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		515BB722BAC56AAD43AD1865 /* Pods-GenericProj.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GenericProj.release.xcconfig"; path = "Pods/Target Support Files/Pods-GenericProj/Pods-GenericProj.release.xcconfig"; sourceTree = "<group>"; };
 		6CC8B4CFFD62002DD8FEA6DF /* Pods-GenericProj.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GenericProj.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GenericProj/Pods-GenericProj.debug.xcconfig"; sourceTree = "<group>"; };
-		BB02403F225B023A006A0F40 /* Update_Pods.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Update_Pods.txt; sourceTree = "<group>"; };
+		BB02403F225B023A006A0F40 /* update_pods.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = update_pods.txt; sourceTree = "<group>"; };
 		BB024040225B0293006A0F40 /* bump_build_number.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = bump_build_number.sh; sourceTree = "<group>"; };
 		BB024041225B3764006A0F40 /* GPNavigationTransitionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GPNavigationTransitionViewController.h; sourceTree = "<group>"; };
 		BB024042225B3764006A0F40 /* GPNavigationTransitionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GPNavigationTransitionViewController.m; sourceTree = "<group>"; };
@@ -256,6 +260,15 @@
 		BB270276225DD1CC00F68CAF /* mask_black.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mask_black.png; sourceTree = "<group>"; };
 		BB270277225DD1CC00F68CAF /* mask_red@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mask_red@2x.png"; sourceTree = "<group>"; };
 		BB270278225DD1CC00F68CAF /* mask_blue@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mask_blue@2x.png"; sourceTree = "<group>"; };
+		BB431D1F225ED9A200537A90 /* download_ipas.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = download_ipas.txt; sourceTree = "<group>"; };
+		BB476E7D22601D2A009A5AE1 /* XYZCVView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYZCVView.h; sourceTree = "<group>"; };
+		BB476E7E22601D2A009A5AE1 /* XYZCVView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XYZCVView.m; sourceTree = "<group>"; };
+		BB476E8022601D6B009A5AE1 /* XYZCVContentView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYZCVContentView.h; sourceTree = "<group>"; };
+		BB476E8122601D6B009A5AE1 /* XYZCVContentView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XYZCVContentView.m; sourceTree = "<group>"; };
+		BB476E8622606E3C009A5AE1 /* XYZCVAlertView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYZCVAlertView.h; sourceTree = "<group>"; };
+		BB476E8722606E3C009A5AE1 /* XYZCVAlertView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XYZCVAlertView.m; sourceTree = "<group>"; };
+		BB476E8922606E54009A5AE1 /* XYZCVActionView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYZCVActionView.h; sourceTree = "<group>"; };
+		BB476E8A22606E54009A5AE1 /* XYZCVActionView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XYZCVActionView.m; sourceTree = "<group>"; };
 		BB527F09225C8CC400B37621 /* mickey@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mickey@2x.png"; sourceTree = "<group>"; };
 		BB78B335206C9B11000CEE6E /* XYZAnimation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYZAnimation.h; sourceTree = "<group>"; };
 		BB78B336206C9B11000CEE6E /* XYZAnimation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XYZAnimation.m; sourceTree = "<group>"; };
@@ -694,6 +707,14 @@
 				0AAB271B1FDFC42D00BD2451 /* XYZCoverView.m */,
 				0A29B0AC1FE12F4D00F007FE /* XYZCoverContentView.h */,
 				0A29B0AD1FE12F4D00F007FE /* XYZCoverContentView.m */,
+				BB476E7D22601D2A009A5AE1 /* XYZCVView.h */,
+				BB476E7E22601D2A009A5AE1 /* XYZCVView.m */,
+				BB476E8022601D6B009A5AE1 /* XYZCVContentView.h */,
+				BB476E8122601D6B009A5AE1 /* XYZCVContentView.m */,
+				BB476E8622606E3C009A5AE1 /* XYZCVAlertView.h */,
+				BB476E8722606E3C009A5AE1 /* XYZCVAlertView.m */,
+				BB476E8922606E54009A5AE1 /* XYZCVActionView.h */,
+				BB476E8A22606E54009A5AE1 /* XYZCVActionView.m */,
 			);
 			name = CoverView;
 			sourceTree = "<group>";
@@ -867,7 +888,8 @@
 				BBFFBA83217827C900FB8159 /* block_declaration.md */,
 				BB8C8EB1224B386E0068928F /* gcd_timer_sample.m */,
 				BB024040225B0293006A0F40 /* bump_build_number.sh */,
-				BB02403F225B023A006A0F40 /* Update_Pods.txt */,
+				BB02403F225B023A006A0F40 /* update_pods.txt */,
+				BB431D1F225ED9A200537A90 /* download_ipas.txt */,
 				BBED5D7E224E0BE70032A53F /* cv.txt */,
 				BBDC2648224CC6CA000394B0 /* dp.txt */,
 				BB27026F225DBDC500F68CAF /* dp3.md */,
@@ -1055,9 +1077,11 @@
 				0A3D07EB1F67BE0A00F19DF3 /* GPKVOViewController.m in Sources */,
 				0A57E1641FE234FC0037F94F /* UIAlertControllerExtentions.m in Sources */,
 				0A0E6F091FA9B5FF00E26E42 /* GPDownloadViewController.m in Sources */,
+				BB476E7F22601D2A009A5AE1 /* XYZCVView.m in Sources */,
 				BB02404C225B3885006A0F40 /* GPPopAnimator.m in Sources */,
 				0AA817BE1D61B59B009F831A /* XYZGlobal.m in Sources */,
 				BB7EDE52208087C600B44D0C /* XYZBaseTableViewCell.m in Sources */,
+				BB476E8B22606E54009A5AE1 /* XYZCVActionView.m in Sources */,
 				BB04B95D2235F923005E54C4 /* GPCollectionViewCell.m in Sources */,
 				BBDC2647224CABB9000394B0 /* GPResponderView.m in Sources */,
 				0A883B4D1F623D8200ED33EB /* UIButtonExtentions.m in Sources */,
@@ -1094,10 +1118,12 @@
 				BBDC2644224C7C96000394B0 /* YYFPSLabel.m in Sources */,
 				0A883B811F62B25E00ED33EB /* XYZBaseTableViewController.m in Sources */,
 				0A2EA8621FC7AC4300A800C6 /* GPDatabaseViewController.m in Sources */,
+				BB476E8222601D6B009A5AE1 /* XYZCVContentView.m in Sources */,
 				BBE77A712236596A007C7AA6 /* XYZNavigationController.m in Sources */,
 				BBFFBA8A2178417F00FB8159 /* XYZSampleObject.m in Sources */,
 				0A29B0AE1FE12F4D00F007FE /* XYZCoverContentView.m in Sources */,
 				BBD5C47B202B02330093AE9E /* UINavigationControllerExtentions.m in Sources */,
+				BB476E8822606E3C009A5AE1 /* XYZCVAlertView.m in Sources */,
 				0A2BD38B1D5D5CEA009D1CEF /* XYZBaseView.m in Sources */,
 				BB78B33A206CA40C000CEE6E /* INTUEasingFunctions.m in Sources */,
 				BB7EDE5620808C9900B44D0C /* GPTableViewController.m in Sources */,
