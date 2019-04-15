@@ -376,7 +376,7 @@
 
 /*! @abstract Displays a JavaScript text input panel.
  @param webView The web view invoking the delegate method.
- @param message The message to display.
+ @param prompt The message to display.
  @param defaultText The initial text to display in the text entry field.
  @param frame Information about the frame whose JavaScript initiated this call.
  @param completionHandler The completion handler to call after the text
