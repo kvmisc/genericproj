@@ -55,7 +55,8 @@
 
 
   YYFPSLabel *FPSLabel = [[YYFPSLabel alloc] initWithFrame:CGRectMake(0.0, XYZ_SCREEN_HET-30.0, 50.0, 30.0)];
-  [nc.view addSubview:FPSLabel];
+  [_window addSubview:FPSLabel];
+  FPSLabel.layer.zPosition = 100.0;
 
 
   UISwipeGestureRecognizer *gr = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipe:)];
