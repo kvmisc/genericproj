@@ -68,7 +68,7 @@
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
 {
 //  _redView.layer.position = _redView.layer.presentationLayer.position;
-  [_redView.layer removeAllAnimations];
+//  [_redView.layer removeAllAnimations];
 
 //  NSLog(@"PRE: %@", _redView.layer.presentationLayer);
 //

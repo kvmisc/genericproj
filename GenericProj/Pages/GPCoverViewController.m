@@ -35,16 +35,26 @@
 //  NSLog(@"xxx");
 }
 
-- (IBAction)show:(id)sender
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
 {
-  //[_sourceView removeFromSuperview];
-
-  _sourceView = [[XYZCoverAlertContentView alloc] init];
+  _sourceView = [[XYZCoverSpringView alloc] init];
   [_sourceView prepareForView:_containerView viewport:nil];
   _sourceView.coverView.completion = ^{
     NSLog(@"block: cover done");
   };
   [_sourceView.coverView show:YES];
+}
+
+- (IBAction)show:(id)sender
+{
+  //[_sourceView removeFromSuperview];
+
+//  _sourceView = [[XYZCoverSpringView alloc] init];
+//  [_sourceView prepareForView:_containerView viewport:nil];
+//  _sourceView.coverView.completion = ^{
+//    NSLog(@"block: cover done");
+//  };
+//  [_sourceView.coverView show:YES];
 
 //  _sourceView = [[XYZCoverActionContentView alloc] init];
 //  [_sourceView prepareForView:_containerView viewport:nil];
