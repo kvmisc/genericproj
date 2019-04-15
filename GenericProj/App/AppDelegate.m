@@ -23,6 +23,22 @@
 {
   [XYZLogger setup];
 
+  NSDictionary *dict = @{
+                         @"aa": @"12",
+                         @"cc": [NSNull null],
+                         @"dd": @"44+55",
+                         @"ee": @"",
+                         @"bb": @"e\u0301"
+                         };
+  NSString *str = [dict tk_queryString];
+  NSLog(@"%@", dict);
+  NSLog(@"%@", str);
+  NSLog(@"%@", [str tk_queryDictionary]);
+
+  NSString *aaa = [@"http://www.baidu.com/api.asp" stringByAppendingFormat:@"?%@", str];
+  NSURL *url = [NSURL URLWithString:aaa];
+  NSLog(@"%@", url.query);
+
 //  NSString *pwd1 = [SAMKeychain passwordForService:@"com.firefly.gp" account:@"kevin"];
 //  NSString *pwd2 = [SAMKeychain passwordForService:@"com.firefly.gp" account:@"tony"];
 //  NSLog(@"pwd: [%@] [%@]", pwd1, pwd2);
@@ -54,9 +70,11 @@
   _window.rootViewController = nc;
 
 
-  YYFPSLabel *FPSLabel = [[YYFPSLabel alloc] initWithFrame:CGRectMake(0.0, XYZ_SCREEN_HET-30.0, 50.0, 30.0)];
+#ifdef DEBUG
+  YYFPSLabel *FPSLabel = [[YYFPSLabel alloc] init];
   [_window addSubview:FPSLabel];
   FPSLabel.layer.zPosition = 100.0;
+#endif
 
 
   UISwipeGestureRecognizer *gr = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipe:)];

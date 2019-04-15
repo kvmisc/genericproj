@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface GPRootViewController : XYZBaseTableViewController
+@interface GPRootViewController : XYZBaseViewController
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 

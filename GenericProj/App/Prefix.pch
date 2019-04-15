@@ -51,6 +51,7 @@
 // Extentions
 #import "Extentions/NSObjectExtentions.h"
 #import "Extentions/NSStringUnicode.h"
+#import "Extentions/NSStringQuery.h"
 #import "Extentions/NSStringExtentions.h"
 #import "Extentions/UIColorExtentions.h"
 #import "Extentions/UIImageExtentions.h"
