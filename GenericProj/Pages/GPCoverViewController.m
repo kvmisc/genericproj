@@ -39,10 +39,10 @@
 {
   //[_sourceView removeFromSuperview];
 
-  _sourceView = [[XYZCoverSpringView alloc] init];
+  _sourceView = [[XYZCoverAlertContentView alloc] init];
   [_sourceView prepareForView:_containerView viewport:nil];
   _sourceView.coverView.completion = ^{
-    NSLog(@"xxx: cover done");
+    NSLog(@"block: cover done");
   };
   [_sourceView.coverView show:YES];
 

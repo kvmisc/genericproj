@@ -55,6 +55,12 @@
   [self addSubview:_backgroundView];
 
   _touchBackgroundToHide = YES;
+
+  _contentView = nil;
+
+  _status = XYZCoverViewStatusUnknown;
+
+  _needsSelfAnimation = NO;
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
@@ -122,14 +128,7 @@
     [self updateStateFromAnimation:flag];
     if ( flag ) {
       // 已完成 ShowSelf，启动 ShowContent
-      CAAnimation *animation = [_contentView showAnimation];
-      if ( animation.duration<=0.0 ) {
-        animation.duration = DURATION_SHOW_CONTENT;
-      }
-      animation.delegate = self;
-      animation.removedOnCompletion = NO;
-      animation.fillMode = kCAFillModeForwards;
-      [_contentView.layer addAnimation:animation forKey:@"ShowContent"];
+      [self addShowContentAnimation];
     } else {
       // 未完成 ShowSelf，非程序取消，置于 ShowFailed 状态
       _status = XYZCoverViewStatusShowFailed;
@@ -157,14 +156,16 @@
     [_contentView updateStateFromAnimation:flag];
     if ( flag ) {
       // 已完成 HideContent，启动 HideSelf
-      CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"opacity"];
-      animation.fromValue = @(self.layer.opacity);
-      animation.toValue = @(0.0);
-      animation.duration = DURATION_HIDE_SELF;
-      animation.removedOnCompletion = NO;
-      animation.fillMode = kCAFillModeForwards;
-      animation.delegate = self;
-      [self.layer addAnimation:animation forKey:@"HideSelf"];
+      if ( _needsSelfAnimation ) {
+        [self addHideSelfAnimation];
+      } else {
+        XYZLogDebug(@"CoverView", @"direct hide self");
+        [self updateStateFromAnimation:YES];
+        _status = XYZCoverViewStatusUnknown;
+        [self removeFromSuperview];
+        if ( _completion ) { _completion(); }
+        XYZLogDebug(@"CoverView", @"hide done");
+      }
     } else {
       // 未完成 HideContent，非程序取消，置于 HideFailed 状态
       _status = XYZCoverViewStatusHideFailed;
@@ -238,14 +239,13 @@
 
   if ( animated ) {
 
-    CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"opacity"];
-    animation.fromValue = @(self.layer.opacity);
-    animation.toValue = @(1.0);
-    animation.duration = DURATION_SHOW_SELF;
-    animation.removedOnCompletion = NO;
-    animation.fillMode = kCAFillModeForwards;
-    animation.delegate = self;
-    [self.layer addAnimation:animation forKey:@"ShowSelf"];
+    if ( _needsSelfAnimation ) {
+      [self addShowSelfAnimation];
+    } else {
+      XYZLogDebug(@"CoverView", @"direct show self");
+      [self updateStateFromAnimation:YES];
+      [self addShowContentAnimation];
+    }
 
   } else {
 
@@ -335,14 +335,7 @@
 
   if ( animated ) {
 
-    CAAnimation *animation = [_contentView hideAnimation];
-    if ( animation.duration<=0.0 ) {
-      animation.duration = DURATION_HIDE_CONTENT;
-    }
-    animation.delegate = self;
-    animation.removedOnCompletion = NO;
-    animation.fillMode = kCAFillModeForwards;
-    [_contentView.layer addAnimation:animation forKey:@"HideContent"];
+    [self addHideContentAnimation];
 
   } else {
 
@@ -354,6 +347,51 @@
     XYZLogDebug(@"CoverView", @"hide done");
 
   }
+}
+
+- (void)addShowSelfAnimation
+{
+  CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"opacity"];
+  animation.fromValue = @(self.layer.opacity);
+  animation.toValue = @(1.0);
+  animation.duration = DURATION_SHOW_SELF;
+  animation.removedOnCompletion = NO;
+  animation.fillMode = kCAFillModeForwards;
+  animation.delegate = self;
+  [self.layer addAnimation:animation forKey:@"ShowSelf"];
+}
+- (void)addShowContentAnimation
+{
+  CAAnimation *animation = [_contentView showAnimation];
+  if ( animation.duration<=0.0 ) {
+    animation.duration = DURATION_SHOW_CONTENT;
+  }
+  animation.delegate = self;
+  animation.removedOnCompletion = NO;
+  animation.fillMode = kCAFillModeForwards;
+  [_contentView.layer addAnimation:animation forKey:@"ShowContent"];
+}
+- (void)addHideContentAnimation
+{
+  CAAnimation *animation = [_contentView hideAnimation];
+  if ( animation.duration<=0.0 ) {
+    animation.duration = DURATION_HIDE_CONTENT;
+  }
+  animation.delegate = self;
+  animation.removedOnCompletion = NO;
+  animation.fillMode = kCAFillModeForwards;
+  [_contentView.layer addAnimation:animation forKey:@"HideContent"];
+}
+- (void)addHideSelfAnimation
+{
+  CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"opacity"];
+  animation.fromValue = @(self.layer.opacity);
+  animation.toValue = @(0.0);
+  animation.duration = DURATION_HIDE_SELF;
+  animation.removedOnCompletion = NO;
+  animation.fillMode = kCAFillModeForwards;
+  animation.delegate = self;
+  [self.layer addAnimation:animation forKey:@"HideSelf"];
 }
 
 @end

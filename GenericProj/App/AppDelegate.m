@@ -21,52 +21,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-  NSString *str = @"ae\u0301z";
-  NSLog(@"str = [%@]", str);                         // str = [aéz]
-  NSLog(@"length = %lu", [str length]);              // length = 4
-  NSLog(@"char_0 = [%c]", [str characterAtIndex:0]); // char_0 = [a]
-  NSLog(@"char_1 = [%c]", [str characterAtIndex:1]); // char_1 = [e]
-  NSLog(@"char_2 = [%c]", [str characterAtIndex:2]); // char_2 = []
-  NSLog(@"char_3 = [%c]", [str characterAtIndex:3]); // char_3 = [z]
-
-  NSRange range0 = [str rangeOfComposedCharacterSequenceAtIndex:0];
-  NSLog(@"range0 = (%lu %lu), char_0 = [%@]", range0.location, range0.length, [str substringWithRange:range0]);
-  // range0 = (0 1), char_0 = [a]
-
-  NSRange range1 = [str rangeOfComposedCharacterSequenceAtIndex:1];
-  NSLog(@"range1 = (%lu %lu), char_1 = [%@]", range1.location, range1.length, [str substringWithRange:range1]);
-  // range1 = (1 2), char_1 = [é]
-
-  NSRange range2 = [str rangeOfComposedCharacterSequenceAtIndex:2];
-  NSLog(@"range2 = (%lu %lu), char_2 = [%@]", range2.location, range2.length, [str substringWithRange:range2]);
-  // range2 = (1 2), char_2 = [é]
-
-  NSRange range3 = [str rangeOfComposedCharacterSequenceAtIndex:3];
-  NSLog(@"range3 = (%lu %lu), char_3 = [%@]", range3.location, range3.length, [str substringWithRange:range3]);
-  // range3 = (3 1), char_3 = [z]
-
-
-//  [XYZLogger setup];
-//
-//  CGRect rect1 = [[UIScreen mainScreen] bounds];
-//  CGRect rect2 = [[UIScreen mainScreen] nativeBounds];
-//  NSLog(@"%@ %@ %f %f", NSStringFromCGSize(rect1.size), NSStringFromCGSize(rect2.size),
-//        [[UIScreen mainScreen] scale], [[UIScreen mainScreen] nativeScale]);
-//
-//  NSLog(@"%f %f", XYZ_SAFE_AREA_TOP, XYZ_SAFE_AREA_BOT);
-
-
-//  NSDictionary *dict = @{
-//                         @"AA": @"11",
-//                         @"DD": @"44",
-//                         @"BB": @"22",
-//                         @"CC": @"33"
-//                         };
-//
-//  for ( NSString *key in dict ) {
-//    NSString *value = [dict objectForKey:key];
-//    NSLog(@"%@: %@", key, value);
-//  }
+  [XYZLogger setup];
 
 //  NSString *pwd1 = [SAMKeychain passwordForService:@"com.firefly.gp" account:@"kevin"];
 //  NSString *pwd2 = [SAMKeychain passwordForService:@"com.firefly.gp" account:@"tony"];
@@ -89,28 +44,6 @@
 //  NSLog(@"%@", [XYZGlobal pathUser:@"1234" service:nil file:nil]);
 //  NSLog(@"%@", [XYZGlobal pathUser:@"1234" service:@"img" file:nil]);
 //  NSLog(@"%@", [XYZGlobal pathUser:@"1234" service:@"img" file:@"icon.png"]);
-
-//  NSString *str = @"After you create an in-app purchase product in App Store Connect, you submit it to Apple for review. If you are submitting your first in-app purchase, you must submit it with a new version of your app. After an app is available on the store with existing in-app purchases, you can submit additional in-app purchase for that app at any time. If you are adding a new in-app purchase type to your app (for example, you usually offer consumables, but want to start offering auto-renewable subscriptions), you must do so with app version update. To submit an in-app purchase for review, it must have the Ready to Submit in-app purchase status. If not, ";
-//  NSData *data = [str dataUsingEncoding:NSUTF8StringEncoding];
-//  NSString *receipt = [data base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength];
-//  NSLog(@"%@", receipt);
-
-//  {
-//    NSString *str = @"aes-256-cfb:wildcat@104.36.65.164:443";
-//    NSData *data = [str dataUsingEncoding:NSUTF8StringEncoding];
-//    NSString *result = [data base64EncodedStringWithOptions:0];
-//    NSLog(@"<%@>", result);
-//    //[dt writeToFile:[XYZGlobal pathGlobal:@"aaa.txt"] atomically:YES];
-//  }
-//  {
-//    NSString *str = @"YWVzLTI1Ni1jZmI6d2lsZGNhdEAxMDQuMzYuNjUuMTY0OjQ0Mw";//@"YmYtY2ZiOnRlc3RAMTkyLjE2OC4xMDAuMTo4ODg4Cg";
-//    NSData *data = [[NSData alloc] initWithBase64EncodedString:str options:0];
-//    NSString *result = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-//    NSLog(@"<%@>", result);
-//    //[dt writeToFile:NSString *path = [XYZGlobal pathGlobal:@"bbb.txt"]; atomically:YES];
-//  }
-
-
 
   _window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
   _window.backgroundColor = [UIColor whiteColor];
