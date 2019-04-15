@@ -52,15 +52,15 @@
   CGSize contentSize = [self intrinsicContentSize];
 
   if ( completion ) {
-    if ( self.coverView.status==XYZCoverViewStatusShowing ) {
+    if ( [self.coverView isShowing] ) {
       self.layer.position = CGPointMake(floor(self.coverView.bounds.size.width/2.0),
                                         floor(self.coverView.bounds.size.height-contentSize.height/2.0));
-    } else if ( self.coverView.status==XYZCoverViewStatusHiding ) {
+    } else if ( [self.coverView isHiding] ) {
       self.layer.position = CGPointMake(floor(self.coverView.bounds.size.width/2.0),
                                         floor(self.coverView.bounds.size.height+contentSize.height/2.0));
     }
   } else {
-    if ( (self.coverView.status==XYZCoverViewStatusShowing) || (self.coverView.status==XYZCoverViewStatusHiding) ) {
+    if ( [self.coverView isShowing] || [self.coverView isHiding] ) {
       if ( self.layer.presentationLayer ) {
         self.layer.position = self.layer.presentationLayer.position;
       }

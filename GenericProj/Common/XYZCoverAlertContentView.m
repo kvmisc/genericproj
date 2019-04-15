@@ -51,13 +51,13 @@
 - (void)updateStateFromAnimation:(BOOL)completion
 {
   if ( completion ) {
-    if ( self.coverView.status==XYZCoverViewStatusShowing ) {
+    if ( [self.coverView isShowing] ) {
       self.layer.opacity = 1.0;
-    } else if ( self.coverView.status==XYZCoverViewStatusHiding ) {
+    } else if ( [self.coverView isHiding] ) {
       self.layer.opacity = 0.0;
     }
   } else {
-    if ( (self.coverView.status==XYZCoverViewStatusShowing) || (self.coverView.status==XYZCoverViewStatusHiding) ) {
+    if ( [self.coverView isShowing] || [self.coverView isHiding] ) {
       if ( self.layer.presentationLayer ) {
         self.layer.opacity = self.layer.presentationLayer.opacity;
       }

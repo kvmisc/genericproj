@@ -9,10 +9,6 @@
 #import "XYZCoverView.h"
 
 /* [CONFIGURABLE_VALUE] */
-//#define DURATION_SHOW_SELF    3.0
-//#define DURATION_SHOW_CONTENT 5.0
-//#define DURATION_HIDE_CONTENT 5.0
-//#define DURATION_HIDE_SELF    3.0
 #define DURATION_SHOW_SELF    0.12
 #define DURATION_SHOW_CONTENT 0.25
 #define DURATION_HIDE_CONTENT 0.25
@@ -86,6 +82,16 @@
 #endif
 
 
+- (BOOL)isShowing
+{
+  return _status==XYZCoverViewStatusShowing;
+}
+- (BOOL)isHiding
+{
+  return _status==XYZCoverViewStatusHiding;
+}
+
+
 - (void)cancelDelayHide
 {
   [NSObject cancelPreviousPerformRequestsWithTarget:self];
@@ -94,13 +100,13 @@
 - (void)updateStateFromAnimation:(BOOL)completion
 {
   if ( completion ) {
-    if ( _status==XYZCoverViewStatusShowing ) {
+    if ( [self isShowing] ) {
       self.layer.opacity = 1.0;
-    } else if ( _status==XYZCoverViewStatusHiding ) {
+    } else if ( [self isHiding] ) {
       self.layer.opacity = 0.0;
     }
   } else {
-    if ( (_status==XYZCoverViewStatusShowing) || (_status==XYZCoverViewStatusHiding) ) {
+    if ( [self isShowing] || [self isHiding] ) {
       if ( self.layer.presentationLayer ) {
         self.layer.opacity = self.layer.presentationLayer.opacity;
       }
@@ -162,9 +168,7 @@
         XYZLogDebug(@"CoverView", @"direct hide self");
         [self updateStateFromAnimation:YES];
         _status = XYZCoverViewStatusUnknown;
-        [self removeFromSuperview];
-        if ( _completion ) { _completion(); }
-        XYZLogDebug(@"CoverView", @"hide done");
+        [self doComplete];
       }
     } else {
       // 未完成 HideContent，非程序取消，置于 HideFailed 状态
@@ -186,9 +190,7 @@
     }
     [self.layer removeAnimationForKey:@"HideSelf"];
 
-    [self removeFromSuperview];
-    if ( _completion ) { _completion(); }
-    XYZLogDebug(@"CoverView", @"hide done");
+    [self doComplete];
     return;
   }
 }
@@ -342,11 +344,16 @@
     [self updateStateFromAnimation:YES];
     [_contentView updateStateFromAnimation:YES];
     _status = XYZCoverViewStatusUnknown;
-    [self removeFromSuperview];
-    if ( _completion ) { _completion(); }
-    XYZLogDebug(@"CoverView", @"hide done");
+    [self doComplete];
 
   }
+}
+
+- (void)doComplete
+{
+  [self removeFromSuperview];
+  if ( _completion ) { _completion(); }
+  XYZLogDebug(@"CoverView", @"hide done");
 }
 
 - (void)addShowSelfAnimation

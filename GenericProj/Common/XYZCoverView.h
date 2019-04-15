@@ -30,6 +30,8 @@ typedef enum : NSUInteger {
 @property (nonatomic, strong) XYZCoverContentView *contentView;
 
 @property (nonatomic, assign) XYZCoverViewStatus status;
+@property (nonatomic, assign, readonly, getter=isShowing) BOOL showing;
+@property (nonatomic, assign, readonly, getter=isHiding) BOOL hiding;
 
 // 如果背景是透明的就不需要自身动画来耽误时间，默认 NO
 @property (nonatomic, assign) BOOL needsSelfAnimation;
