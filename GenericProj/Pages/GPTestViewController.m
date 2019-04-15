@@ -376,6 +376,15 @@ void bubble_sort(int arr[], int len) {
   //[self begin];
 }
 
+- (void)viewDidAppear:(BOOL)animated
+{
+  [super viewDidAppear:animated];
+
+//  XYZWebViewController *wvc = [[XYZWebViewController alloc] initWithURL:@"https://www.baidu.com/"];
+  XYZWebViewController *wvc = [[XYZWebViewController alloc] initWithURL:@"http://kevinsblog.cn/"];
+  [self.navigationController pushViewController:wvc animated:YES];
+}
+
 - (void)doit
 {
 //  [UIAlertController tk_presentAlert:@"系统出现严重错误!"];

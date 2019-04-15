@@ -18,6 +18,8 @@
 
 - (void)loadRequest:(NSURLRequest *)request;
 
+- (void)clearWebViewCache;
+
 - (void)scalePageToFit;
 
 - (void)injectJavaScript:(NSString *)js;
