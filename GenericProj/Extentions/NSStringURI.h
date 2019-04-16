@@ -42,10 +42,10 @@
 - (NSString *)tk_URLDecodedString;
 
 #ifdef DEBUG
-+ (void)tk_testAddingQueryDictionary;
-+ (void)tk_testAddingQueryString;
-+ (void)tk_testQueryDictionary;
-+ (void)tk_testQueryString;
++ (void)tk_TestAddingQueryDictionary;
++ (void)tk_TestAddingQueryString;
++ (void)tk_TestQueryDictionary;
++ (void)tk_TestQueryString;
 #endif
 @end
 
@@ -62,6 +62,6 @@
 // 返回值为已编码状态
 - (NSString *)tk_queryString;
 #ifdef DEBUG
-+ (void)tk_testQueryString;
++ (void)tk_TestQueryString;
 #endif
 @end

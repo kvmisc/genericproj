@@ -50,7 +50,7 @@
 }
 
 #ifdef DEBUG
-+ (void)tk_testBase64
++ (void)tk_TestBase64
 {
   NSLog(@"Begin Test Base64 ========================================");
   {

@@ -20,7 +20,7 @@
 - (NSString *)tk_base64DecodedString;
 
 #ifdef DEBUG
-+ (void)tk_testBase64;
++ (void)tk_TestBase64;
 #endif
 
 @end

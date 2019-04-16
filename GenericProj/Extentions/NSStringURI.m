@@ -81,10 +81,10 @@
 }
 
 #ifdef DEBUG
-+ (void)tk_testAddingQueryDictionary
++ (void)tk_TestAddingQueryDictionary
 {
 }
-+ (void)tk_testAddingQueryString
++ (void)tk_TestAddingQueryString
 {
   NSLog(@"Begin Test Adding Query String ========================================");
   NSArray *urlAry = @[
@@ -99,7 +99,7 @@
   }
   NSLog(@"End Test Adding Query String ==========================================");
 }
-+ (void)tk_testQueryDictionary
++ (void)tk_TestQueryDictionary
 {
   NSLog(@"Begin Test Query Dictionary ========================================");
   NSArray *urlAry = @[
@@ -117,7 +117,7 @@
   }
   NSLog(@"End Test Query Dictionary ==========================================");
 }
-+ (void)tk_testQueryString
++ (void)tk_TestQueryString
 {
   NSLog(@"Begin Test Query String ========================================");
   NSArray *urlAry = @[
@@ -180,7 +180,7 @@
 }
 
 #ifdef DEBUG
-+ (void)tk_testQueryString
++ (void)tk_TestQueryString
 {
   NSLog(@"Begin Test Query String ========================================");
   NSDictionary *map = @{

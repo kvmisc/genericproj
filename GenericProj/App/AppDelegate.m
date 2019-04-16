@@ -23,11 +23,11 @@
 {
   [XYZLogger setup];
 
-  [NSString tk_testAddingQueryDictionary];
-  [NSString tk_testAddingQueryString];
-  [NSString tk_testQueryString];
-  [NSString tk_testQueryDictionary];
-  [NSDictionary tk_testQueryString];
+  [NSString tk_TestAddingQueryDictionary];
+  [NSString tk_TestAddingQueryString];
+  [NSString tk_TestQueryString];
+  [NSString tk_TestQueryDictionary];
+  [NSDictionary tk_TestQueryString];
 
 //  NSString *pwd1 = [SAMKeychain passwordForService:@"com.firefly.gp" account:@"kevin"];
 //  NSString *pwd2 = [SAMKeychain passwordForService:@"com.firefly.gp" account:@"tony"];
