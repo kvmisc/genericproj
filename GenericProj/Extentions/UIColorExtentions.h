@@ -13,8 +13,10 @@
 
 @interface UIColor (Extentions)
 
+// @"00FF00FF"
 + (UIColor *)tk_colorWithHexString:(NSString *)string;
 
+// 0x00FF00FF
 + (UIColor *)tk_colorWithHexInteger:(NSInteger)integer;
 
 @end

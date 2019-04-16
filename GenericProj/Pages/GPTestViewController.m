@@ -93,13 +93,15 @@ void bubble_sort(int arr[], int len) {
 {
   [super viewWillLayoutSubviews];
 
-  _displayView.frame = CGRectMake(40, 40, 150, 150);
+  //_displayView.frame = CGRectMake(40, 40, 150, 150);
 }
 
 
 - (void)viewDidLoad
 {
   [super viewDidLoad];
+
+  self.view.backgroundColor = [UIColor tk_colorWithHexString:@"ff000033"];
 
 //  {
 //    CALayer *layer = [CALayer layer];
@@ -381,8 +383,8 @@ void bubble_sort(int arr[], int len) {
   [super viewDidAppear:animated];
 
 //  XYZWebViewController *wvc = [[XYZWebViewController alloc] initWithURL:@"https://www.baidu.com/"];
-  XYZWebViewController *wvc = [[XYZWebViewController alloc] initWithURL:@"http://kevinsblog.cn/"];
-  [self.navigationController pushViewController:wvc animated:YES];
+//  XYZWebViewController *wvc = [[XYZWebViewController alloc] initWithURL:@"http://kevinsblog.cn/"];
+//  [self.navigationController pushViewController:wvc animated:YES];
 }
 
 - (void)doit
