@@ -23,21 +23,11 @@
 {
   [XYZLogger setup];
 
-  NSDictionary *dict = @{
-                         @"aa": @"12",
-                         @"cc": [NSNull null],
-                         @"dd": @"44+55",
-                         @"ee": @"",
-                         @"bb": @"e\u0301"
-                         };
-  NSString *str = [dict tk_queryString];
-  NSLog(@"%@", dict);
-  NSLog(@"%@", str);
-  NSLog(@"%@", [str tk_queryDictionary]);
-
-  NSString *aaa = [@"http://www.baidu.com/api.asp" stringByAppendingFormat:@"?%@", str];
-  NSURL *url = [NSURL URLWithString:aaa];
-  NSLog(@"%@", url.query);
+  [NSString tk_testAddingQueryDictionary];
+  [NSString tk_testAddingQueryString];
+  [NSString tk_testQueryString];
+  [NSString tk_testQueryDictionary];
+  [NSDictionary tk_testQueryString];
 
 //  NSString *pwd1 = [SAMKeychain passwordForService:@"com.firefly.gp" account:@"kevin"];
 //  NSString *pwd2 = [SAMKeychain passwordForService:@"com.firefly.gp" account:@"tony"];

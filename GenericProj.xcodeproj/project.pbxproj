@@ -76,7 +76,7 @@
 		BB270279225DD1CD00F68CAF /* mask_black.png in Resources */ = {isa = PBXBuildFile; fileRef = BB270276225DD1CC00F68CAF /* mask_black.png */; };
 		BB27027A225DD1CD00F68CAF /* mask_red@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BB270277225DD1CC00F68CAF /* mask_red@2x.png */; };
 		BB27027B225DD1CD00F68CAF /* mask_blue@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BB270278225DD1CC00F68CAF /* mask_blue@2x.png */; };
-		BB349E162264772D00515502 /* NSStringQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = BB349E152264772D00515502 /* NSStringQuery.m */; };
+		BB349E162264772D00515502 /* NSStringURI.m in Sources */ = {isa = PBXBuildFile; fileRef = BB349E152264772D00515502 /* NSStringURI.m */; };
 		BB476E7F22601D2A009A5AE1 /* XYZCoverView.m in Sources */ = {isa = PBXBuildFile; fileRef = BB476E7E22601D2A009A5AE1 /* XYZCoverView.m */; };
 		BB476E8222601D6B009A5AE1 /* XYZCoverContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = BB476E8122601D6B009A5AE1 /* XYZCoverContentView.m */; };
 		BB476E8822606E3C009A5AE1 /* XYZCoverAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = BB476E8722606E3C009A5AE1 /* XYZCoverAlertView.m */; };
@@ -253,8 +253,8 @@
 		BB270276225DD1CC00F68CAF /* mask_black.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mask_black.png; sourceTree = "<group>"; };
 		BB270277225DD1CC00F68CAF /* mask_red@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mask_red@2x.png"; sourceTree = "<group>"; };
 		BB270278225DD1CC00F68CAF /* mask_blue@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mask_blue@2x.png"; sourceTree = "<group>"; };
-		BB349E142264772D00515502 /* NSStringQuery.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NSStringQuery.h; sourceTree = "<group>"; };
-		BB349E152264772D00515502 /* NSStringQuery.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NSStringQuery.m; sourceTree = "<group>"; };
+		BB349E142264772D00515502 /* NSStringURI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NSStringURI.h; sourceTree = "<group>"; };
+		BB349E152264772D00515502 /* NSStringURI.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NSStringURI.m; sourceTree = "<group>"; };
 		BB431D1F225ED9A200537A90 /* download_ipas.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = download_ipas.txt; sourceTree = "<group>"; };
 		BB476E7D22601D2A009A5AE1 /* XYZCoverView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYZCoverView.h; sourceTree = "<group>"; };
 		BB476E7E22601D2A009A5AE1 /* XYZCoverView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XYZCoverView.m; sourceTree = "<group>"; };
@@ -543,8 +543,8 @@
 				0A883B401F6237AC00ED33EB /* NSObjectExtentions.m */,
 				0A4EB5021DDD3A9100A77974 /* NSStringUnicode.h */,
 				0A4EB5031DDD3A9100A77974 /* NSStringUnicode.m */,
-				BB349E142264772D00515502 /* NSStringQuery.h */,
-				BB349E152264772D00515502 /* NSStringQuery.m */,
+				BB349E142264772D00515502 /* NSStringURI.h */,
+				BB349E152264772D00515502 /* NSStringURI.m */,
 				0A972A4B1FC3F88200396FBD /* NSStringExtentions.h */,
 				0A972A4C1FC3F88200396FBD /* NSStringExtentions.m */,
 				0A883B421F62380800ED33EB /* UIColorExtentions.h */,
@@ -1075,7 +1075,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BB349E162264772D00515502 /* NSStringQuery.m in Sources */,
+				BB349E162264772D00515502 /* NSStringURI.m in Sources */,
 				0A58ACA71FA86D910043C35A /* XYZDownloadItem.m in Sources */,
 				BBB09285226092490059980C /* XYZCoverAlertContentView.m in Sources */,
 				0A58ACA61FA86D8B0043C35A /* XYZDownloadManager.m in Sources */,

@@ -36,4 +36,39 @@
   return CGSizeMake(MAX(ceil(width), ceil(rect.size.width)), ceil(rect.size.height));
 }
 
+
+- (NSString *)tk_base64EncodedString
+{
+  NSData *data = [self dataUsingEncoding:NSUTF8StringEncoding];
+  return [data base64EncodedStringWithOptions:0];
+}
+
+- (NSString *)tk_base64DecodedString
+{
+  NSData *data = [[NSData alloc] initWithBase64EncodedData:[self dataUsingEncoding:NSUTF8StringEncoding] options:0];
+  return [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+}
+
+#ifdef DEBUG
++ (void)tk_testBase64
+{
+  NSLog(@"Begin Test Base64 ========================================");
+  {
+    NSString *str = @"Meet URL Decode and Encode, a simple online tool that does exactly what it says; decodes URL encoding and encodes into it quickly and easily. URL encode your data in a hassle-free way, or decode it into human-readable format.";
+    NSString *encoded = [str tk_base64EncodedString];
+    NSLog(@"%@", encoded);
+    NSString *decoded = [encoded tk_base64DecodedString];
+    NSLog(@"%@", decoded);
+  }
+  {
+    NSString *str = @"";
+    NSString *encoded = [str tk_base64EncodedString];
+    NSLog(@"[%@]", encoded);
+    NSString *decoded = [encoded tk_base64DecodedString];
+    NSLog(@"[%@]", decoded);
+  }
+  NSLog(@"End Test Base64 ==========================================");
+}
+#endif
+
 @end
