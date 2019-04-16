@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface GPHierarchyViewController : XYZBaseViewController
+@interface GPHierarchyViewController : UIViewController
 
 @end

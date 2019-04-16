@@ -23,11 +23,11 @@
 {
   [XYZLogger setup];
 
-  [NSString tk_TestAddingQueryDictionary];
-  [NSString tk_TestAddingQueryString];
-  [NSString tk_TestQueryString];
-  [NSString tk_TestQueryDictionary];
-  [NSDictionary tk_TestQueryString];
+//  [NSString tk_TestAddingQueryDictionary];
+//  [NSString tk_TestAddingQueryString];
+//  [NSString tk_TestQueryString];
+//  [NSString tk_TestQueryDictionary];
+//  [NSDictionary tk_TestQueryString];
 
 //  NSString *pwd1 = [SAMKeychain passwordForService:@"com.firefly.gp" account:@"kevin"];
 //  NSString *pwd2 = [SAMKeychain passwordForService:@"com.firefly.gp" account:@"tony"];
@@ -54,7 +54,7 @@
   _window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
   _window.backgroundColor = [UIColor whiteColor];
   UIViewController *vc = [[GPRootViewController alloc] init];
-  UINavigationController *nc = [[XYZNavigationController alloc] initWithRootViewController:vc];
+  UINavigationController *nc = [[UINavigationController alloc] initWithRootViewController:vc];
   nc.navigationBarHidden = YES;
   //nc.delegate = self;
   _window.rootViewController = nc;

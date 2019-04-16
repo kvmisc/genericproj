@@ -28,38 +28,30 @@
   return self;
 }
 
-
-
 - (void)setup
 {
   XYZPrintMethod();
 }
 
+//- (void)awakeFromNib
+//{
+//  // 必须调用父类的实现。
+//  [super awakeFromNib];
+//
+//  XYZPrintMethod();
+//  // 做些 xib 加载完成后的工作。
+//  // ...
+//}
 
-
-- (void)awakeFromNib
-{
-  // 必须调用父类的实现。
-  [super awakeFromNib];
-
-  XYZPrintMethod();
-  // 做些 xib 加载完成后的工作。
-  // ...
-}
-
-
-
-- (void)updateConstraints
-{
-  XYZPrintMethod();
-  // 更新约束。
-  // ...
-
-  // 必须在最后调用父类实现。
-  [super updateConstraints];
-}
-
-
+//- (void)updateConstraints
+//{
+//  XYZPrintMethod();
+//  // 更新约束。
+//  // ...
+//
+//  // 必须在最后调用父类实现。
+//  [super updateConstraints];
+//}
 
 + (BOOL)requiresConstraintBasedLayout
 {

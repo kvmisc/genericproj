@@ -10,6 +10,7 @@
 
 @interface GPHierarchyViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+@property (nonatomic, assign) NSInteger count;
 @end
 
 static NSMutableArray *TitleAry = nil;
@@ -38,17 +39,44 @@ static NSMutableArray *TitleAry = nil;
 {
   [super viewDidLoad];
   _titleLabel.text = _theTitle;
-}
 
 
-- (NSString *)description
-{
-  return [NSString stringWithFormat:@"[GPHierarchyViewController] %p %@", self, _theTitle];
+//  @weakify(self);
+//  [self.KVOController observe:self keyPath:@"isMovingFromParentViewController" options:NSKeyValueObservingOptionNew block:^(id observer, id object, NSDictionary<NSString *,id> *change) {
+//    @strongify(self);
+//    NSLog(@"observer:%@ %@", self.titleLabel.text, observer);
+//    NSLog(@"object:%@ %@", self.titleLabel.text, object);
+//    NSLog(@"change:%@ %@",self.titleLabel.text, change);
+//  }];
+
+  @weakify(self);
+  [self.KVOController observe:self keyPath:@"count" options:NSKeyValueObservingOptionNew block:^(id observer, id object, NSDictionary<NSString *,id> *change) {
+    @strongify(self);
+    NSLog(@"observer:%@ %@", self.titleLabel.text, observer);
+    NSLog(@"object:%@ %@", self.titleLabel.text, object);
+    NSLog(@"change:%@ %@",self.titleLabel.text, change);
+  }];
+
+  dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+    self.count = 5;
+  });
 }
+
+#ifdef DEBUG
+- (void)dealloc { XYZPrintMethod(); }
+#endif
+
+
+//- (NSString *)description
+//{
+//  return [NSString stringWithFormat:@"[GPHierarchyViewController] %p %@", self, _theTitle];
+//}
 
 
 - (IBAction)back:(id)sender
 {
+  [self.navigationController popViewControllerAnimated:YES];
+  return;
   if ( self.navigationController ) {
     if ( [self.navigationController.viewControllers count]>=2 ) {
       [self.navigationController popViewControllerAnimated:YES];
@@ -77,20 +105,20 @@ static NSMutableArray *TitleAry = nil;
 }
 
 
-- (void)startActivities
-{
-  NSLog(@"start: %@", _theTitle);
-}
-
-- (void)stopActivities
-{
-  NSLog(@"stop: %@", _theTitle);
-}
-
-- (void)destroyActivities
-{
-  NSLog(@"destroy: %@", _theTitle);
-}
+//- (void)startActivities
+//{
+//  NSLog(@"start: %@", _theTitle);
+//}
+//
+//- (void)stopActivities
+//{
+//  NSLog(@"stop: %@", _theTitle);
+//}
+//
+//- (void)destroyActivities
+//{
+//  NSLog(@"destroy: %@", _theTitle);
+//}
 
 
 //- (void)viewWillAppear:(BOOL)animated

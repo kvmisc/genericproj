@@ -9,15 +9,16 @@
 #import "GPKVOViewController.h"
 #import "GPKVOObject.h"
 
+@interface GPKVOViewController ()
+@property (nonatomic, assign) NSInteger count;
+@end
+
 @implementation GPKVOViewController {
   GPKVOObject *_object;
 }
 
 #ifdef DEBUG
-- (void)dealloc
-{
-  XYZPrintMethod();
-}
+- (void)dealloc { XYZPrintMethod(); }
 #endif
 
 
@@ -25,18 +26,27 @@
 {
   [super viewDidLoad];
 
-  _object = [[GPKVOObject alloc] init];
+//  _object = [[GPKVOObject alloc] init];
+//
+//  [self.KVOController observe:_object keyPath:@"name" options:NSKeyValueObservingOptionNew block:^(id observer, id object, NSDictionary<NSString *,id> *change) {
+//    NSLog(@"observer: %@", observer);
+//    NSLog(@"object: %@", object);
+//    NSLog(@"change: %@", change);
+//  }];
+//
+//  _object.name = @"asdf";
+//
+//  _object.name = @"asdf";
 
-  [self.KVOController observe:_object keyPath:@"name" options:NSKeyValueObservingOptionNew block:^(id observer, id object, NSDictionary<NSString *,id> *change) {
+
+  [self.KVOController observe:self keyPath:@"count" options:NSKeyValueObservingOptionNew block:^(id observer, id object, NSDictionary<NSString *,id> *change) {
     NSLog(@"observer: %@", observer);
     NSLog(@"object: %@", object);
     NSLog(@"change: %@", change);
   }];
 
-  _object.name = @"asdf";
-
-  _object.name = @"asdf";
-
+  self.count = 5;
+  self.count = 5;
 }
 
 @end

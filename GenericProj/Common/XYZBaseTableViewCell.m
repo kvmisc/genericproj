@@ -31,36 +31,26 @@
   if ( index==0 ) {
     if ( !_aboveLine ) {
       _aboveLine = [[UIView alloc] init];
+      _aboveLine.backgroundColor = [UIColor redColor];
       [self.contentView addSubview:_aboveLine];
     }
-    _aboveLine.backgroundColor = [UIColor redColor];
-    @weakify(self);
-    [_aboveLine mas_remakeConstraints:^(MASConstraintMaker *make) {
-      @strongify(self);
-      make.left.top.right.equalTo(self.contentView);
-      make.height.equalTo(@(1.0));
-    }];
+    _aboveLine.hidden = NO;
   } else {
-    [_aboveLine removeFromSuperview];
-    _aboveLine = nil;
+    _aboveLine.hidden = YES;
   }
+  [_aboveLine tk_bringToFront];
 
   if ( !_belowLine ) {
     _belowLine = [[UIView alloc] init];
+    _belowLine.backgroundColor = [UIColor blueColor];
     [self.contentView addSubview:_belowLine];
   }
-  _belowLine.backgroundColor = [UIColor blueColor];
-  @weakify(self);
-  [_belowLine mas_remakeConstraints:^(MASConstraintMaker *make) {
-    @strongify(self);
-    make.bottom.right.equalTo(self.contentView);
-    make.height.equalTo(@(1.0));
-    if ( (index+1)<count ) {
-      make.left.equalTo(self.contentView).offset(10.0);
-    } else {
-      make.left.equalTo(self.contentView);
-    }
-  }];
+  [_belowLine tk_bringToFront];
+}
+
+- (void)layoutSubviews
+{
+  [super layoutSubviews];
 }
 
 @end
