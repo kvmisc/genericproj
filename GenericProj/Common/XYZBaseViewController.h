@@ -13,6 +13,7 @@
 @property (nonatomic, assign, readonly) BOOL viewAppeared;
 @property (nonatomic, assign, readonly) BOOL appearedEver;
 
+// 除开 NavBar 和 TabBar 的区域
 @property (nonatomic, strong, readonly) UIView *contentView;
 
 
