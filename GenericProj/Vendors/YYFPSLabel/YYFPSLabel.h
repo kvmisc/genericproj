@@ -17,4 +17,6 @@
  */
 @interface YYFPSLabel : UILabel
 
++ (void)setup;
+
 @end

@@ -17,12 +17,12 @@
 
 - (id)init
 {
-  self = [super initWithFrame:CGRectMake(0.0, XYZ_SCREEN_HET-10.0, 32.0, 10.0)];
+  self = [super init];
   if (self) {
 
     self.font = [UIFont systemFontOfSize:8.0];
     self.textColor = [UIColor whiteColor];
-    self.backgroundColor = [UIColor blackColor];
+    self.backgroundColor = [UIColor redColor];
     self.textAlignment = NSTextAlignmentCenter;
     self.userInteractionEnabled = NO;
 
@@ -66,6 +66,16 @@
   _count = 0;
 
   self.text = [NSString stringWithFormat:@"FPS: %d",(int)round(fps)];
+}
+
++ (void)setup
+{
+  dispatch_async(dispatch_get_main_queue(), ^{
+    YYFPSLabel *FPSLabel = [[YYFPSLabel alloc] init];
+    FPSLabel.frame = CGRectMake(0.0, XYZ_STATUS_BAR_HET, 32.0, 10.0);
+    [XYZ_APP_DELEGATE.window addSubview:FPSLabel];
+    FPSLabel.layer.zPosition = 100.0;
+  });
 }
 
 @end

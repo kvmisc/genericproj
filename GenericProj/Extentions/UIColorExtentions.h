@@ -16,6 +16,7 @@
 // @"00FF00FF"
 + (UIColor *)tk_colorWithHexString:(NSString *)string;
 
+// 定义颜色的时候最好用数字，这样可以省去字符串转换数字的操作，节省时间
 // 0x00FF00FF
 + (UIColor *)tk_colorWithHexInteger:(NSInteger)integer;
 

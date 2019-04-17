@@ -26,8 +26,9 @@
 // 5/5s/SE      {320, 568}  {640, 1136}   2.0   2.0 image-320w@2x.png image-568h@2x.png
 // 6 /6s /7 /8  {375, 667}  {750, 1334}   2.0   2.0 image-375w@2x.png image-667h@2x.png
 // 6P/6sP/7P/8P {414, 736}  {1242, 2208}  3.0   3.0 image-414w@3x.png image-736h@3x.png
-// XR           {375, 812}  {750, 1624}   2.0   2.0 image-375w@2x.png image-812h@2x.png
-// X/XS/XSM     {375, 812}  {1125, 2436}  3.0   3.0 image-375w@3x.png image-812h@3x.png
+// X/XS         {375, 812}  {1125, 2436}  3.0   3.0 image-375w@3x.png image-812h@3x.png
+// XR           {414, 896}  {828, 1792}   2.0   2.0 image-414w@2x.png image-896h@2x.png
+// XSM          {414, 896}  {1242, 2688}  3.0   3.0 image-414w@3x.png image-896h@3x.png
 + (UIImage *)tk_screenWImageNamed:(NSString *)name;
 + (UIImage *)tk_screenHImageNamed:(NSString *)name;
 

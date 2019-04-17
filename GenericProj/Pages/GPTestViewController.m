@@ -101,7 +101,7 @@ void bubble_sort(int arr[], int len) {
 {
   [super viewDidLoad];
 
-  self.view.backgroundColor = [UIColor tk_colorWithHexString:@"ff000033"];
+  self.view.backgroundColor = [UIColor tk_colorWithHexInteger:0xff000033];
 
 //  {
 //    CALayer *layer = [CALayer layer];
