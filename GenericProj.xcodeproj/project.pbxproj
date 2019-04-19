@@ -631,13 +631,10 @@
 			isa = PBXGroup;
 			children = (
 				BBCA25A221533B2A004906B1 /* README.md */,
-				0A2BD3891D5D5CEA009D1CEF /* XYZBaseView.h */,
-				0A2BD38A1D5D5CEA009D1CEF /* XYZBaseView.m */,
-				0AFEA2241E14EE2A00F0C4C6 /* XYZBaseViewController.h */,
-				0AFEA2251E14EE2A00F0C4C6 /* XYZBaseViewController.m */,
+				BB725AA02269711300A5DF4F /* View */,
+				BB725AA12269712600A5DF4F /* ViewController */,
 				0AD8DF351FE0B71E0092FF6D /* CoverView */,
 				0A883B571F62638300ED33EB /* MessageCenter */,
-				BB7EDE4F208087A800B44D0C /* TableViewController */,
 				BB145D6A207DFE620087D55F /* WebViewController */,
 			);
 			path = Common;
@@ -799,15 +796,26 @@
 			name = samples;
 			sourceTree = "<group>";
 		};
-		BB7EDE4F208087A800B44D0C /* TableViewController */ = {
+		BB725AA02269711300A5DF4F /* View */ = {
 			isa = PBXGroup;
 			children = (
+				0A2BD3891D5D5CEA009D1CEF /* XYZBaseView.h */,
+				0A2BD38A1D5D5CEA009D1CEF /* XYZBaseView.m */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		BB725AA12269712600A5DF4F /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				0AFEA2241E14EE2A00F0C4C6 /* XYZBaseViewController.h */,
+				0AFEA2251E14EE2A00F0C4C6 /* XYZBaseViewController.m */,
 				0A883B7F1F62B25E00ED33EB /* XYZBaseTableViewController.h */,
 				0A883B801F62B25E00ED33EB /* XYZBaseTableViewController.m */,
 				BB7EDE50208087C600B44D0C /* XYZBaseTableViewCell.h */,
 				BB7EDE51208087C600B44D0C /* XYZBaseTableViewCell.m */,
 			);
-			name = TableViewController;
+			name = ViewController;
 			sourceTree = "<group>";
 		};
 		BB7EDE5820808C9D00B44D0C /* TableView */ = {

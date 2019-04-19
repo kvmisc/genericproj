@@ -64,9 +64,9 @@
 // Common
 #import "Common/XYZBaseView.h"
 #import "Common/XYZBaseViewController.h"
+#import "Common/XYZBaseTableViewController.h"
 #import "Common/XYZCoverView.h"
 #import "Common/XYZMessageCenter.h"
-#import "Common/XYZBaseTableViewController.h"
 #import "Common/XYZWebViewController.h"
 
 // Utils
