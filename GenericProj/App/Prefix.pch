@@ -70,7 +70,9 @@
 #import "Common/XYZWebViewController.h"
 
 // Utils
+#import "Utils/XYZPaymentManager.h"
 #import "Utils/XYZHTTPRequest.h"
 #import "Utils/XYZDownloadManager.h"
+#import "Utils/XYZLanguageManager.h"
 
 #endif

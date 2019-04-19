@@ -96,6 +96,7 @@
 		BB8F97692050DAD5008A8CAD /* GPRuntimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB8F97672050DAD5008A8CAD /* GPRuntimeViewController.m */; };
 		BB8F976A2050DAD5008A8CAD /* GPRuntimeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB8F97682050DAD5008A8CAD /* GPRuntimeViewController.xib */; };
 		BB8F976D2050DD45008A8CAD /* GPRuntimeTest.m in Sources */ = {isa = PBXBuildFile; fileRef = BB8F976C2050DD45008A8CAD /* GPRuntimeTest.m */; };
+		BB9BFC5D2268684F0071A008 /* XYZLanguageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BB9BFC5C2268684F0071A008 /* XYZLanguageManager.m */; };
 		BBA112F52256E8A400678404 /* GPRedrawViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBA112F32256E8A400678404 /* GPRedrawViewController.m */; };
 		BBA112F62256E8A400678404 /* GPRedrawViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBA112F42256E8A400678404 /* GPRedrawViewController.xib */; };
 		BBA112FA2256E96900678404 /* GPRedrawAAAView.m in Sources */ = {isa = PBXBuildFile; fileRef = BBA112F92256E96900678404 /* GPRedrawAAAView.m */; };
@@ -289,6 +290,8 @@
 		BB8F97682050DAD5008A8CAD /* GPRuntimeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GPRuntimeViewController.xib; sourceTree = "<group>"; };
 		BB8F976B2050DD45008A8CAD /* GPRuntimeTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GPRuntimeTest.h; sourceTree = "<group>"; };
 		BB8F976C2050DD45008A8CAD /* GPRuntimeTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GPRuntimeTest.m; sourceTree = "<group>"; };
+		BB9BFC5B2268684F0071A008 /* XYZLanguageManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYZLanguageManager.h; sourceTree = "<group>"; };
+		BB9BFC5C2268684F0071A008 /* XYZLanguageManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XYZLanguageManager.m; sourceTree = "<group>"; };
 		BBA112F22256E8A400678404 /* GPRedrawViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GPRedrawViewController.h; sourceTree = "<group>"; };
 		BBA112F32256E8A400678404 /* GPRedrawViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GPRedrawViewController.m; sourceTree = "<group>"; };
 		BBA112F42256E8A400678404 /* GPRedrawViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GPRedrawViewController.xib; sourceTree = "<group>"; };
@@ -647,6 +650,7 @@
 				BBBDFC682177091400936776 /* Payment */,
 				0A55A7E41F668E6E001A0C13 /* Network */,
 				0AFF50591FA8608300A66AC4 /* Download */,
+				BB9BFC5E226868540071A008 /* LanguageManager */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -829,6 +833,15 @@
 				BB8F976C2050DD45008A8CAD /* GPRuntimeTest.m */,
 			);
 			name = Runtime;
+			sourceTree = "<group>";
+		};
+		BB9BFC5E226868540071A008 /* LanguageManager */ = {
+			isa = PBXGroup;
+			children = (
+				BB9BFC5B2268684F0071A008 /* XYZLanguageManager.h */,
+				BB9BFC5C2268684F0071A008 /* XYZLanguageManager.m */,
+			);
+			name = LanguageManager;
 			sourceTree = "<group>";
 		};
 		BBA112F72256E8AC00678404 /* Redraw */ = {
@@ -1109,6 +1122,7 @@
 				0A3D07E01F67B82E00F19DF3 /* GPAspectViewController.m in Sources */,
 				BBA113002256E98B00678404 /* GPRedrawCCCView.m in Sources */,
 				BB8F976D2050DD45008A8CAD /* GPRuntimeTest.m in Sources */,
+				BB9BFC5D2268684F0071A008 /* XYZLanguageManager.m in Sources */,
 				0A883B441F62380800ED33EB /* UIColorExtentions.m in Sources */,
 				0A8C61A41D5B97DD000D882E /* XYZCancelableBlock.m in Sources */,
 				BBA112FA2256E96900678404 /* GPRedrawAAAView.m in Sources */,
