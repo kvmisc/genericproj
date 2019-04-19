@@ -57,7 +57,7 @@
 
   _request1 = [[GPTestRequest alloc] init];
   _request1.HTTPManager = manager;
-  //_request1.address = @"http://kevinsblog.cn/";
+  _request1.address = @"http://kevinsblog.cn/";
   //_request1.address = @"http://kevinsblog.cn/download/ts.bin";
   //_request1.destinationFile = TKPathForDocumentResource(@"s110.zip");
   //_request1.temporaryFile = TKPathForDocumentResource(@"s110.tmp");
