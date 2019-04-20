@@ -49,15 +49,7 @@
 
 
   // 将查询参数添加到地址中
-  NSString *address = _address;
-  NSString *query = AFQueryStringFromParameters(_queries);
-  if ( query.length>0 ) {
-    if ( [address rangeOfString:@"?"].location!=NSNotFound ) {
-      address = [address stringByAppendingFormat:@"&%@", query];
-    } else {
-      address = [address stringByAppendingFormat:@"?%@", query];
-    }
-  }
+  NSString *address = [_address tk_stringByAddingQueryDictionary:_queries];
 
   NSError *serializationError = nil;
   NSMutableURLRequest *request =
@@ -87,7 +79,7 @@
       }
       NSData *body = _body;
       if ( body.length<=0 ) {
-        NSString *string = AFQueryStringFromParameters(_parameters);
+        NSString *string = [_parameters tk_queryString];
         body = [(string.length>0)?string:@"" dataUsingEncoding:NSUTF8StringEncoding];
       }
       [request setHTTPBody:body];
