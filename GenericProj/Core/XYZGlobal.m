@@ -153,22 +153,64 @@
 }
 + (NSString *)pathGlobal:(NSString *)service file:(NSString *)file
 {
-  NSString *path1 = TKPathForDocumentResource(service);
-  return [path1 stringByAppendingPathComponent:file];
+  NSString *path = TKPathForDocumentResource(nil);
+  if ( service.length>0 ) {
+    path = [path stringByAppendingPathComponent:service];
+    return [path stringByAppendingPathComponent:file];
+  }
+  return path;
 }
 + (NSString *)pathUser:(NSString *)uid relativePath:(NSString *)relativePath
 {
-  NSString *path1 = TKPathForDocumentResource(@"Users");
-  NSString *path2 = [path1 stringByAppendingPathComponent:uid];
-  return [path2 stringByAppendingPathComponent:relativePath];
+  NSString *path = TKPathForDocumentResource(@"Users");
+  if ( uid.length>0 ) {
+    path = [path stringByAppendingPathComponent:uid];
+    return [path stringByAppendingPathComponent:relativePath];
+  }
+  return path;
 }
 + (NSString *)pathUser:(NSString *)uid service:(NSString *)service file:(NSString *)file
 {
-  NSString *path1 = TKPathForDocumentResource(@"Users");
-  NSString *path2 = [path1 stringByAppendingPathComponent:uid];
-  NSString *path3 = [path2 stringByAppendingPathComponent:service];
-  return [path3 stringByAppendingPathComponent:file];
+  NSString *path = TKPathForDocumentResource(@"Users");
+  if ( uid.length>0 ) {
+    path = [path stringByAppendingPathComponent:uid];
+    if ( service.length>0 ) {
+      path = [path stringByAppendingPathComponent:service];
+      return [path stringByAppendingPathComponent:file];
+    }
+  }
+  return path;
 }
+
+#ifdef DEBUG
++ (void)testPath
+{
+  NSLog(@"Begin Test Path ========================================");
+  NSLog(@"%@", [self pathGlobal:nil]);
+  NSLog(@"%@", [self pathGlobal:@""]);
+  NSLog(@"%@", [self pathGlobal:@"aaa"]);
+
+  NSLog(@"%@", [self pathGlobal:nil file:nil]);
+  NSLog(@"%@", [self pathGlobal:nil file:@"bbb"]);
+  NSLog(@"%@", [self pathGlobal:@"aaa" file:nil]);
+  NSLog(@"%@", [self pathGlobal:@"aaa" file:@"bbb"]);
+
+  NSLog(@"%@", [self pathUser:nil relativePath:nil]);
+  NSLog(@"%@", [self pathUser:nil relativePath:@"aaa"]);
+  NSLog(@"%@", [self pathUser:@"u123456" relativePath:nil]);
+  NSLog(@"%@", [self pathUser:@"u123456" relativePath:@"aaa"]);
+
+  NSLog(@"%@", [self pathUser:nil service:nil file:nil]);
+  NSLog(@"%@", [self pathUser:nil service:nil file:@"bbb"]);
+  NSLog(@"%@", [self pathUser:nil service:@"aaa" file:nil]);
+  NSLog(@"%@", [self pathUser:nil service:@"aaa" file:@"bbb"]);
+  NSLog(@"%@", [self pathUser:@"u123456" service:nil file:nil]);
+  NSLog(@"%@", [self pathUser:@"u123456" service:nil file:@"bbb"]);
+  NSLog(@"%@", [self pathUser:@"u123456" service:@"aaa" file:nil]);
+  NSLog(@"%@", [self pathUser:@"u123456" service:@"aaa" file:@"bbb"]);
+  NSLog(@"End Test Path ==========================================");
+}
+#endif
 
 
 
