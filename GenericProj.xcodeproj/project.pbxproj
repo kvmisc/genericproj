@@ -1081,7 +1081,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "$SRCROOT/GenericProj/Support/bump_build_number.sh\n";
+			shellScript = "$SRCROOT/$PROJECT_NAME/Support/bump_build_number.sh\n";
 		};
 		B0EEC6B0936D245F18CD8BE0 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
