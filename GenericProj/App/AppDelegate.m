@@ -21,6 +21,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+  NSLog(@"%d %d", 9 % 4, 9 % -4);
+
   [XYZLogger setup];
 
 //  [NSString tk_TestAddingQueryDictionary];
@@ -74,6 +76,9 @@
   // 告诉用户出现了某个致命错误，用户可以重启或重装软件。
   // 有些用户比较笨，不会退出软件再打开，只会退到后台，然后再打开。所以，这些操作应该在进入前
   // 台的时候就做一遍。当然，这些操作要能检查重复。
+
+//  NSLog(@"%d", 11%3);
+//  NSLog(@"%d", -11%3);
 
   return YES;
 }

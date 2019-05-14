@@ -37,6 +37,8 @@
     CALayerDelegate
 >
 
+@property (strong, nonatomic) dispatch_source_t timer;
+
 @property (weak, nonatomic) IBOutlet UIButton *button;
 
 @property (weak, nonatomic) IBOutlet UIView *greenView;

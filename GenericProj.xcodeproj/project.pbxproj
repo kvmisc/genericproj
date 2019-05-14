@@ -226,7 +226,6 @@
 		515BB722BAC56AAD43AD1865 /* Pods-GenericProj.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GenericProj.release.xcconfig"; path = "Pods/Target Support Files/Pods-GenericProj/Pods-GenericProj.release.xcconfig"; sourceTree = "<group>"; };
 		6CC8B4CFFD62002DD8FEA6DF /* Pods-GenericProj.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GenericProj.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GenericProj/Pods-GenericProj.debug.xcconfig"; sourceTree = "<group>"; };
 		BB02403F225B023A006A0F40 /* update_pods.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = update_pods.txt; sourceTree = "<group>"; };
-		BB024040225B0293006A0F40 /* bump_build_number.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = bump_build_number.sh; sourceTree = "<group>"; };
 		BB024041225B3764006A0F40 /* GPNavigationTransitionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GPNavigationTransitionViewController.h; sourceTree = "<group>"; };
 		BB024042225B3764006A0F40 /* GPNavigationTransitionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GPNavigationTransitionViewController.m; sourceTree = "<group>"; };
 		BB024043225B3764006A0F40 /* GPNavigationTransitionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GPNavigationTransitionViewController.xib; sourceTree = "<group>"; };
@@ -321,6 +320,7 @@
 		BBCA25AA21533D10004906B1 /* build.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = build.sh; sourceTree = SOURCE_ROOT; };
 		BBD5C479202B02330093AE9E /* UINavigationControllerExtentions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UINavigationControllerExtentions.h; sourceTree = "<group>"; };
 		BBD5C47A202B02330093AE9E /* UINavigationControllerExtentions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UINavigationControllerExtentions.m; sourceTree = "<group>"; };
+		BBDA9A9A228A783E00BC4B7E /* bump_build_number.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = bump_build_number.sh; sourceTree = "<group>"; };
 		BBDC263F224C7C96000394B0 /* YYWeakProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYWeakProxy.m; sourceTree = "<group>"; };
 		BBDC2640224C7C96000394B0 /* YYFPSLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYFPSLabel.h; sourceTree = "<group>"; };
 		BBDC2641224C7C96000394B0 /* YYFPSLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYFPSLabel.m; sourceTree = "<group>"; };
@@ -612,6 +612,7 @@
 			isa = PBXGroup;
 			children = (
 				0A7AE4F71D58294200B585D9 /* README.md */,
+				BBDA9A9A228A783E00BC4B7E /* bump_build_number.sh */,
 				0A7AE51C1D58407000B585D9 /* Podfile */,
 				BBCA25AA21533D10004906B1 /* build.sh */,
 			);
@@ -921,7 +922,6 @@
 				BB8C8EB2224B3F790068928F /* job_tech.md */,
 				BBFFBA83217827C900FB8159 /* block_declaration.md */,
 				BB8C8EB1224B386E0068928F /* gcd_timer_sample.m */,
-				BB024040225B0293006A0F40 /* bump_build_number.sh */,
 				BB02403F225B023A006A0F40 /* update_pods.txt */,
 				BB431D1F225ED9A200537A90 /* download_ipas.txt */,
 				BBED5D7E224E0BE70032A53F /* cv.txt */,
@@ -990,6 +990,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -1080,7 +1081,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "echo \"Bumping build number...\"\nPLIST_FILE=${PROJECT_DIR}/${INFOPLIST_FILE}\nOLD_BUILD=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"${PLIST_FILE}\")\nNEW_BUILD=$(expr ${OLD_BUILD} + 1)\n/usr/libexec/Plistbuddy -c \"Set CFBundleVersion ${NEW_BUILD}\" \"${PLIST_FILE}\"\n";
+			shellScript = "$SRCROOT/GenericProj/Support/bump_build_number.sh\n";
 		};
 		B0EEC6B0936D245F18CD8BE0 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;

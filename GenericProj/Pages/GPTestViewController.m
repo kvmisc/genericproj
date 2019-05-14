@@ -13,6 +13,8 @@
 
 #import <QuartzCore/QuartzCore.h>
 
+#import <os/lock.h>
+
 
 
 void bubble_sort(int arr[], int len) {
@@ -36,58 +38,58 @@ void bubble_sort(int arr[], int len) {
   CALayer *_blueLayer;
 }
 
-#ifdef DEBUG
-- (void)dealloc
-{
-  XYZPrintMethod();
-}
-#endif
+//#ifdef DEBUG
+//- (void)dealloc
+//{
+//  XYZPrintMethod();
+//}
+//#endif
 
 - (BOOL)shouldLoadContentView
 {
   return NO;
 }
 
-
-- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
-{
-  //[super touchesBegan:touches withEvent:event];
-  NSLog(@"vc touch began");
-
-//  NSLog(@"%@", BASE_URL);
-//  _titleLabel.text = BASE_URL;
 //
-//  //[self.displayView setNeedsDisplay];
-//  [_blueLayer display];
-
-  CGPoint point1 = [[touches anyObject] locationInView:self.view];
-  CGPoint point = [[touches anyObject] locationInView:_displayView];
-  NSLog(@"%@ %@", NSStringFromCGPoint(point1), NSStringFromCGPoint(point));
-  CALayer *layer = [_displayView.layer hitTest:point];
-  if ( layer==_blueLayer ) {
-    NSLog(@"blue layer touched");
-  } else if ( layer==_greenLayer ) {
-    NSLog(@"green layer touched");
-  }
-}
-
-- (void)touchesMoved:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
-{
-  //[super touchesMoved:touches withEvent:event];
-  NSLog(@"vc touch moved");
-}
-
-- (void)touchesCancelled:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
-{
-  //[super touchesCancelled:touches withEvent:event];
-  NSLog(@"vc touch cancelled");
-}
-
-- (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
-{
-  //[super touchesEnded:touches withEvent:event];
-  //NSLog(@"vc touch ended");
-}
+//- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
+//{
+//  //[super touchesBegan:touches withEvent:event];
+//  NSLog(@"vc touch began");
+//
+////  NSLog(@"%@", BASE_URL);
+////  _titleLabel.text = BASE_URL;
+////
+////  //[self.displayView setNeedsDisplay];
+////  [_blueLayer display];
+//
+//  CGPoint point1 = [[touches anyObject] locationInView:self.view];
+//  CGPoint point = [[touches anyObject] locationInView:_displayView];
+//  NSLog(@"%@ %@", NSStringFromCGPoint(point1), NSStringFromCGPoint(point));
+//  CALayer *layer = [_displayView.layer hitTest:point];
+//  if ( layer==_blueLayer ) {
+//    NSLog(@"blue layer touched");
+//  } else if ( layer==_greenLayer ) {
+//    NSLog(@"green layer touched");
+//  }
+//}
+//
+//- (void)touchesMoved:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
+//{
+//  //[super touchesMoved:touches withEvent:event];
+//  NSLog(@"vc touch moved");
+//}
+//
+//- (void)touchesCancelled:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
+//{
+//  //[super touchesCancelled:touches withEvent:event];
+//  NSLog(@"vc touch cancelled");
+//}
+//
+//- (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
+//{
+//  //[super touchesEnded:touches withEvent:event];
+//  //NSLog(@"vc touch ended");
+//}
 
 - (void)viewWillLayoutSubviews
 {
@@ -97,11 +99,59 @@ void bubble_sort(int arr[], int len) {
 }
 
 
+- (void)setUpTimer
+{
+  // 获取主队列
+  dispatch_queue_t queue = dispatch_get_main_queue();
+  // 创建定时器, 在主线程中调用
+  dispatch_source_t timer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0, queue);
+  // 2秒后执行
+  NSTimeInterval start = 2.0;
+  // 执行间隔1秒
+  NSTimeInterval interval = 1.0;
+  // 设置定时器
+  dispatch_source_set_timer(timer,
+                            dispatch_time(DISPATCH_TIME_NOW, start * NSEC_PER_SEC),
+                            interval * NSEC_PER_SEC,
+                            0);
+  // 设置回调
+  __weak typeof(self) weakSelf = self;
+  dispatch_source_set_event_handler(timer, ^{
+    NSLog(@"in timer");
+    [weakSelf timerTest];
+  });
+  // 启动定时器
+  dispatch_resume(timer);
+  self.timer = timer;
+}
+
+- (void)timerTest
+{
+  NSLog(@"%s", __func__);
+}
+
+- (void)dealloc
+{
+  NSLog(@"%s", __func__);
+}
+
+
 - (void)viewDidLoad
 {
   [super viewDidLoad];
 
-  self.view.backgroundColor = [UIColor tk_colorWithHexInteger:0xff000033];
+  os_unfair_lock lock = OS_UNFAIR_LOCK_INIT;
+
+  os_unfair_lock_lock(&lock);
+  os_unfair_lock_unlock(&lock);
+
+  return;
+
+
+
+//  self.view.backgroundColor = [UIColor tk_colorWithHexInteger:0xff000033];
+//
+//  [self setUpTimer];
 
 //  {
 //    CALayer *layer = [CALayer layer];
