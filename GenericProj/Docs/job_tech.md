@@ -168,6 +168,9 @@ void bubble_sort(int arr[], int len) {
 
 * hash 方法只在对象被添加至 NSSet 和设置为 NSDictionary 的 key 时会调用；
 
+对应基本数据类型默认关键字是：atomic,readwrite,assign
+对于普通的 Objective-C 对象：atomic,readwrite,strong
+
 ## 设计模式
 
 适配器模式、责任链、原型、代理、观察者、迭代器
